@@ -1,0 +1,61 @@
+# ============================================================================
+# Python
+# ============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+*.egg
+*.so
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# ============================================================================
+# IDE / Editor
+# ============================================================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ============================================================================
+# Jupyter
+# ============================================================================
+.ipynb_checkpoints/
+
+# ============================================================================
+# Project-Specific Exclusions
+# ============================================================================
+
+# Copyrighted publisher templates (must NOT be redistributed)
+Elsevier Template/
+Springer_Nature_LaTeX_Template/
+
+# Original manuscript and raw data (not part of this work)
+Original manuscript/
+Original data/
+
+# Duplicate dataset folder (canonical data is in New_Dataset/)
+Datasets/
+
+# LaTeX manuscripts (submitted separately to journals)
+deep_learning_model/manuscript/
+
+# Large model checkpoint files (>1 MB each)
+# Trained weights can be regenerated; see README for instructions
+*.pt
+
+# Internal planning documents
+deep_learning_model/PROJECT_SUMMARY.md
+deep_learning_model/QUICKSTART.md
+
+# Gemini agent artifacts
+.gemini/

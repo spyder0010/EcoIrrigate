@@ -1,0 +1,11 @@
+{
+  "task": "multi-task",
+  "model": "MultiTaskNet",
+  "test_loss": 4.195498218590563,
+  "r2_score": 0.8715589046478271,
+  "rmse": 0.5424653608276814,
+  "mae": 0.4589737057685852,
+  "best_epoch": 10,
+  "total_epochs": 20,
+  "best_val_loss": 0.7991248153319414
+}

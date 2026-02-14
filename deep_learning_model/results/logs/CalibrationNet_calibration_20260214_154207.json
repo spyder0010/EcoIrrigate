@@ -1,0 +1,11 @@
+{
+  "task": "calibration",
+  "model": "CalibrationNet",
+  "test_loss": 0.6620612064888701,
+  "r2_score": 0.4174830913543701,
+  "rmse": 1.2469635800516712,
+  "mae": 1.0837687253952026,
+  "best_epoch": 8,
+  "total_epochs": 18,
+  "best_val_loss": 0.09948825226165355
+}

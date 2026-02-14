@@ -1,0 +1,26 @@
+{
+  "train_farm1_test_farm2": {
+    "r2": 0.9344558715820312,
+    "rmse": 0.5397988418029595,
+    "mae": 0.35586777329444885,
+    "epochs_trained": 50,
+    "train_samples": 10656,
+    "test_samples": 10656
+  },
+  "train_farm2_test_farm1": {
+    "r2": 0.916745662689209,
+    "rmse": 0.5590029731391633,
+    "mae": 0.4015861749649048,
+    "epochs_trained": 50,
+    "train_samples": 10656,
+    "test_samples": 10656
+  },
+  "combined_reference": {
+    "r2": 0.811930775642395,
+    "rmse": 1.0598043016405807,
+    "mae": 0.8402082324028015,
+    "epochs_trained": 50,
+    "train_samples": 17049,
+    "test_samples": 4263
+  }
+}

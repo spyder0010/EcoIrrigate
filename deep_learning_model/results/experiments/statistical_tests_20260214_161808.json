@@ -1,0 +1,26 @@
+{
+  "shapiro_wilk": {
+    "statistic": 0.9781016793662913,
+    "p_value": 8.4001704852694555e-22
+  },
+  "wilcoxon_vs_mean": {
+    "statistic": 1005995.0,
+    "p_value": 5.154158608011275e-194
+  },
+  "cohens_d_vs_mean": 1.0780919790267944,
+  "mannwhitney_farms": {
+    "statistic": 1462876.5,
+    "p_value": 1.594614991431029e-12
+  },
+  "prediction_stats": {
+    "mean_error": -0.7720877528190613,
+    "std_error": 0.663044810295105,
+    "skewness": 0.5711435079574585,
+    "kurtosis": 0.15107464790344238
+  },
+  "r2_confidence_interval": {
+    "r2_mean": 0.7652168465256691,
+    "ci_lower_95": 0.7489127054810524,
+    "ci_upper_95": 0.7801385819911957
+  }
+}
