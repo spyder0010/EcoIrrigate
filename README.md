@@ -3,7 +3,7 @@
 > **Companion repository** for the manuscript:
 > *"Multi-Task Deep Learning Framework for IoT Soil Moisture Calibration and Forecasting in Urban Agriculture"*
 >
-> **Authors:** Soham Saha · Sneha Paul · Ahona Ghosh · Shalini Shaw · Arpan Deyasi  
+> **Authors:** Soham Saha · Subhajit Kar · Arijeet Ghosh · Sohan Bhattacharjee · Somes Sanyal  
 > **Affiliation:** Department of Computer Science and Engineering (IoT, CS, BT), Institute of Engineering and Management, Kolkata 700160, India  
 > **Corresponding Author:** Soham Saha ([sohamsaha568@gmail.com](mailto:sohamsaha568@gmail.com))  
 > **Repository:** [https://github.com/spyder0010/EcoIrrigate](https://github.com/spyder0010/EcoIrrigate)
@@ -257,8 +257,8 @@ If you use this code or dataset in your research, please cite:
 @article{saha2026ecoirrigate,
   title     = {Multi-Task Deep Learning Framework for {IoT} Soil Moisture 
                Calibration and Forecasting in Urban Agriculture},
-  author    = {Saha, Soham and Paul, Sneha and Ghosh, Ahona and Shaw, Shalini 
-               and Deyasi, Arpan},
+  author    = {Saha, Soham and kar, Subhojit and Ghosh, Arijeet and Sohan, Bhattacharjee 
+               and Sanyal, Somes},
   year      = {2026},
   note      = {Under Review}
 }
