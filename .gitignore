@@ -37,6 +37,3 @@ Thumbs.db
 # Trained weights can be regenerated; see README for instructions
 *.pt
 
-# Internal planning documents
-deep_learning_model/PROJECT_SUMMARY.md
-deep_learning_model/QUICKSTART.md
