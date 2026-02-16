@@ -1,0 +1,122 @@
+{
+  "A1_ADC_Only": {
+    "config": "A1_ADC_Only",
+    "num_features": 1,
+    "features": [
+      "Raw_Capacitive_ADC"
+    ],
+    "test_r2": 0.824980616569519,
+    "test_rmse": 0.8789106919918133,
+    "test_mae": 0.6526705026626587,
+    "epochs_trained": 87,
+    "params": 46753,
+    "train_time_seconds": 116.6309585571289
+  },
+  "A2_Plus_Voltage": {
+    "config": "A2_Plus_Voltage",
+    "num_features": 2,
+    "features": [
+      "Raw_Capacitive_ADC",
+      "Sensor_Voltage_V"
+    ],
+    "test_r2": 0.9339454174041748,
+    "test_rmse": 0.5399495442095059,
+    "test_mae": 0.436084508895874,
+    "epochs_trained": 61,
+    "params": 47009,
+    "train_time_seconds": 85.14764904975891
+  },
+  "A3_Plus_BoardTemp": {
+    "config": "A3_Plus_BoardTemp",
+    "num_features": 3,
+    "features": [
+      "Raw_Capacitive_ADC",
+      "Sensor_Voltage_V",
+      "Sensor_Board_Temperature_C"
+    ],
+    "test_r2": 0.918982744216919,
+    "test_rmse": 0.5979851459760251,
+    "test_mae": 0.46005693078041077,
+    "epochs_trained": 28,
+    "params": 47265,
+    "train_time_seconds": 39.16649913787842
+  },
+  "A4_Plus_AtmTemp": {
+    "config": "A4_Plus_AtmTemp",
+    "num_features": 4,
+    "features": [
+      "Raw_Capacitive_ADC",
+      "Sensor_Voltage_V",
+      "Sensor_Board_Temperature_C",
+      "Atm_Temperature_C"
+    ],
+    "test_r2": 0.8972416520118713,
+    "test_rmse": 0.6734575662477755,
+    "test_mae": 0.49998775124549866,
+    "epochs_trained": 102,
+    "params": 47521,
+    "train_time_seconds": 142.06239199638367
+  },
+  "A5_Plus_SoilTemp": {
+    "config": "A5_Plus_SoilTemp",
+    "num_features": 5,
+    "features": [
+      "Raw_Capacitive_ADC",
+      "Sensor_Voltage_V",
+      "Sensor_Board_Temperature_C",
+      "Atm_Temperature_C",
+      "Soil_Temperature_C"
+    ],
+    "test_r2": 0.9111214876174927,
+    "test_rmse": 0.6263255368055893,
+    "test_mae": 0.49339357018470764,
+    "epochs_trained": 73,
+    "params": 47777,
+    "train_time_seconds": 121.39555954933167
+  },
+  "A6_Plus_Pressure": {
+    "config": "A6_Plus_Pressure",
+    "num_features": 6,
+    "features": [
+      "Raw_Capacitive_ADC",
+      "Sensor_Voltage_V",
+      "Sensor_Board_Temperature_C",
+      "Atm_Temperature_C",
+      "Soil_Temperature_C",
+      "Atm_Pressure_inHg"
+    ],
+    "test_r2": 0.9401727318763733,
+    "test_rmse": 0.513867533156983,
+    "test_mae": 0.4037244915962219,
+    "epochs_trained": 103,
+    "params": 48033,
+    "train_time_seconds": 156.10195803642273
+  },
+  "A7_Full_Model": {
+    "config": "A7_Full_Model",
+    "num_features": 15,
+    "features": [
+      "Raw_Capacitive_ADC",
+      "Sensor_Voltage_V",
+      "Sensor_Board_Temperature_C",
+      "Atm_Temperature_C",
+      "Soil_Temperature_C",
+      "Atm_Pressure_inHg",
+      "Hour_sin",
+      "Hour_cos",
+      "Day_sin",
+      "Day_cos",
+      "Hour",
+      "Day",
+      "Month",
+      "DayOfWeek",
+      "DayOfYear"
+    ],
+    "test_r2": 0.6114296913146973,
+    "test_rmse": 1.3095934337421058,
+    "test_mae": 1.2479896545410156,
+    "epochs_trained": 33,
+    "params": 50337,
+    "train_time_seconds": 51.49575352668762
+  }
+}

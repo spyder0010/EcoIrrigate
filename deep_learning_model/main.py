@@ -323,10 +323,15 @@ def main(args):
     temporal_dim = len(processed_data['feature_groups']['temporal_features'])
     args.calib_dim = calib_dim  # Used by MultiTaskNet
     if args.task == 'calibration':
-        args.input_dim = calib_dim + temporal_dim
+        # IMPORTANT: CalibrationNet uses ONLY sensor/environmental features (A2 set)
+        # Multi-seed ablation: A2(R²=0.956±0.007) >> A7(R²=0.596±0.091; temporal features degrade calibration)
+        args.input_dim = calib_dim
     elif args.task == 'forecasting':
+        # Forecasting needs temporal context for horizon prediction
         args.input_dim = calib_dim + temporal_dim + 1
     else:
+        # Multi-task uses calibration features for CalibrationNet branch,
+        # full features for ForecastingNet branch
         args.input_dim = calib_dim + temporal_dim
     
     # Create model
@@ -403,13 +408,13 @@ def main(args):
                 'args': vars(args)
             }, model_path)
             
-            print(f"✓ Saved best model to {model_path}")
+            print(f"[OK] Saved best model to {model_path}")
         else:
             patience_counter += 1
             
         # Stop if no improvement
         if patience_counter >= args.patience:
-            print(f"\n⚠ Early stopping triggered after {epoch} epochs")
+            print(f"\n[WARN] Early stopping triggered after {epoch} epochs")
             break
     
     # Final evaluation on test set
@@ -471,7 +476,7 @@ def main(args):
     with open(results_path, 'w') as f:
         json.dump(results, f, indent=2)
     
-    print(f"\n✓ Results saved to {results_path}")
+    print(f"\n[OK] Results saved to {results_path}")
     print("\n" + "="*80)
     print("TRAINING COMPLETE")
     print("="*80)

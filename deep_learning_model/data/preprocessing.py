@@ -74,9 +74,9 @@ class DataPreprocessor:
         # Sort by timestamp and farm
         df = df.sort_values(['Farm_ID', 'Timestamp']).reset_index(drop=True)
         
-        print(f"✓ Loaded {len(df):,} records")
-        print(f"✓ Date range: {df['Timestamp'].min()} to {df['Timestamp'].max()}")
-        print(f"✓ Farms: {df['Farm_ID'].unique().tolist()}")
+        print(f"[OK] Loaded {len(df):,} records")
+        print(f"[OK] Date range: {df['Timestamp'].min()} to {df['Timestamp'].max()}")
+        print(f"[OK] Farms: {df['Farm_ID'].unique().tolist()}")
         
         # Store initial stats
         self.preprocessing_report['total_records'] = len(df)
@@ -113,7 +113,7 @@ class DataPreprocessor:
             print(missing_df.to_string(index=False))
             self.preprocessing_report['missing_values'] = missing_df.to_dict('records')
         else:
-            print("✓ No missing values detected")
+            print("[OK] No missing values detected")
             self.preprocessing_report['missing_values'] = []
         
         return df
@@ -167,7 +167,7 @@ class DataPreprocessor:
         self.preprocessing_report['outliers'] = outlier_counts
         
         if len(outlier_counts) == 0:
-            print("✓ No significant outliers detected")
+            print("[OK] No significant outliers detected")
         
         return df_clean
     
@@ -380,7 +380,7 @@ class DataPreprocessor:
         val_df_scaled = self.scale_features(val_df, features_to_scale, fit=False)
         test_df_scaled = self.scale_features(test_df, features_to_scale, fit=False)
         
-        print(f"✓ Scaled {len(features_to_scale)} features")
+        print(f"[OK] Scaled {len(features_to_scale)} features")
         
         # Summary statistics
         print("\n### PREPROCESSING SUMMARY ###")
@@ -451,7 +451,7 @@ def main():
     processed_data['val'].to_csv('../data/processed/val_data.csv', index=False)
     processed_data['test'].to_csv('../data/processed/test_data.csv', index=False)
     
-    print("\n✓ Processed data saved to ../data/processed/")
+    print(f"\n[OK] Processed data saved to ../data/processed/")
 
 
 if __name__ == "__main__":

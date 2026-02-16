@@ -154,7 +154,7 @@ class MultiTaskLoss(nn.Module):
 
 class FocalMSELoss(nn.Module):
     """
-    Focal MSE loss - focuses on hard-to-predict examples.
+    Focal MSE loss - focuses on hard-to-predict examples. [EXPERIMENTAL — not used in main pipeline]
     
     Inspired by Focal Loss for classification, adapted for regression.
     """
@@ -194,7 +194,7 @@ class FocalMSELoss(nn.Module):
 
 class QuantileLoss(nn.Module):
     """
-    Quantile loss for uncertainty quantification.
+    Quantile loss for uncertainty quantification. [EXPERIMENTAL — not used in main pipeline]
     
     Predicts prediction intervals (e.g., 5th, 50th, 95th percentiles).
     """

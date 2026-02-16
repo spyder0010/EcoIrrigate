@@ -51,6 +51,9 @@ def run_baseline_comparison(data_path='../New_Dataset/kolkata_unified_dataset.cs
     processed = preprocessor.preprocess_pipeline(filepath=data_path)
     
     feature_groups = processed['feature_groups']
+    # CAVEAT: This script uses ALL 15 features (calibration + temporal).
+    # The manuscript's primary comparison uses only A2 features (ADC + Voltage).
+    # For the A2-feature baselines, see: results/experiments/a2_recomputation_*.json
     feature_cols = feature_groups['calibration_features'] + feature_groups['temporal_features']
     target_col = feature_groups['target']
     

@@ -1,0 +1,246 @@
+{
+  "a2_primary": {
+    "r2": 0.9589865207672119,
+    "rmse": 0.3308741997434236,
+    "mae": 0.2683592438697815,
+    "bootstrap_ci_lower": 0.9565138757228852,
+    "bootstrap_ci_upper": 0.9613640666007995,
+    "bootstrap_mean": 0.9589588539421559,
+    "n_bootstrap": 10000
+  },
+  "ablation_results": {
+    "A1": {
+      "features": [
+        "Raw_Capacitive_ADC"
+      ],
+      "r2_mean": 0.9460584402084351,
+      "r2_std": 0.019251668598468427,
+      "r2_ci_lower": 0.9137177228927612,
+      "r2_ci_upper": 0.9633051574230194,
+      "rmse_mean": 0.374049914747513
+    },
+    "A2": {
+      "features": [
+        "Raw_Capacitive_ADC",
+        "Sensor_Voltage_V"
+      ],
+      "r2_mean": 0.9561491012573242,
+      "r2_std": 0.007407277581471082,
+      "r2_ci_lower": 0.9433862686157226,
+      "r2_ci_upper": 0.9626209139823914,
+      "rmse_mean": 0.34101343773363324
+    },
+    "A3": {
+      "features": [
+        "Raw_Capacitive_ADC",
+        "Sensor_Voltage_V",
+        "Sensor_Board_Temperature_C"
+      ],
+      "r2_mean": 0.9356771230697631,
+      "r2_std": 0.021668912718547973,
+      "r2_ci_lower": 0.8983894646167755,
+      "r2_ci_upper": 0.9552413702011109,
+      "rmse_mean": 0.4092396507608947
+    },
+    "A4": {
+      "features": [
+        "Raw_Capacitive_ADC",
+        "Sensor_Voltage_V",
+        "Sensor_Board_Temperature_C",
+        "Atm_Temperature_C"
+      ],
+      "r2_mean": 0.9467133045196533,
+      "r2_std": 0.012978422751496525,
+      "r2_ci_lower": 0.9257409870624542,
+      "r2_ci_upper": 0.9616370379924775,
+      "rmse_mean": 0.374488971566235
+    },
+    "A5": {
+      "features": [
+        "Raw_Capacitive_ADC",
+        "Sensor_Voltage_V",
+        "Sensor_Board_Temperature_C",
+        "Atm_Temperature_C",
+        "Soil_Temperature_C"
+      ],
+      "r2_mean": 0.9238797307014466,
+      "r2_std": 0.021813358201717523,
+      "r2_ci_lower": 0.8899634003639221,
+      "r2_ci_upper": 0.9486724019050599,
+      "rmse_mean": 0.44630058543580053
+    },
+    "A6": {
+      "features": [
+        "Raw_Capacitive_ADC",
+        "Sensor_Voltage_V",
+        "Sensor_Board_Temperature_C",
+        "Soil_Temperature_C",
+        "Atm_Temperature_C",
+        "Atm_Pressure_inHg"
+      ],
+      "r2_mean": 0.9058583378791809,
+      "r2_std": 0.018448166282507616,
+      "r2_ci_lower": 0.8803712546825408,
+      "r2_ci_upper": 0.9327900648117066,
+      "rmse_mean": 0.49878353724025104
+    },
+    "A7": {
+      "features": [
+        "Raw_Capacitive_ADC",
+        "Sensor_Voltage_V",
+        "Sensor_Board_Temperature_C",
+        "Soil_Temperature_C",
+        "Atm_Temperature_C",
+        "Atm_Pressure_inHg",
+        "Hour",
+        "Day",
+        "Month",
+        "DayOfWeek",
+        "DayOfYear"
+      ],
+      "r2_mean": 0.5959373354911804,
+      "r2_std": 0.090489329051499,
+      "r2_ci_lower": 0.45024630427360535,
+      "r2_ci_upper": 0.6932541012763977,
+      "rmse_mean": 1.0323651469213193
+    }
+  },
+  "baselines_a2_features": {
+    "Linear Regression": {
+      "r2": 0.7125945360606942,
+      "rmse": 0.8758848732707647,
+      "mae": 0.6542814320485825
+    },
+    "Ridge": {
+      "r2": 0.7127081396838191,
+      "rmse": 0.8757117493356714,
+      "mae": 0.6541408154802192
+    },
+    "Lasso": {
+      "r2": 0.7358702838688032,
+      "rmse": 0.8396690551812221,
+      "mae": 0.629702913240085
+    },
+    "ElasticNet": {
+      "r2": 0.7296834331954407,
+      "rmse": 0.849446140314173,
+      "mae": 0.6363112662735055
+    },
+    "SVR (RBF)": {
+      "r2": 0.9161490287939849,
+      "rmse": 0.4731006714925566,
+      "mae": 0.30021296237680745
+    },
+    "Random Forest": {
+      "r2": 0.9529226041675554,
+      "rmse": 0.35449142268392264,
+      "mae": 0.26869599509447833
+    },
+    "Gradient Boosting": {
+      "r2": 0.9538802728147887,
+      "rmse": 0.35086728851828775,
+      "mae": 0.26620036287179766
+    },
+    "KNN": {
+      "r2": 0.9485982571584349,
+      "rmse": 0.3704148916512769,
+      "mae": 0.26746917088425015
+    },
+    "MLP": {
+      "r2": 0.9646153906768742,
+      "rmse": 0.30733124716848714,
+      "mae": 0.24360737890004283
+    }
+  },
+  "paired_tests_a2_vs_baselines": {
+    "Linear Regression": {
+      "wilcoxon_stat": 869499.0,
+      "wilcoxon_p": 2.891096507160802e-229,
+      "ttest_stat": 37.920977649049156,
+      "ttest_p": 3.580092200738378e-260,
+      "cohens_d": 0.6705640951540133,
+      "dl_mae": 0.2683592438697815,
+      "baseline_mae": 0.6542814320485825
+    },
+    "Ridge": {
+      "wilcoxon_stat": 870809.0,
+      "wilcoxon_p": 6.508308355750292e-229,
+      "ttest_stat": 37.911641018099765,
+      "ttest_p": 4.571110470611634e-260,
+      "cohens_d": 0.6703989936752931,
+      "dl_mae": 0.2683592438697815,
+      "baseline_mae": 0.6541408154802192
+    },
+    "Lasso": {
+      "wilcoxon_stat": 875441.0,
+      "wilcoxon_p": 1.1411463570020774e-227,
+      "ttest_stat": 37.49038137026374,
+      "ttest_p": 2.741548731393456e-255,
+      "cohens_d": 0.6629497765904814,
+      "dl_mae": 0.2683592438697815,
+      "baseline_mae": 0.629702913240085
+    },
+    "ElasticNet": {
+      "wilcoxon_stat": 875134.0,
+      "wilcoxon_p": 9.440727695612014e-228,
+      "ttest_stat": 37.60159870719042,
+      "ttest_p": 1.508510567703519e-256,
+      "cohens_d": 0.6649164546015781,
+      "dl_mae": 0.2683592438697815,
+      "baseline_mae": 0.6363112662735055
+    },
+    "SVR (RBF)": {
+      "wilcoxon_stat": 2162726.0,
+      "wilcoxon_p": 3.972632569678662e-14,
+      "ttest_stat": 5.77014463062005,
+      "ttest_p": 8.676696520750436e-09,
+      "cohens_d": 0.10203460071490376,
+      "dl_mae": 0.2683592438697815,
+      "baseline_mae": 0.30021296237680745
+    },
+    "Random Forest": {
+      "wilcoxon_stat": 2203104.0,
+      "wilcoxon_p": 1.1319218470525496e-11,
+      "ttest_stat": 0.09895200827818414,
+      "ttest_p": 0.9211825785546479,
+      "cohens_d": 0.0017497877957900366,
+      "dl_mae": 0.2683592438697815,
+      "baseline_mae": 0.26869599509447833
+    },
+    "Gradient Boosting": {
+      "wilcoxon_stat": 2123870.0,
+      "wilcoxon_p": 9.899604761639456e-17,
+      "ttest_stat": -0.6469442217690639,
+      "ttest_p": 0.5177144886733307,
+      "cohens_d": -0.011440041728369498,
+      "dl_mae": 0.2683592438697815,
+      "baseline_mae": 0.26620036287179766
+    },
+    "KNN": {
+      "wilcoxon_stat": 1974254.0,
+      "wilcoxon_p": 5.644839380380872e-29,
+      "ttest_stat": -0.21749683435882436,
+      "ttest_p": 0.8278350532708826,
+      "cohens_d": -0.0038460392366583495,
+      "dl_mae": 0.2683592438697815,
+      "baseline_mae": 0.26746917088425015
+    },
+    "MLP": {
+      "wilcoxon_stat": 1939009.0,
+      "wilcoxon_p": 2.2546627718612524e-32,
+      "ttest_stat": -13.452581490002789,
+      "ttest_p": 3.6067593603145024e-40,
+      "cohens_d": -0.23788464047037922,
+      "dl_mae": 0.2683592438697815,
+      "baseline_mae": 0.24360737890004283
+    }
+  },
+  "permutation_a2_vs_a6": {
+    "observed_diff": 0.05029076337814331,
+    "p_value": 0.0085
+  },
+  "shapiro_wilk": {
+    "statistic": 0.990182298132196,
+    "p_value": 4.720432057778213e-14
+  }
+}

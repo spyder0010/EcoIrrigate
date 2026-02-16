@@ -270,8 +270,9 @@ def create_data_loaders(processed_data: Dict,
     farm_encoding = {farm: idx for idx, farm in enumerate(unique_farms)}
     
     if task == 'calibration':
-        # Point-wise calibration task
-        features = feature_groups['calibration_features'] + feature_groups['temporal_features']
+        # Point-wise calibration task — uses only sensor/environmental features (A6 set)
+        # Multi-seed ablation: A2(R²=0.956±0.007) best; A6(R²=0.906±0.018); A7(R²=0.596±0.091)
+        features = feature_groups['calibration_features']
         target = feature_groups['target']
         
         train_dataset = CalibrationDataset(

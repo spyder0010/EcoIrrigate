@@ -55,7 +55,7 @@ ABLATION_CONFIGS = {
 
 
 def train_ablation_config(config_name, feature_cols, processed_data, device, 
-                           epochs=50, batch_size=64, lr=0.001, patience=10):
+                           epochs=150, batch_size=64, lr=0.001, patience=25):
     """Train a single ablation configuration."""
     
     target_col = processed_data['feature_groups']['target']
@@ -83,7 +83,7 @@ def train_ablation_config(config_name, feature_cols, processed_data, device,
     input_dim = len(feature_cols)
     model = CalibrationNet(
         input_dim=input_dim,
-        hidden_dims=[128, 64, 32],  # Smaller model for ablation
+        hidden_dims=[256, 128, 64],  # Larger model for ablation to handle higher-dim configs
         num_farms=len(farm_encoding),
         dropout=0.3
     ).to(device)
