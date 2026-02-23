@@ -1,0 +1,52 @@
+{
+  "reactive": {
+    "triggers": 4,
+    "true_positives": 3,
+    "false_positives": 1,
+    "missed_events": 1,
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "water_savings_pct": 0.0
+  },
+  "forecast_6h": {
+    "triggers": 4,
+    "true_positives": 3,
+    "false_positives": 1,
+    "missed_events": 1,
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "water_savings_pct": 0.0
+  },
+  "forecast_12h": {
+    "triggers": 8,
+    "true_positives": 3,
+    "false_positives": 5,
+    "missed_events": 1,
+    "precision": 0.375,
+    "recall": 0.75,
+    "f1": 0.5,
+    "water_savings_pct": -100.0
+  },
+  "moving_avg": {
+    "triggers": 4,
+    "true_positives": 3,
+    "false_positives": 1,
+    "missed_events": 1,
+    "precision": 0.75,
+    "recall": 0.75,
+    "f1": 0.75,
+    "water_savings_pct": 0.0
+  },
+  "oracle": {
+    "triggers": 3,
+    "true_positives": 3,
+    "false_positives": 0,
+    "missed_events": 1,
+    "precision": 1.0,
+    "recall": 0.75,
+    "f1": 0.857,
+    "water_savings_pct": 25.0
+  }
+}
