@@ -40,7 +40,8 @@ EcoIrrigate/
 │   ├── kolkata_unified_dataset.csv            ← Primary dataset (21,312 records)
 │   ├── daily_pressure_extracted.csv           ← Atmospheric pressure observations
 │   ├── daily_temperature_extracted.csv        ← Atmospheric temperature observations
-│   └── QUALITY_REPORT.json                    ← Data quality audit results
+│   ├── QUALITY_REPORT.json                    ← Data quality audit results
+│   └── DATA_DICTIONARY.md                     ← Feature descriptions and metadata
 │
 ├── graphical_abstract/                        ← Graphical abstract generator
 │   ├── generate_graphical_abstract.py         ← Python script (matplotlib + numpy)
