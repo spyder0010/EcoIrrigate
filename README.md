@@ -42,6 +42,13 @@ EcoIrrigate/
 │   ├── daily_temperature_extracted.csv        ← Atmospheric temperature observations
 │   └── QUALITY_REPORT.json                    ← Data quality audit results
 │
+├── graphical_abstract/                        ← Graphical abstract generator
+│   ├── generate_graphical_abstract.py         ← Python script (matplotlib + numpy)
+│   └── results/
+│       ├── graphical_abstract.png             ← Graphical abstract (PNG, 300 DPI)
+│       ├── graphical_abstract.tiff            ← Graphical abstract (TIFF, 300 DPI)
+│       └── graphical_abstract.pdf             ← Graphical abstract (PDF, 300 DPI)
+│
 └── deep_learning_model/
     ├── main.py                                ← Unified training entry point
     ├── requirements.txt                       ← Python dependencies
@@ -110,6 +117,16 @@ EcoIrrigate/
 | Training | 70% | Model training |
 | Validation | 15% | Hyperparameter tuning, early stopping |
 | Test | 15% | Final evaluation (reported in manuscript) |
+
+### Mendeley Data Repository
+
+The complete dataset is archived on Mendeley Data for long-term preservation and citability:
+
+| Property | Value |
+|----------|-------|
+| **DOI** | [10.17632/8x4v7yy3ds.1](https://doi.org/10.17632/8x4v7yy3ds.1) |
+| **Title** | EcoIrrigate: Multi-Sensor Soil Moisture Monitoring Dataset from Kolkata, India (Jan–Apr 2025) |
+| **License** | CC BY 4.0 |
 
 ---
 
@@ -351,6 +368,20 @@ The Arduino firmware is located at `deep_learning_model/hardware/data_logging/da
 | Training is very slow | Use a GPU. If unavailable, reduce epochs: `--epochs 30` |
 | Results differ from paper | Single-seed runs vary. Run the ablation study (Step 4a) for multi-seed averages |
 | CUDA out of memory | Reduce batch size: `--batch-size 32` or `--batch-size 16` |
+
+---
+
+## Graphical Abstract Replication
+
+The graphical abstract can be regenerated from the Python script included in the repository:
+
+```bash
+cd graphical_abstract
+pip install matplotlib numpy pillow
+python generate_graphical_abstract.py
+```
+
+This produces `results/graphical_abstract.png`, `results/graphical_abstract.tiff`, and `results/graphical_abstract.pdf` at 300 DPI (≥1328×531 px, 2.5:1 aspect ratio) compliant with Elsevier specifications.
 
 ---
 
