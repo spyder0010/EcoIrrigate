@@ -410,10 +410,7 @@ def run_mtl_analysis(data_path='../New_Dataset/kolkata_unified_dataset.csv'):
     ax.grid(True, alpha=0.3, axis='y')
     
     plt.tight_layout()
-    fig_path = '../manuscript/springer/figures/fig_mtl_feature_importance.png'
-    plt.savefig(fig_path, dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"Feature importance plot saved to {fig_path}")
     
     return output
 

@@ -75,6 +75,8 @@ BATCH_SIZE = 64
 LR = 0.001
 HIDDEN_DIMS = [256, 128, 64]
 
+FIG_DIR = os.path.join(os.path.dirname(__file__), '..', 'results', 'figures')
+
 
 def set_seed(seed):
     """Set all random seeds for reproducibility."""
@@ -406,47 +408,16 @@ def run_multi_seed_ablation(data_path='../New_Dataset/kolkata_unified_dataset.cs
         json.dump(output, f, indent=2, cls=NumpyEncoder)
     print(f"\nResults saved to {results_path}")
     
-    # ─── Generate Training Curve Plots (R1-W2) ───────────────────────────────
+    # ─── Generate R² Convergence Plot ─────────────────────────────────────────
     print("\n" + "=" * 60)
-    print("GENERATING TRAINING CURVE PLOTS")
+    print("GENERATING R² CONVERGENCE PLOT")
     print("=" * 60)
-    
-    fig, axes = plt.subplots(2, 4, figsize=(20, 10))
-    fig.suptitle('Training Curves: All Ablation Configurations (seed=42)', fontsize=14)
     
     config_names = list(ABLATION_CONFIGS.keys())
     labels = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7']
     
-    for i, (config_name, label) in enumerate(zip(config_names, labels)):
-        row = i // 4
-        col = i % 4
-        ax = axes[row, col]
-        
-        h = training_histories[config_name]
-        epochs_range = range(1, len(h['train_losses']) + 1)
-        
-        ax.plot(epochs_range, h['train_losses'], 'b-', alpha=0.7, label='Train Loss')
-        ax.plot(epochs_range, h['val_losses'], 'r-', alpha=0.7, label='Val Loss')
-        ax.axvline(x=h['best_epoch'], color='g', linestyle='--', alpha=0.5, label=f'Best Ep={h["best_epoch"]}')
-        ax.set_title(f'{label} ({len(ABLATION_CONFIGS[config_name])} feat)')
-        ax.set_xlabel('Epoch')
-        ax.set_ylabel('Huber Loss')
-        ax.legend(fontsize=7)
-        ax.grid(True, alpha=0.3)
-    
-    # Hide empty subplot
-    axes[1, 3].set_visible(False)
-    
-    plt.tight_layout()
-    fig_path = '../manuscript/springer/figures/fig_ablation_training_curves.png'
-    os.makedirs(os.path.dirname(fig_path), exist_ok=True)
-    plt.savefig(fig_path, dpi=300, bbox_inches='tight')
-    plt.close()
-    print(f"  Training curves saved to {fig_path}")
-    
-    # R² convergence plot
     fig, axes = plt.subplots(2, 4, figsize=(20, 10))
-    fig.suptitle('R² Convergence: Train vs Validation (seed=42)', fontsize=14)
+    fig.suptitle('R\u00b2 Convergence: Train vs Validation (seed=42)', fontsize=14)
     
     for i, (config_name, label) in enumerate(zip(config_names, labels)):
         row = i // 4
@@ -456,47 +427,23 @@ def run_multi_seed_ablation(data_path='../New_Dataset/kolkata_unified_dataset.cs
         h = training_histories[config_name]
         epochs_range = range(1, len(h['train_r2_history']) + 1)
         
-        ax.plot(epochs_range, h['train_r2_history'], 'b-', alpha=0.7, label='Train R²')
-        ax.plot(epochs_range, h['val_r2_history'], 'r-', alpha=0.7, label='Val R²')
+        ax.plot(epochs_range, h['train_r2_history'], 'b-', alpha=0.7, label='Train R\u00b2')
+        ax.plot(epochs_range, h['val_r2_history'], 'r-', alpha=0.7, label='Val R\u00b2')
         ax.axvline(x=h['best_epoch'], color='g', linestyle='--', alpha=0.5)
         ax.set_title(f'{label} ({len(ABLATION_CONFIGS[config_name])} feat)')
         ax.set_xlabel('Epoch')
-        ax.set_ylabel('R²')
+        ax.set_ylabel('R\u00b2')
         ax.legend(fontsize=7)
         ax.grid(True, alpha=0.3)
     
     axes[1, 3].set_visible(False)
     plt.tight_layout()
-    r2_fig_path = '../manuscript/springer/figures/fig_ablation_r2_convergence.png'
+    
+    os.makedirs(FIG_DIR, exist_ok=True)
+    r2_fig_path = os.path.join(FIG_DIR, 'fig_ablation_r2_convergence.png')
     plt.savefig(r2_fig_path, dpi=300, bbox_inches='tight')
     plt.close()
-    print(f"  R² convergence saved to {r2_fig_path}")
-    
-    # Confidence interval bar plot
-    fig, ax = plt.subplots(figsize=(10, 6))
-    
-    means = [summary_stats[c]['r2_mean'] for c in config_names]
-    stds = [summary_stats[c]['r2_std'] for c in config_names]
-    ci_errors = [1.96 * s / np.sqrt(5) for s in stds]
-    
-    colors = ['#4a90d9' if l != 'A6' else '#e74c3c' for l in labels]
-    bars = ax.bar(labels, means, yerr=ci_errors, capsize=5, color=colors, alpha=0.8)
-    
-    for bar, mean, std in zip(bars, means, stds):
-        ax.text(bar.get_x() + bar.get_width()/2., bar.get_height() + 0.01,
-                f'{mean:.3f}\n±{std:.3f}', ha='center', va='bottom', fontsize=8)
-    
-    ax.set_xlabel('Ablation Configuration')
-    ax.set_ylabel('Test R² (mean ± 95% CI)')
-    ax.set_title('Feature Ablation: R² with 95% Confidence Intervals (5 seeds)')
-    ax.grid(True, alpha=0.3, axis='y')
-    ax.set_ylim(0, 1.1)
-    
-    plt.tight_layout()
-    ci_fig_path = '../manuscript/springer/figures/fig_ablation_confidence_intervals.png'
-    plt.savefig(ci_fig_path, dpi=300, bbox_inches='tight')
-    plt.close()
-    print(f"  CI bar plot saved to {ci_fig_path}")
+    print(f"  R\u00b2 convergence saved to {r2_fig_path}")
     
     # ─── Print Final Summary ──────────────────────────────────────────────────
     print("\n" + "=" * 80)
@@ -528,4 +475,3 @@ def run_multi_seed_ablation(data_path='../New_Dataset/kolkata_unified_dataset.cs
 
 if __name__ == '__main__':
     results = run_multi_seed_ablation()
-

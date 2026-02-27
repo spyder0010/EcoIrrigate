@@ -1,11 +1,11 @@
 # EcoIrrigate: Multi-Task Deep Learning for IoT Soil Moisture Calibration and Forecasting
 
 > **Companion repository** for the manuscript:
-> *"Multi-Task Deep Learning Framework for IoT Soil Moisture Calibration and Forecasting in Urban Agriculture"*
+> *"A Multi-Task Deep Learning Framework for Sensor Calibration and Multi-Horizon Soil Moisture Prediction in IoT Irrigation Systems"*
 >
-> **Authors:** Soham Saha · Subhojit Kar · Arijeet Ghosh · Sohan Bhattacharjee · Somes Sanyal  
+> **Authors:** Soham Saha · Subhojit Kar · Arijeet Ghosh · Sohan Bhattacharjee · Somes Sanyal · Avik Kumar Das  
 > **Affiliation:** Department of Computer Science and Engineering (IoT, CS, BT), Institute of Engineering and Management, Kolkata 700160, India  
-> **Corresponding Author:** Arijeet Ghosh ([arijeet.mtece.12@gmail.com](mailto:arijeet.mtece.12@gmail.com))  
+> **Corresponding Author:** Soham Saha ([sohamsaha568@gmail.com](mailto:sohamsaha568@gmail.com))  
 > **Repository:** [https://github.com/spyder0010/EcoIrrigate](https://github.com/spyder0010/EcoIrrigate)
 
 ---
@@ -60,16 +60,28 @@ EcoIrrigate/
     │   └── data_loader.py                     ← PyTorch Dataset/DataLoader classes
     │
     ├── models/
-    │   ├── architectures.py                   ← CalibrationNet, ForecastingNet, MultiModalFusionNet, MultiTaskNet
-    │   └── losses.py                          ← Huber, WeightedMSE, MultiTask (+ experimental: Focal, Quantile)
+    │   ├── architectures.py                   ← CalibrationNet, ForecastingNet, MultiTaskNet
+    │   ├── baseline_architectures.py          ← TCN, ConvLSTM, Transformer variants
+    │   └── losses.py                          ← Huber, WeightedMSE, MultiTask losses
     │
-    ├── experiments/
+    ├── experiments/                           ← All experiment and figure generation scripts
     │   ├── __init__.py
     │   ├── ablation_study.py                  ← 7-configuration feature ablation
+    │   ├── a2_recomputation.py                ← A2 statistics + supplementary figures
+    │   ├── architecture_variants.py           ← A7 architecture variant sweep
     │   ├── baseline_comparison.py             ← 9 traditional ML baselines
+    │   ├── comprehensive_ablation.py          ← Multi-seed ablation with training curves
     │   ├── cross_farm_validation.py           ← Leave-one-farm-out generalization
+    │   ├── dl_architecture_comparison.py      ← TCN vs ConvLSTM vs Transformer vs BiLSTM
+    │   ├── generate_figures.py                ← 8 main publication figures + SHAP + stats
+    │   ├── generate_callibrationnet_arch.py   ← CalibrationNet 3D architecture diagram
+    │   ├── generate_multitasknet_3D.py        ← MultiTaskNet 3D architecture diagram
+    │   ├── generate_system_overview_3D.py     ← System overview pipeline diagram
+    │   ├── mtl_analysis.py                    ← Multi-task representation/gradient analysis
     │   ├── rule_vs_dl_comparison.py           ← Rule-based vs. DL forecasting
-    │   └── generate_figures.py                ← All 14 publication figures + SHAP + stats
+    │   ├── scheduling_simulation.py           ← Retrospective irrigation scheduling
+    │   ├── sensitivity_analysis.py            ← Multi-task λ sensitivity sweep
+    │   └── statistical_analysis.py            ← Statistical significance tests
     │
     ├── hardware/
     │   └── data_logging/
@@ -77,8 +89,7 @@ EcoIrrigate/
     │
     └── results/
         ├── experiments/                       ← JSON experiment outputs
-        ├── figures/                           ← 14 publication-quality PNG figures (10 main + 4 supplementary)
-        ├── logs/                              ← Training logs (JSON)
+        ├── figures/                           ← Publication-quality PNG figures (300 DPI)
         └── models/                            ← Trained model checkpoints (.pt)
 ```
 
@@ -160,6 +171,58 @@ Joint calibration + forecasting via shared encoder with task-specific heads.
 
 ---
 
+## Experiment Scripts
+
+### Complete Script Inventory
+
+All experiment scripts are in `deep_learning_model/experiments/`. Run from the `deep_learning_model/` directory.
+
+| Script | Purpose | Output Type | Manuscript Reference |
+|--------|---------|-------------|---------------------|
+| `ablation_study.py` | 7-configuration feature ablation (single seed) | JSON | Table 7 |
+| `comprehensive_ablation.py` | Multi-seed ablation (5 seeds × 7 configs = 35 runs) with training curves | JSON + Figure | Tables 7–8 |
+| `a2_recomputation.py` | A2-feature baselines + supplementary figures (CIs, training curves, λ sensitivity, MTL importance) | JSON + Figures | Tables 2–3, Figs S1–S4 |
+| `baseline_comparison.py` | 9 traditional ML baselines for calibration | JSON | Tables 2–3 |
+| `cross_farm_validation.py` | Leave-one-farm-out transfer experiments | JSON | Table 5 |
+| `rule_vs_dl_comparison.py` | Rule-based vs. DL forecasting across horizons | JSON | Table 4 |
+| `dl_architecture_comparison.py` | TCN vs ConvLSTM vs Transformer vs BiLSTM-Attention | JSON | Table 6 |
+| `architecture_variants.py` | A7 dropout/hidden-dim/warmup sweep | JSON | Table 8 |
+| `sensitivity_analysis.py` | Multi-task loss weight λ sensitivity | JSON | Table 9 |
+| `mtl_analysis.py` | Gradient flow + representation (CKA) analysis | JSON | §5.5 Discussion |
+| `statistical_analysis.py` | Wilcoxon, Cohen's d, bootstrap CIs, Mann-Whitney U | JSON | §4.6 |
+| `scheduling_simulation.py` | Retrospective irrigation scheduling (5 strategies) | JSON + Figures | Table 10, §4.7 |
+| `generate_figures.py` | 8 main publication result figures + SHAP + statistical tests | Figures | Figs 1–4, 6–9 |
+| `generate_callibrationnet_arch.py` | CalibrationNet 3D architecture diagram | Figure | Architecture figure |
+| `generate_multitasknet_3D.py` | MultiTaskNet 3D architecture diagram | Figure | Architecture figure |
+| `generate_system_overview_3D.py` | End-to-end system pipeline diagram | Figure | System overview figure |
+
+### Figure-Producing Scripts
+
+The following table maps each figure file in `results/figures/` to the script that generates it.
+
+| Figure File | Generating Script | Description |
+|-------------|-------------------|-------------|
+| `fig1_calibration_scatter.png` | `generate_figures.py` | Predicted vs. actual moisture scatter plot |
+| `fig2_multi_horizon_forecast.png` | `generate_figures.py` | Multi-horizon forecasting comparison |
+| `fig3_ablation_study.png` | `generate_figures.py` | 7-configuration ablation bar chart |
+| `fig4_shap_importance.png` | `generate_figures.py` | SHAP beeswarm feature importance |
+| `fig6_cross_farm.png` | `generate_figures.py` | Cross-farm generalization results |
+| `fig7_baseline_comparison.png` | `generate_figures.py` | Baseline model comparison |
+| `fig8_thermal_lag.png` | `generate_figures.py` | Atmospheric–soil thermal lag |
+| `fig9_rule_vs_dl.png` | `generate_figures.py` | Rule-based vs. DL degradation |
+| `fig_ablation_confidence_intervals.png` | `a2_recomputation.py` | Ablation R² with 95% CIs |
+| `fig_ablation_training_curves.png` | `a2_recomputation.py` | Training loss/R² per ablation config |
+| `fig_sensitivity_lambda.png` | `a2_recomputation.py` | λ sensitivity Pareto plot |
+| `fig_mtl_feature_importance.png` | `a2_recomputation.py` | MTL vs. standalone feature importance |
+| `fig_scheduling_timeline.png` | `scheduling_simulation.py` | SM trace + irrigation triggers |
+| `fig_scheduling_comparison.png` | `scheduling_simulation.py` | Strategy precision/recall/F1 bars |
+| `fig_calibrationnet_3d.png` | `generate_callibrationnet_arch.py` | CalibrationNet architecture diagram |
+| `fig_multitasknet_3d.png` | `generate_multitasknet_3D.py` | MultiTaskNet architecture diagram |
+| `fig_system_overview_3d.png` | `generate_system_overview_3D.py` | System pipeline overview |
+| `prototype_setup.jpg` | *(photograph)* | Hardware deployment photo |
+
+---
+
 ## Step-by-Step Replication Guide
 
 Follow these steps **exactly** to reproduce every result and figure in the paper.
@@ -169,7 +232,7 @@ Follow these steps **exactly** to reproduce every result and figure in the paper
 You need the following installed on your computer:
 
 | Software | Version | Purpose |
-|----------|---------|---------|
+|----------|---------|---------||
 | Python | ≥ 3.8 | Running the code |
 | pip | latest | Installing Python packages |
 | Git | any | Cloning the repository |
@@ -239,33 +302,80 @@ python main.py --task multi-task --model MultiTaskNet --epochs 100 --lr 0.001
 ### Step 4: Run All Experiments
 
 ```bash
-# 4a. Ablation study — tests 7 feature configurations (Table III, ~30-60 min)
+# 4a. Ablation study — tests 7 feature configurations (Table 7, ~30-60 min)
 python experiments/ablation_study.py
 
-# 4b. Baseline comparison — trains 9 ML models (Table II, ~5-10 min)
+# 4b. Comprehensive ablation — multi-seed (5 seeds × 7 configs, ~3-5 hours)
+python experiments/comprehensive_ablation.py
+
+# 4c. A2 recomputation — baselines on optimal features + supplementary figures (~15-30 min)
+python experiments/a2_recomputation.py
+
+# 4d. Baseline comparison — trains 9 ML models (~5-10 min)
 python experiments/baseline_comparison.py
 
-# 4c. Cross-farm validation — trains on Farm 1 and tests on Farm 2, and vice versa (Table IV, ~10-20 min)
+# 4e. Cross-farm validation — bidirectional farm transfer (~10-20 min)
 python experiments/cross_farm_validation.py
 
-# 4d. Rule-based vs. DL forecasting comparison (Table V, ~5 min)
+# 4f. Rule-based vs. DL forecasting comparison (~5 min)
 python experiments/rule_vs_dl_comparison.py
+
+# 4g. DL architecture comparison — TCN, ConvLSTM, Transformer, BiLSTM-Att (~1-2 hours)
+python experiments/dl_architecture_comparison.py
+
+# 4h. Architecture variants — A7 dropout/hidden-dim sweep (~30-45 min)
+python experiments/architecture_variants.py
+
+# 4i. Sensitivity analysis — multi-task λ sweep (~30-45 min)
+python experiments/sensitivity_analysis.py
+
+# 4j. MTL representation analysis — gradient flow and CKA (~10-15 min)
+python experiments/mtl_analysis.py
+
+# 4k. Statistical analysis — significance tests, effect sizes, CIs (~5 min)
+python experiments/statistical_analysis.py
+
+# 4l. Scheduling simulation — retrospective irrigation strategies (~2 min)
+python experiments/scheduling_simulation.py
 ```
 
 Each experiment saves its results as a JSON file in `results/experiments/`.
 
 ### Step 5: Generate All Figures
 
+All figure-generating scripts should be run from `deep_learning_model/`:
+
 ```bash
-# Generates all 14 publication figures + SHAP analysis + statistical tests
+# 5a. Main publication figures (Figs 1–4, 6–9) + SHAP + statistical tests
 python experiments/generate_figures.py
+
+# 5b. Supplementary figures (CIs, training curves, λ sensitivity, MTL importance)
+python experiments/a2_recomputation.py
+
+# 5c. Scheduling simulation figures (timeline + strategy comparison)
+python experiments/scheduling_simulation.py
+
+# 5d. Architecture diagrams
+python experiments/generate_system_overview_3D.py
+python experiments/generate_callibrationnet_arch.py
+python experiments/generate_multitasknet_3D.py
 ```
 
-Figures are saved at 300 DPI to `results/figures/`. This step also runs SHAP analysis and bootstrap statistical tests.
+All figures are saved at 300 DPI to `results/figures/`.
 
-### Step 6: Verify Your Results
+### Step 6: Generate the Graphical Abstract
 
-Compare your generated files against the values in the tables below. Due to stochastic training, single-seed results may vary slightly. The multi-seed ablation study (Step 4a) averages over 5 random seeds to reduce variance.
+```bash
+cd graphical_abstract
+pip install matplotlib numpy pillow
+python generate_graphical_abstract.py
+```
+
+This produces `results/graphical_abstract.png`, `results/graphical_abstract.tiff`, and `results/graphical_abstract.pdf` at 300 DPI (≥1328×531 px, 2.5:1 aspect ratio) compliant with Elsevier specifications.
+
+### Step 7: Verify Your Results
+
+Compare your generated files against the values in the tables below. Due to stochastic training, single-seed results may vary slightly. The multi-seed ablation study (Step 4b) averages over 5 random seeds to reduce variance.
 
 ---
 
@@ -322,24 +432,28 @@ All models below are trained on the optimal A2 feature set (Raw ADC + Sensor Vol
 
 ## Publication Figures
 
-All figures in the manuscript are generated by `experiments/generate_figures.py`:
+All 18 figures used in the manuscript are listed below, mapped to their generating scripts:
 
-| Figure | File | Description |
-|--------|------|-------------|
-| Fig. 1 | `fig1_calibration_scatter.png` | Predicted vs. actual moisture scatter |
-| Fig. 2 | `fig2_multi_horizon_forecast.png` | Multi-horizon forecasting performance |
-| Fig. 3 | `fig3_ablation_study.png` | 7-configuration ablation results |
-| Fig. 4 | `fig4_shap_importance.png` | SHAP feature importance analysis |
-| Fig. 5 | `fig5_timeseries_overlay.png` | 7-day prediction vs. ground truth overlay |
-| Fig. 6 | `fig6_cross_farm.png` | Cross-farm generalization results |
-| Fig. 7 | `fig7_baseline_comparison.png` | Baseline model comparison |
-| Fig. 8 | `fig8_thermal_lag.png` | Atmospheric–soil thermal lag visualization |
-| Fig. 9 | `fig9_rule_vs_dl.png` | Rule-based vs. DL forecasting comparison |
-| Fig. 10 | `fig10_training_convergence.png` | Training/validation convergence curves |
-| Supp. S1 | `fig_ablation_confidence_intervals.png` | Ablation R² with 95% confidence intervals |
-| Supp. S2 | `fig_ablation_training_curves.png` | Training loss/R² convergence per ablation config |
-| Supp. S3 | `fig_sensitivity_lambda.png` | Multi-task loss weight (λ) sensitivity analysis |
-| Supp. S4 | `fig_mtl_feature_importance.png` | MTL vs. standalone feature importance ratios |
+| Figure | File | Script | Description |
+|--------|------|--------|-------------|
+| Fig. 1 | `fig1_calibration_scatter.png` | `generate_figures.py` | Predicted vs. actual moisture scatter |
+| Fig. 2 | `fig2_multi_horizon_forecast.png` | `generate_figures.py` | Multi-horizon forecasting performance |
+| Fig. 3 | `fig3_ablation_study.png` | `generate_figures.py` | 7-configuration ablation results |
+| Fig. 4 | `fig4_shap_importance.png` | `generate_figures.py` | SHAP feature importance analysis |
+| Fig. 6 | `fig6_cross_farm.png` | `generate_figures.py` | Cross-farm generalization results |
+| Fig. 7 | `fig7_baseline_comparison.png` | `generate_figures.py` | Baseline model comparison |
+| Fig. 8 | `fig8_thermal_lag.png` | `generate_figures.py` | Atmospheric–soil thermal lag |
+| Fig. 9 | `fig9_rule_vs_dl.png` | `generate_figures.py` | Rule-based vs. DL comparison |
+| Supp. | `fig_ablation_confidence_intervals.png` | `a2_recomputation.py` | Ablation R² with 95% CIs |
+| Supp. | `fig_ablation_training_curves.png` | `a2_recomputation.py` | Training convergence per config |
+| Supp. | `fig_sensitivity_lambda.png` | `a2_recomputation.py` | λ sensitivity analysis |
+| Supp. | `fig_mtl_feature_importance.png` | `a2_recomputation.py` | MTL feature importance ratios |
+| Supp. | `fig_scheduling_timeline.png` | `scheduling_simulation.py` | Irrigation scheduling timeline |
+| Supp. | `fig_scheduling_comparison.png` | `scheduling_simulation.py` | Strategy comparison bars |
+| Arch. | `fig_calibrationnet_3d.png` | `generate_callibrationnet_arch.py` | CalibrationNet architecture |
+| Arch. | `fig_multitasknet_3d.png` | `generate_multitasknet_3D.py` | MultiTaskNet architecture |
+| Arch. | `fig_system_overview_3d.png` | `generate_system_overview_3D.py` | System pipeline overview |
+| Photo | `prototype_setup.jpg` | *(photograph)* | Hardware deployment |
 
 ---
 
@@ -367,22 +481,8 @@ The Arduino firmware is located at `deep_learning_model/hardware/data_logging/da
 | `ModuleNotFoundError: No module named 'torch'` | Run `pip install -r requirements.txt` from `deep_learning_model/` |
 | `FileNotFoundError: kolkata_unified_dataset.csv` | Make sure you're running from `deep_learning_model/` (the dataset is at `../New_Dataset/`) |
 | Training is very slow | Use a GPU. If unavailable, reduce epochs: `--epochs 30` |
-| Results differ from paper | Single-seed runs vary. Run the ablation study (Step 4a) for multi-seed averages |
+| Results differ from paper | Single-seed runs vary. Run the ablation study (Step 4b) for multi-seed averages |
 | CUDA out of memory | Reduce batch size: `--batch-size 32` or `--batch-size 16` |
-
----
-
-## Graphical Abstract Replication
-
-The graphical abstract can be regenerated from the Python script included in the repository:
-
-```bash
-cd graphical_abstract
-pip install matplotlib numpy pillow
-python generate_graphical_abstract.py
-```
-
-This produces `results/graphical_abstract.png`, `results/graphical_abstract.tiff`, and `results/graphical_abstract.pdf` at 300 DPI (≥1328×531 px, 2.5:1 aspect ratio) compliant with Elsevier specifications.
 
 ---
 
@@ -392,10 +492,11 @@ If you use this code or dataset in your research, please cite:
 
 ```bibtex
 @article{saha2026ecoirrigate,
-  title     = {Multi-Task Deep Learning Framework for {IoT} Soil Moisture 
-               Calibration and Forecasting in Urban Agriculture},
+  title     = {A Multi-Task Deep Learning Framework for Sensor Calibration
+               and Multi-Horizon Soil Moisture Prediction in {IoT}
+               Irrigation Systems},
   author    = {Saha, Soham and Kar, Subhojit and Ghosh, Arijeet and Bhattacharjee, Sohan 
-               and Sanyal, Somes},
+               and Sanyal, Somes and Das, Avik Kumar},
   year      = {2026},
   note      = {Under Review}
 }
@@ -413,3 +514,4 @@ This repository is released for **academic and non-commercial research purposes 
 
 - Dataset collected from IoT sensor installations at two urban agricultural sites in Kolkata, West Bengal, India.
 - Research conducted at the Department of Computer Science and Engineering (IoT, CS, BT), Institute of Engineering and Management, Kolkata.
+- Supported by the IEM UEM Trust Research Grant (Project ID: IEMT(N)2024/A/08 G44).

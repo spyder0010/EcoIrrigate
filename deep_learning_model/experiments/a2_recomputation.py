@@ -409,7 +409,7 @@ def run_a2_recomputation():
     print("PART 4: GENERATING FIGURES")
     print("=" * 80)
     
-    fig_dir = os.path.join(os.path.dirname(__file__), '..', 'manuscript', 'springer', 'figures')
+    fig_dir = os.path.join(os.path.dirname(__file__), '..', 'results', 'figures')
     os.makedirs(fig_dir, exist_ok=True)
     
     # ─── Figure A: Ablation Confidence Intervals ─────────────────────────────

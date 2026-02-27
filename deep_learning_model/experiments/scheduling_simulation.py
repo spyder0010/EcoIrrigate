@@ -41,9 +41,10 @@ warnings.filterwarnings("ignore")
 # ── paths ────────────────────────────────────────────────────────────
 ROOT = Path(__file__).resolve().parents[2]          # Eco-Irrigate/
 DATA_PATH = ROOT / "New_Dataset" / "kolkata_unified_dataset.csv"
-OUT_DIR = ROOT / "deep_learning_model" / "results" / "scheduling"
-FIG_DIR = Path(r"C:\Users\soham\Downloads\EcoIrrigate_1")  # elsevier fig dir
+OUT_DIR = ROOT / "deep_learning_model" / "results" / "experiments"
+FIG_DIR = ROOT / "deep_learning_model" / "results" / "figures"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
+FIG_DIR.mkdir(parents=True, exist_ok=True)
 
 # ── simulation parameters ────────────────────────────────────────────
 VWC_THRESHOLD = 11.0        # %VWC – stress trigger (≈ 25th percentile)
@@ -208,7 +209,7 @@ STRATEGY_COLORS = {
 def plot_timeline(timestamps, sm, all_triggers, save_path):
     """Soil-moisture trace with trigger markers for each strategy."""
     fig, axes = plt.subplots(len(all_triggers), 1,
-                             figsize=(14, 2.8 * len(all_triggers)),
+                             figsize=(16, 3.2 * len(all_triggers)),
                              sharex=True)
     if len(all_triggers) == 1:
         axes = [axes]
@@ -217,9 +218,9 @@ def plot_timeline(timestamps, sm, all_triggers, save_path):
         color = STRATEGY_COLORS[name]
         label = STRATEGY_LABELS[name]
 
-        ax.plot(timestamps, sm, color="#555555", linewidth=0.6, alpha=0.8)
+        ax.plot(timestamps, sm, color="#555555", linewidth=1.0, alpha=0.8)
         ax.axhline(VWC_THRESHOLD, color="#c0392b", linestyle="--",
-                   linewidth=0.8, alpha=0.7, label=f"Threshold ({VWC_THRESHOLD}%)")
+                   linewidth=1.2, alpha=0.7, label=f"Threshold ({VWC_THRESHOLD}%)")
 
         # Shade stress regions
         below = sm < VWC_THRESHOLD
@@ -230,19 +231,19 @@ def plot_timeline(timestamps, sm, all_triggers, save_path):
         trig_idx = np.where(trigs == 1)[0]
         if len(trig_idx) > 0:
             ax.scatter(timestamps[trig_idx], sm[trig_idx],
-                       color=color, marker="v", s=50, zorder=5,
+                       color=color, marker="v", s=90, zorder=5,
                        label=f"{label} ({len(trig_idx)} events)")
 
-        ax.set_ylabel("VWC (%)", fontsize=9)
-        ax.legend(loc="upper right", fontsize=7, framealpha=0.9)
+        ax.set_ylabel("VWC (%)", fontsize=20)
+        ax.legend(loc="upper right", fontsize=13.8, framealpha=0.9)
         ax.set_ylim(sm.min() - 0.5, sm.max() + 0.5)
-        ax.tick_params(labelsize=8)
+        ax.tick_params(labelsize=16)
 
     axes[-1].xaxis.set_major_formatter(mdates.DateFormatter("%b %d"))
     axes[-1].xaxis.set_major_locator(mdates.DayLocator(interval=3))
-    axes[-1].set_xlabel("Date (2025)", fontsize=9)
+    axes[-1].set_xlabel("Date (2025)", fontsize=18)
     plt.suptitle("Retrospective Irrigation Scheduling Simulation",
-                 fontsize=12, fontweight="bold", y=1.01)
+                 fontsize=30, fontweight="bold", y=1.01)
     plt.tight_layout()
     plt.savefig(save_path, dpi=300, bbox_inches="tight")
     plt.close()
@@ -376,10 +377,6 @@ def main():
 
     comparison_path = FIG_DIR / "fig_scheduling_comparison.png"
     plot_comparison_bars(results, comparison_path)
-
-    # Also save to results dir
-    plot_timeline(ts_pd, sm, all_triggers, OUT_DIR / "fig_scheduling_timeline.png")
-    plot_comparison_bars(results, OUT_DIR / "fig_scheduling_comparison.png")
 
     print("\n" + "=" * 60)
     print("  Simulation complete!")

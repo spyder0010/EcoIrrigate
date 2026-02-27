@@ -204,7 +204,7 @@ def run_sensitivity_analysis(data_path='../New_Dataset/kolkata_unified_dataset.c
         print(f"{l_val:<10.1f} {res['calib_r2']:<12.4f} {res['forecast_rmse']:<15.4f} {res['epochs']:<8}")
         
     # Plotting
-    os.makedirs('../manuscript/springer/figures', exist_ok=True)
+    os.makedirs('results/figures', exist_ok=True)
     
     l_vals = [r['lambda'] for r in results]
     r2_vals = [r['calib_r2'] for r in results]
@@ -226,10 +226,6 @@ def run_sensitivity_analysis(data_path='../New_Dataset/kolkata_unified_dataset.c
     ax2.plot(l_vals, rmse_vals, marker='s', color=color, linestyle='--', label='Forecast RMSE')
     ax2.tick_params(axis='y', labelcolor=color)
     
-    plt.title('Multi-Task Sensitivity Analysis: Impact of λ on Task Performance')
-    fig.tight_layout()
-    plt.savefig('../manuscript/springer/figures/fig_sensitivity_lambda.png', dpi=300)
-    plt.close()
     
     # Save JSON
     os.makedirs('../results/experiments', exist_ok=True)
@@ -240,7 +236,7 @@ def run_sensitivity_analysis(data_path='../New_Dataset/kolkata_unified_dataset.c
         json.dump({'results': results, 'lambdas': lambda_values}, f, indent=2)
         
     print(f"\n[OK] Results saved to {out_path}")
-    print(f"[OK] Plot saved to ../manuscript/springer/figures/fig_sensitivity_lambda.png")
+
     
     return results
 

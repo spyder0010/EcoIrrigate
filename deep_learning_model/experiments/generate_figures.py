@@ -2,22 +2,22 @@
 Publication Figure Generation & Statistical Analysis
 =====================================================
 
-Generates all 10 publication-quality figures plus SHAP analysis
-and statistical significance tests for EcoIrrigate Part II.
+Generates 8 publication-quality result figures plus SHAP analysis
+and statistical significance tests for EcoIrrigate.
 
-Figures:
+Figures
+-------
   1. Calibration scatter (predicted vs actual)
   2. Multi-horizon forecast comparison
   3. Ablation bar chart
   4. SHAP feature importance
-  5. Time-series overlay (7-day window)
   6. Cross-farm generalization
   7. Baseline comparison bar chart
   8. Thermal lag visualization
   9. Rule-based vs DL comparison
-  10. Training convergence curves
 
-Usage:
+Usage
+-----
     python experiments/generate_figures.py
 """
 
@@ -84,10 +84,13 @@ def load_latest_experiment(pattern):
 
 def load_data_and_model():
     """Load preprocessed data and train a quick model for predictions."""
+    # Resolve dataset path relative to this script's location, not CWD
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    dataset_path = os.path.normpath(os.path.join(
+        script_dir, '..', '..', 'New_Dataset', 'kolkata_unified_dataset.csv'
+    ))
     preprocessor = DataPreprocessor(scaling_method='standard')
-    processed = preprocessor.preprocess_pipeline(
-        filepath='../New_Dataset/kolkata_unified_dataset.csv'
-    )
+    processed = preprocessor.preprocess_pipeline(filepath=dataset_path)
     return processed, preprocessor
 
 
@@ -456,49 +459,6 @@ def fig4_shap_analysis(model, processed, device, feature_cols):
     return shap_values, feature_cols
 
 
-# ─── FIGURE 5: Time-Series Overlay (7-day window) ───────────────────────────
-
-def fig5_timeseries_overlay(processed, preds, targets):
-    """7-day time-series overlay of predictions vs actuals."""
-    test_df = processed['test_raw'].reset_index(drop=True)
-    
-    # Get Farm 1 data for cleaner visualization
-    farm1_mask = test_df['Farm_ID'] == test_df['Farm_ID'].unique()[0]
-    farm1_idx = np.where(farm1_mask.values)[0]
-    
-    # Take 7 days = 7 * 96 = 672 points (15-min intervals)
-    n_points = min(672, len(farm1_idx))
-    idx_slice = farm1_idx[:n_points]
-    
-    timestamps = test_df.loc[idx_slice, 'Timestamp'].values
-    actual = targets[idx_slice]
-    predicted = preds[idx_slice]
-    
-    fig, axes = plt.subplots(2, 1, figsize=(14, 8), gridspec_kw={'height_ratios': [3, 1]})
-    
-    # Main overlay
-    ax = axes[0]
-    ax.plot(timestamps, actual, color=COLORS['primary'], lw=1.2, alpha=0.9, label='Actual')
-    ax.plot(timestamps, predicted, color=COLORS['secondary'], lw=1.2, alpha=0.8, label='Predicted')
-    ax.fill_between(timestamps, actual, predicted, alpha=0.1, color=COLORS['secondary'])
-    ax.set_ylabel('Volumetric Moisture (%)')
-    ax.set_title('7-Day Soil Moisture: Actual vs Predicted (Farm 1)', fontweight='bold')
-    ax.legend(loc='upper right')
-    
-    # Residuals
-    ax = axes[1]
-    residuals = predicted - actual
-    ax.bar(timestamps, residuals, width=0.01, color=COLORS['quaternary'], alpha=0.7)
-    ax.axhline(0, color='k', lw=0.8)
-    ax.set_ylabel('Residual (%)')
-    ax.set_xlabel('Date')
-    ax.set_title(f'Prediction Error (MAE={np.mean(np.abs(residuals)):.3f}%)')
-    
-    plt.tight_layout()
-    plt.savefig(f'{OUTPUT_DIR}/fig5_timeseries_overlay.png')
-    plt.close()
-    print("✓ Figure 5: Time-series overlay")
-
 
 # ─── FIGURE 6: Cross-Farm Generalization ────────────────────────────────────
 
@@ -739,32 +699,6 @@ def fig9_rule_vs_dl():
     print("✓ Figure 9: Rule-based vs DL")
 
 
-# ─── FIGURE 10: Training Convergence ────────────────────────────────────────
-
-def fig10_training_convergence(train_losses, val_losses):
-    """Training convergence curves."""
-    fig, ax = plt.subplots(figsize=(10, 5))
-    
-    epochs = range(1, len(train_losses) + 1)
-    ax.plot(epochs, train_losses, color=COLORS['primary'], lw=2, label='Training Loss')
-    ax.plot(epochs, val_losses, color=COLORS['secondary'], lw=2, label='Validation Loss')
-    
-    # Mark best epoch
-    best_epoch = np.argmin(val_losses) + 1
-    best_val = min(val_losses)
-    ax.scatter([best_epoch], [best_val], color=COLORS['tertiary'], s=100, zorder=5,
-              marker='*', label=f'Best (epoch {best_epoch})')
-    
-    ax.set_xlabel('Epoch')
-    ax.set_ylabel('Loss')
-    ax.set_title('CalibrationNet Training Convergence', fontweight='bold')
-    ax.legend()
-    
-    plt.tight_layout()
-    plt.savefig(f'{OUTPUT_DIR}/fig10_training_convergence.png')
-    plt.close()
-    print("✓ Figure 10: Training convergence")
-
 
 # ─── STATISTICAL TESTS ──────────────────────────────────────────────────────
 
@@ -912,12 +846,10 @@ def main():
     print("\n  Running SHAP analysis (this may take a few minutes)...")
     fig4_shap_analysis(model, processed, device, feature_cols)
     
-    fig5_timeseries_overlay(processed, preds, targets)
     fig6_cross_farm()
     fig7_baseline_comparison()
     fig8_thermal_lag(processed)
     fig9_rule_vs_dl()
-    fig10_training_convergence(train_losses, val_losses)
     
     # Statistical tests
     stat_results = run_statistical_tests(preds, targets, processed)
