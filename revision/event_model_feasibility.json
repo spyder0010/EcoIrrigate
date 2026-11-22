@@ -1,0 +1,207 @@
+{
+  "design": {
+    "status": "exploratory; final 2025 period already inspected for other models",
+    "event": "at least one one-hour VWC rise >= 0.5 percentage points ending within next six hours",
+    "target_horizon_steps": 24,
+    "features": [
+      "current_vwc",
+      "change_1h",
+      "change_6h",
+      "change_24h",
+      "volatility_6h",
+      "volatility_24h",
+      "max_rise_24h",
+      "board_temp",
+      "air_temp",
+      "soil_temp",
+      "pressure",
+      "hour_sin",
+      "hour_cos",
+      "day_sin",
+      "day_cos",
+      "farm_2"
+    ],
+    "selection": "C chosen by validation Brier; refit on train plus validation; no future weather",
+    "source_sha256": "1f12bac2a35f78b8f2c6af0fe56142f2301471d9ef2203a3983a5a60444d6319",
+    "neural_ledger_sha256": "9384819deaeee24dc805418167ba38b0d3089beb7b4da13b8d09946734160a63"
+  },
+  "episodes": [
+    {
+      "farm": "Kolkata_Farm_1",
+      "split": "train",
+      "one_hour_jump_windows": 48,
+      "episodes_separated_by_24h": 10,
+      "episode_first_jump_times": [
+        "2025-01-08 23:00:00",
+        "2025-01-18 19:00:00",
+        "2025-01-20 21:30:00",
+        "2025-01-22 13:45:00",
+        "2025-02-07 09:15:00",
+        "2025-02-16 10:15:00",
+        "2025-02-17 19:00:00",
+        "2025-02-20 17:15:00",
+        "2025-02-25 01:00:00",
+        "2025-03-04 07:15:00"
+      ]
+    },
+    {
+      "farm": "Kolkata_Farm_1",
+      "split": "validation",
+      "one_hour_jump_windows": 12,
+      "episodes_separated_by_24h": 2,
+      "episode_first_jump_times": [
+        "2025-03-24 05:00:00",
+        "2025-03-25 18:30:00"
+      ]
+    },
+    {
+      "farm": "Kolkata_Farm_1",
+      "split": "test",
+      "one_hour_jump_windows": 16,
+      "episodes_separated_by_24h": 3,
+      "episode_first_jump_times": [
+        "2025-04-10 08:15:00",
+        "2025-04-17 09:00:00",
+        "2025-04-20 18:30:00"
+      ]
+    },
+    {
+      "farm": "Kolkata_Farm_2",
+      "split": "train",
+      "one_hour_jump_windows": 51,
+      "episodes_separated_by_24h": 9,
+      "episode_first_jump_times": [
+        "2025-01-13 06:45:00",
+        "2025-01-17 09:15:00",
+        "2025-01-21 10:45:00",
+        "2025-01-26 05:00:00",
+        "2025-02-12 08:00:00",
+        "2025-02-16 05:15:00",
+        "2025-02-27 01:15:00",
+        "2025-03-02 18:00:00",
+        "2025-03-09 23:15:00"
+      ]
+    },
+    {
+      "farm": "Kolkata_Farm_2",
+      "split": "validation",
+      "one_hour_jump_windows": 8,
+      "episodes_separated_by_24h": 2,
+      "episode_first_jump_times": [
+        "2025-03-24 17:45:00",
+        "2025-04-07 08:45:00"
+      ]
+    },
+    {
+      "farm": "Kolkata_Farm_2",
+      "split": "test",
+      "one_hour_jump_windows": 32,
+      "episodes_separated_by_24h": 5,
+      "episode_first_jump_times": [
+        "2025-04-11 20:15:00",
+        "2025-04-15 03:45:00",
+        "2025-04-19 01:30:00",
+        "2025-04-22 02:45:00",
+        "2025-04-24 23:15:00"
+      ]
+    }
+  ],
+  "validation_by_C": [
+    {
+      "C": 0.01,
+      "n": 3148,
+      "positive": 135,
+      "prevalence": 0.042884371029224905,
+      "brier": 0.038959159764416176,
+      "average_precision": 0.18107427537445087,
+      "roc_auc": 0.6300770734225762
+    },
+    {
+      "C": 0.1,
+      "n": 3148,
+      "positive": 135,
+      "prevalence": 0.042884371029224905,
+      "brier": 0.0391238359846371,
+      "average_precision": 0.189098867121245,
+      "roc_auc": 0.6735995869749604
+    },
+    {
+      "C": 1.0,
+      "n": 3148,
+      "positive": 135,
+      "prevalence": 0.042884371029224905,
+      "brier": 0.039205152396058596,
+      "average_precision": 0.2015324501784669,
+      "roc_auc": 0.7057245762191
+    },
+    {
+      "C": 10.0,
+      "n": 3148,
+      "positive": 135,
+      "prevalence": 0.042884371029224905,
+      "brier": 0.0392149967769821,
+      "average_precision": 0.20249382880588984,
+      "roc_auc": 0.7075118929085076
+    }
+  ],
+  "chosen_C": 0.01,
+  "test_logistic": {
+    "n": 3150,
+    "positive": 316,
+    "prevalence": 0.10031746031746032,
+    "brier": 0.0896494524352188,
+    "average_precision": 0.19378981330409065,
+    "roc_auc": 0.5616452122955433
+  },
+  "test_constant_prevalence": {
+    "n": 3150,
+    "positive": 316,
+    "prevalence": 0.10031746031746032,
+    "brier": 0.09353605982973953,
+    "average_precision": 0.10031746031746032,
+    "roc_auc": 0.5
+  },
+  "test_by_farm": {
+    "Kolkata_Farm_1": {
+      "n": 1575,
+      "positive": 106,
+      "prevalence": 0.0673015873015873,
+      "brier": 0.06026278396863066,
+      "average_precision": 0.15908737697321557,
+      "roc_auc": 0.613624979128402
+    },
+    "Kolkata_Farm_2": {
+      "n": 1575,
+      "positive": 210,
+      "prevalence": 0.13333333333333333,
+      "brier": 0.11903612090180693,
+      "average_precision": 0.23593635107361804,
+      "roc_auc": 0.5587231815803244
+    }
+  },
+  "test_positive_probability_mean": 0.08150210342943139,
+  "test_negative_probability_mean": 0.030283742479853052,
+  "six_hour_error_regimes": [
+    {
+      "regime": "wetting_1pt",
+      "n": 240,
+      "fraction": 0.07984031936127745,
+      "persistence_sse_share": 0.6597912977630195,
+      "bilstm_sse_share": 0.7095505297730276
+    },
+    {
+      "regime": "drying_1pt",
+      "n": 138,
+      "fraction": 0.04590818363273453,
+      "persistence_sse_share": 0.18234934242609158,
+      "bilstm_sse_share": 0.16493777273186894
+    },
+    {
+      "regime": "other",
+      "n": 2628,
+      "fraction": 0.874251497005988,
+      "persistence_sse_share": 0.15785935981088897,
+      "bilstm_sse_share": 0.12551169749510363
+    }
+  ]
+}

@@ -35,6 +35,7 @@ The first and third commands may take several minutes. The scale and station res
 python revision/audit_dataset_and_baselines.py
 python revision/audit_target_mapping.py
 python revision/evaluate_residual_ridge.py
+python revision/event_model_feasibility.py
 python revision/noaa_site_blend.py --year 2026 --expanded
 python revision/noaa_zero_shot.py --evaluate-only
 ```
