@@ -19,6 +19,7 @@ ROOT = Path(__file__).resolve().parent / "external_noaa" / "zero_shot"
 SEED = 42
 REPS = 10_000
 HORIZONS = (1, 6, 12, 24)
+PREVIOUSLY_AUDITED = "AL_Brewton_3_NNE"
 
 
 def score(rows: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
@@ -74,6 +75,7 @@ def main() -> None:
         boot_rmse, boot_mae = score(rows[draws])
         loo_rmse = np.array([score(np.delete(rows, i, axis=0))[0] for i in range(len(rows))])
         loo_mae = np.array([score(np.delete(rows, i, axis=0))[1] for i in range(len(rows))])
+        audited_index = eligible.index(PREVIOUSLY_AUDITED)
         output["results"].append({
             "horizon_hours": horizon,
             "n_stations": len(rows),
@@ -87,6 +89,12 @@ def main() -> None:
                 if np.sign(value) != np.sign(observed_rmse)
             ],
             "pooled_ridge_minus_persistence_mae": round(float(observed_mae), 5),
+            "excluding_previously_audited_station": {
+                "station": PREVIOUSLY_AUDITED,
+                "n_origins": int(rows[:, 0].sum() - rows[audited_index, 0]),
+                "ridge_minus_persistence_rmse": round(float(loo_rmse[audited_index]), 5),
+                "ridge_minus_persistence_mae": round(float(loo_mae[audited_index]), 5),
+            },
             "station_bootstrap_mae_2p5_97p5": [round(float(v), 5) for v in np.quantile(boot_mae, [0.025, 0.975])],
             "leave_one_station_out_mae_range": [round(float(loo_mae.min()), 5), round(float(loo_mae.max()), 5)],
             "leave_one_station_out_mae_sign_reversals": int(np.sum(np.sign(loo_mae) != np.sign(observed_mae))),

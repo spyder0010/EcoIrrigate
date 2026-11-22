@@ -23,6 +23,12 @@
         "OR_Coos_Bay_8_SW"
       ],
       "pooled_ridge_minus_persistence_mae": 0.02141,
+      "excluding_previously_audited_station": {
+        "station": "AL_Brewton_3_NNE",
+        "n_origins": 203013,
+        "ridge_minus_persistence_rmse": 0.01663,
+        "ridge_minus_persistence_mae": 0.02067
+      },
       "station_bootstrap_mae_2p5_97p5": [
         0.01602,
         0.02728
@@ -49,6 +55,12 @@
       "leave_one_station_out_rmse_sign_reversals": 0,
       "leave_one_station_out_rmse_sign_reversal_stations": [],
       "pooled_ridge_minus_persistence_mae": 0.06505,
+      "excluding_previously_audited_station": {
+        "station": "AL_Brewton_3_NNE",
+        "n_origins": 202388,
+        "ridge_minus_persistence_rmse": -0.01713,
+        "ridge_minus_persistence_mae": 0.05253
+      },
       "station_bootstrap_mae_2p5_97p5": [
         0.02249,
         0.11101
@@ -75,6 +87,12 @@
       "leave_one_station_out_rmse_sign_reversals": 0,
       "leave_one_station_out_rmse_sign_reversal_stations": [],
       "pooled_ridge_minus_persistence_mae": 0.08625,
+      "excluding_previously_audited_station": {
+        "station": "AL_Brewton_3_NNE",
+        "n_origins": 201847,
+        "ridge_minus_persistence_rmse": -0.02906,
+        "ridge_minus_persistence_mae": 0.06495
+      },
       "station_bootstrap_mae_2p5_97p5": [
         0.0176,
         0.16063
@@ -101,6 +119,12 @@
       "leave_one_station_out_rmse_sign_reversals": 0,
       "leave_one_station_out_rmse_sign_reversal_stations": [],
       "pooled_ridge_minus_persistence_mae": 0.16435,
+      "excluding_previously_audited_station": {
+        "station": "AL_Brewton_3_NNE",
+        "n_origins": 201044,
+        "ridge_minus_persistence_rmse": -0.02977,
+        "ridge_minus_persistence_mae": 0.13243
+      },
       "station_bootstrap_mae_2p5_97p5": [
         0.06546,
         0.27047

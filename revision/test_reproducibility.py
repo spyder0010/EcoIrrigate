@@ -4,12 +4,19 @@ import unittest
 import numpy as np
 import pandas as pd
 
-from continuous_scale_bounds import score_witness, verify_kernel, verify_margin
+from continuous_scale_bounds import kernel_moments, score_witness, verify_kernel, verify_margin
 from noaa_residual_baseline import make_frame_from_raw
 from scale_sampling_sensitivity import check_deviation_function
 
 
 class ScaleComparisonTests(unittest.TestCase):
+    def test_common_affine_change_scales_paired_gap(self):
+        model, persistence, observed = map(np.array, ([.65, .31], [.18, .6], [.42, .43]))
+        identity = kernel_moments(model, persistence, observed, [0., 1.])[:3]
+        transformed = kernel_moments(2 + 3 * model, 2 + 3 * persistence, 2 + 3 * observed, [2., 5.])[:3]
+        self.assertNotEqual(identity[0], 0)
+        np.testing.assert_allclose(transformed, 9 * np.array(identity), atol=1e-12, rtol=0)
+
     def test_kernel_matches_dense_reference(self):
         verify_kernel()
 

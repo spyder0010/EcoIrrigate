@@ -26,7 +26,6 @@ from data.preprocessing import DataPreprocessor  # noqa: E402
 from models.architectures import MultiTaskNet  # noqa: E402
 
 SOURCE = SOURCE_CSV
-CHECKPOINT = next((MODEL_ROOT / "results" / "models").glob("MultiTaskNet_multi-task_*.pt"))
 OUT = Path(__file__).resolve().parent / "baseline_audit"
 HORIZONS = {"1h": 4, "6h": 24, "12h": 48, "24h": 96}
 
@@ -41,6 +40,10 @@ def score(actual: np.ndarray, predicted: np.ndarray) -> dict:
 
 
 def main() -> None:
+    checkpoint_dir = MODEL_ROOT / "results" / "models"
+    checkpoint_path = next(checkpoint_dir.glob("MultiTaskNet_multi-task_*.pt"), None)
+    if checkpoint_path is None:
+        raise FileNotFoundError(f"Place the archived MultiTaskNet_multi-task checkpoint in {checkpoint_dir}")
     torch.set_num_threads(4)
     processed = DataPreprocessor().preprocess_pipeline(str(SOURCE))
     feature_groups = processed["feature_groups"]
@@ -52,7 +55,7 @@ def main() -> None:
         farm_encoding={farm: i for i, farm in enumerate(sorted(test.Farm_ID.unique()))},
     )
     model = MultiTaskNet(calib_input_dim=6, seq_input_dim=7)
-    checkpoint = torch.load(CHECKPOINT, map_location="cpu", weights_only=False)
+    checkpoint = torch.load(checkpoint_path, map_location="cpu", weights_only=False)
     model.load_state_dict(checkpoint["model_state_dict"])
     model.eval()
     calib_pred, forecast_pred = [], []
@@ -91,7 +94,7 @@ def main() -> None:
     ledger = pd.DataFrame(rows)
     OUT.mkdir(exist_ok=True)
     ledger.to_csv(OUT / "saved_multitask_prediction_ledger.csv", index=False, float_format="%.10g")
-    results = {"checkpoint": str(CHECKPOINT), "checkpoint_epoch": int(checkpoint["epoch"]), "n_calibration": len(dataset)}
+    results = {"checkpoint": str(checkpoint_path), "checkpoint_epoch": int(checkpoint["epoch"]), "n_calibration": len(dataset)}
     results["calibration"] = score(to_vwc(np.array([float(dataset[i]["calib_target"][0]) for i in range(len(dataset))])), to_vwc(calib_pred))
     results["forecast"] = {}
     for horizon, part in ledger.groupby("horizon"):
