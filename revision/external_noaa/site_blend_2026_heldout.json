@@ -1,0 +1,575 @@
+{
+  "method": {
+    "description": "A convex blend of persistence and pooled residual Ridge, with one weight per station and horizon.",
+    "feature_columns": [
+      "vwc_current",
+      "hour_sin",
+      "hour_cos",
+      "day_sin",
+      "day_cos",
+      "temp_current",
+      "rh_current",
+      "solar_current",
+      "vwc_lag_1",
+      "vwc_change_1",
+      "vwc_lag_3",
+      "vwc_change_3",
+      "vwc_lag_6",
+      "vwc_change_6",
+      "vwc_lag_12",
+      "vwc_change_12",
+      "vwc_lag_24",
+      "vwc_change_24",
+      "vwc_mean_3",
+      "rain_sum_3",
+      "temp_mean_3",
+      "vwc_mean_6",
+      "rain_sum_6",
+      "temp_mean_6",
+      "vwc_mean_24",
+      "rain_sum_24",
+      "temp_mean_24",
+      "station_AZ",
+      "station_CA",
+      "station_FL"
+    ],
+    "station_encoding": "The three original stations have fixed AZ, CA and FL indicators.",
+    "alpha_grid": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "weight_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "selection": "Train Ridge on 2023; select pooled alpha and station weights by 2024 RMSE; refit on all years before the evaluation year.",
+    "evaluation_year": 2026,
+    "stations": [
+      "AZ_Tucson_11_W",
+      "CA_Merced_23_WSW",
+      "FL_Sebring_23_SSE"
+    ],
+    "expanded": false,
+    "test_status": "2025 is exploratory development evidence. The original 3-station 2026 check was frozen before that year's download. The 2026 expanded check was specified after inspecting original-station outcomes but before downloading the four added stations."
+  },
+  "results": [
+    {
+      "horizon_hours": 1,
+      "station": "ALL",
+      "n_evaluation_origins": 13542,
+      "selected_alpha": 0.1,
+      "site_weight": {
+        "AZ_Tucson_11_W": 1.0,
+        "CA_Merced_23_WSW": 0.25,
+        "FL_Sebring_23_SSE": 1.0
+      },
+      "validation_selection": {
+        "AZ_Tucson_11_W": {
+          "n_validation": 7537,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 0.50232,
+            "0.25": 0.49151,
+            "0.5": 0.48193,
+            "0.75": 0.47365,
+            "1.0": 0.46674
+          }
+        },
+        "CA_Merced_23_WSW": {
+          "n_validation": 8651,
+          "weight": 0.25,
+          "rmse_by_weight": {
+            "0.0": 0.12991,
+            "0.25": 0.12846,
+            "0.5": 0.12951,
+            "0.75": 0.13299,
+            "1.0": 0.13873
+          }
+        },
+        "FL_Sebring_23_SSE": {
+          "n_validation": 2320,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 0.34444,
+            "0.25": 0.33895,
+            "0.5": 0.33422,
+            "0.75": 0.33029,
+            "1.0": 0.32719
+          }
+        }
+      },
+      "persistence_rmse": 0.36602,
+      "ridge_rmse": 0.33563,
+      "blend_rmse": 0.33434,
+      "blend_minus_persistence_rmse": -0.03168,
+      "persistence_mae": 0.13889,
+      "ridge_mae": 0.131,
+      "blend_mae": 0.1223
+    },
+    {
+      "horizon_hours": 1,
+      "station": "AZ_Tucson_11_W",
+      "n_evaluation_origins": 7588,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 7537,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 0.50232,
+          "0.25": 0.49151,
+          "0.5": 0.48193,
+          "0.75": 0.47365,
+          "1.0": 0.46674
+        }
+      },
+      "persistence_rmse": 0.47427,
+      "ridge_rmse": 0.42942,
+      "blend_rmse": 0.42942,
+      "blend_minus_persistence_rmse": -0.04485,
+      "persistence_mae": 0.22736,
+      "ridge_mae": 0.18339,
+      "blend_mae": 0.18339
+    },
+    {
+      "horizon_hours": 1,
+      "station": "CA_Merced_23_WSW",
+      "n_evaluation_origins": 3302,
+      "selected_alpha": 0.1,
+      "site_weight": 0.25,
+      "validation_selection": {
+        "n_validation": 8651,
+        "weight": 0.25,
+        "rmse_by_weight": {
+          "0.0": 0.12991,
+          "0.25": 0.12846,
+          "0.5": 0.12951,
+          "0.75": 0.13299,
+          "1.0": 0.13873
+        }
+      },
+      "persistence_rmse": 0.08564,
+      "ridge_rmse": 0.10392,
+      "blend_rmse": 0.08515,
+      "blend_minus_persistence_rmse": -0.0005,
+      "persistence_mae": 0.01726,
+      "ridge_mae": 0.06457,
+      "blend_mae": 0.02891
+    },
+    {
+      "horizon_hours": 1,
+      "station": "FL_Sebring_23_SSE",
+      "n_evaluation_origins": 2652,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 2320,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 0.34444,
+          "0.25": 0.33895,
+          "0.5": 0.33422,
+          "0.75": 0.33029,
+          "1.0": 0.32719
+        }
+      },
+      "persistence_rmse": 0.17712,
+      "ridge_rmse": 0.18479,
+      "blend_rmse": 0.18479,
+      "blend_minus_persistence_rmse": 0.00767,
+      "persistence_mae": 0.03718,
+      "ridge_mae": 0.0638,
+      "blend_mae": 0.0638
+    },
+    {
+      "horizon_hours": 6,
+      "station": "ALL",
+      "n_evaluation_origins": 13520,
+      "selected_alpha": 0.1,
+      "site_weight": {
+        "AZ_Tucson_11_W": 1.0,
+        "CA_Merced_23_WSW": 0.0,
+        "FL_Sebring_23_SSE": 0.25
+      },
+      "validation_selection": {
+        "AZ_Tucson_11_W": {
+          "n_validation": 7532,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 1.53107,
+            "0.25": 1.45064,
+            "0.5": 1.38101,
+            "0.75": 1.32391,
+            "1.0": 1.281
+          }
+        },
+        "CA_Merced_23_WSW": {
+          "n_validation": 8644,
+          "weight": 0.0,
+          "rmse_by_weight": {
+            "0.0": 0.46337,
+            "0.25": 0.46606,
+            "0.5": 0.47961,
+            "0.75": 0.50314,
+            "1.0": 0.53534
+          }
+        },
+        "FL_Sebring_23_SSE": {
+          "n_validation": 2310,
+          "weight": 0.25,
+          "rmse_by_weight": {
+            "0.0": 0.60951,
+            "0.25": 0.60509,
+            "0.5": 0.6058,
+            "0.75": 0.61162,
+            "1.0": 0.62241
+          }
+        }
+      },
+      "persistence_rmse": 1.16038,
+      "ridge_rmse": 0.97635,
+      "blend_rmse": 0.96541,
+      "blend_minus_persistence_rmse": -0.19497,
+      "persistence_mae": 0.618,
+      "ridge_mae": 0.47729,
+      "blend_mae": 0.4201
+    },
+    {
+      "horizon_hours": 6,
+      "station": "AZ_Tucson_11_W",
+      "n_evaluation_origins": 7582,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 7532,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 1.53107,
+          "0.25": 1.45064,
+          "0.5": 1.38101,
+          "0.75": 1.32391,
+          "1.0": 1.281
+        }
+      },
+      "persistence_rmse": 1.51937,
+      "ridge_rmse": 1.25275,
+      "blend_rmse": 1.25275,
+      "blend_minus_persistence_rmse": -0.26662,
+      "persistence_mae": 1.02017,
+      "ridge_mae": 0.66191,
+      "blend_mae": 0.66191
+    },
+    {
+      "horizon_hours": 6,
+      "station": "CA_Merced_23_WSW",
+      "n_evaluation_origins": 3296,
+      "selected_alpha": 0.1,
+      "site_weight": 0.0,
+      "validation_selection": {
+        "n_validation": 8644,
+        "weight": 0.0,
+        "rmse_by_weight": {
+          "0.0": 0.46337,
+          "0.25": 0.46606,
+          "0.5": 0.47961,
+          "0.75": 0.50314,
+          "1.0": 0.53534
+        }
+      },
+      "persistence_rmse": 0.27869,
+      "ridge_rmse": 0.37334,
+      "blend_rmse": 0.27869,
+      "blend_minus_persistence_rmse": 0.0,
+      "persistence_mae": 0.06526,
+      "ridge_mae": 0.24485,
+      "blend_mae": 0.06526
+    },
+    {
+      "horizon_hours": 6,
+      "station": "FL_Sebring_23_SSE",
+      "n_evaluation_origins": 2642,
+      "selected_alpha": 0.1,
+      "site_weight": 0.25,
+      "validation_selection": {
+        "n_validation": 2310,
+        "weight": 0.25,
+        "rmse_by_weight": {
+          "0.0": 0.60951,
+          "0.25": 0.60509,
+          "0.5": 0.6058,
+          "0.75": 0.61162,
+          "1.0": 0.62241
+        }
+      },
+      "persistence_rmse": 0.41063,
+      "ridge_rmse": 0.44772,
+      "blend_rmse": 0.41078,
+      "blend_minus_persistence_rmse": 0.00015,
+      "persistence_mae": 0.15344,
+      "ridge_mae": 0.23744,
+      "blend_mae": 0.16884
+    },
+    {
+      "horizon_hours": 12,
+      "station": "ALL",
+      "n_evaluation_origins": 13490,
+      "selected_alpha": 0.1,
+      "site_weight": {
+        "AZ_Tucson_11_W": 1.0,
+        "CA_Merced_23_WSW": 0.0,
+        "FL_Sebring_23_SSE": 0.5
+      },
+      "validation_selection": {
+        "AZ_Tucson_11_W": {
+          "n_validation": 7526,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 1.98531,
+            "0.25": 1.87344,
+            "0.5": 1.77948,
+            "0.75": 1.70642,
+            "1.0": 1.65701
+          }
+        },
+        "CA_Merced_23_WSW": {
+          "n_validation": 8638,
+          "weight": 0.0,
+          "rmse_by_weight": {
+            "0.0": 0.70266,
+            "0.25": 0.70463,
+            "0.5": 0.71536,
+            "0.75": 0.73446,
+            "1.0": 0.76132
+          }
+        },
+        "FL_Sebring_23_SSE": {
+          "n_validation": 2301,
+          "weight": 0.5,
+          "rmse_by_weight": {
+            "0.0": 0.74486,
+            "0.25": 0.73584,
+            "0.5": 0.73364,
+            "0.75": 0.73832,
+            "1.0": 0.74974
+          }
+        }
+      },
+      "persistence_rmse": 1.49077,
+      "ridge_rmse": 1.25119,
+      "blend_rmse": 1.24231,
+      "blend_minus_persistence_rmse": -0.24846,
+      "persistence_mae": 0.83663,
+      "ridge_mae": 0.59857,
+      "blend_mae": 0.54689
+    },
+    {
+      "horizon_hours": 12,
+      "station": "AZ_Tucson_11_W",
+      "n_evaluation_origins": 7576,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 7526,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 1.98531,
+          "0.25": 1.87344,
+          "0.5": 1.77948,
+          "0.75": 1.70642,
+          "1.0": 1.65701
+        }
+      },
+      "persistence_rmse": 1.94715,
+      "ridge_rmse": 1.60619,
+      "blend_rmse": 1.60619,
+      "blend_minus_persistence_rmse": -0.34096,
+      "persistence_mae": 1.36096,
+      "ridge_mae": 0.83049,
+      "blend_mae": 0.83049
+    },
+    {
+      "horizon_hours": 12,
+      "station": "CA_Merced_23_WSW",
+      "n_evaluation_origins": 3284,
+      "selected_alpha": 0.1,
+      "site_weight": 0.0,
+      "validation_selection": {
+        "n_validation": 8638,
+        "weight": 0.0,
+        "rmse_by_weight": {
+          "0.0": 0.70266,
+          "0.25": 0.70463,
+          "0.5": 0.71536,
+          "0.75": 0.73446,
+          "1.0": 0.76132
+        }
+      },
+      "persistence_rmse": 0.39988,
+      "ridge_rmse": 0.4682,
+      "blend_rmse": 0.39988,
+      "blend_minus_persistence_rmse": 0.0,
+      "persistence_mae": 0.099,
+      "ridge_mae": 0.26229,
+      "blend_mae": 0.099
+    },
+    {
+      "horizon_hours": 12,
+      "station": "FL_Sebring_23_SSE",
+      "n_evaluation_origins": 2630,
+      "selected_alpha": 0.1,
+      "site_weight": 0.5,
+      "validation_selection": {
+        "n_validation": 2301,
+        "weight": 0.5,
+        "rmse_by_weight": {
+          "0.0": 0.74486,
+          "0.25": 0.73584,
+          "0.5": 0.73364,
+          "0.75": 0.73832,
+          "1.0": 0.74974
+        }
+      },
+      "persistence_rmse": 0.52726,
+      "ridge_rmse": 0.5696,
+      "blend_rmse": 0.53381,
+      "blend_minus_persistence_rmse": 0.00654,
+      "persistence_mae": 0.2473,
+      "ridge_mae": 0.35041,
+      "blend_mae": 0.28921
+    },
+    {
+      "horizon_hours": 24,
+      "station": "ALL",
+      "n_evaluation_origins": 13437,
+      "selected_alpha": 1000.0,
+      "site_weight": {
+        "AZ_Tucson_11_W": 1.0,
+        "CA_Merced_23_WSW": 0.75,
+        "FL_Sebring_23_SSE": 1.0
+      },
+      "validation_selection": {
+        "AZ_Tucson_11_W": {
+          "n_validation": 7514,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 2.02636,
+            "0.25": 2.00986,
+            "0.5": 1.99479,
+            "0.75": 1.98118,
+            "1.0": 1.96906
+          }
+        },
+        "CA_Merced_23_WSW": {
+          "n_validation": 8626,
+          "weight": 0.75,
+          "rmse_by_weight": {
+            "0.0": 1.01758,
+            "0.25": 1.01013,
+            "0.5": 1.00597,
+            "0.75": 1.00514,
+            "1.0": 1.00765
+          }
+        },
+        "FL_Sebring_23_SSE": {
+          "n_validation": 2299,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 0.98375,
+            "0.25": 0.96357,
+            "0.5": 0.94869,
+            "0.75": 0.93937,
+            "1.0": 0.93576
+          }
+        }
+      },
+      "persistence_rmse": 1.5795,
+      "ridge_rmse": 1.52311,
+      "blend_rmse": 1.51974,
+      "blend_minus_persistence_rmse": -0.05976,
+      "persistence_mae": 0.64072,
+      "ridge_mae": 0.70412,
+      "blend_mae": 0.69055
+    },
+    {
+      "horizon_hours": 24,
+      "station": "AZ_Tucson_11_W",
+      "n_evaluation_origins": 7564,
+      "selected_alpha": 1000.0,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 7514,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 2.02636,
+          "0.25": 2.00986,
+          "0.5": 1.99479,
+          "0.75": 1.98118,
+          "1.0": 1.96906
+        }
+      },
+      "persistence_rmse": 2.04314,
+      "ridge_rmse": 1.95819,
+      "blend_rmse": 1.95819,
+      "blend_minus_persistence_rmse": -0.08495,
+      "persistence_mae": 0.95985,
+      "ridge_mae": 0.96553,
+      "blend_mae": 0.96553
+    },
+    {
+      "horizon_hours": 24,
+      "station": "CA_Merced_23_WSW",
+      "n_evaluation_origins": 3249,
+      "selected_alpha": 1000.0,
+      "site_weight": 0.75,
+      "validation_selection": {
+        "n_validation": 8626,
+        "weight": 0.75,
+        "rmse_by_weight": {
+          "0.0": 1.01758,
+          "0.25": 1.01013,
+          "0.5": 1.00597,
+          "0.75": 1.00514,
+          "1.0": 1.00765
+        }
+      },
+      "persistence_rmse": 0.49173,
+      "ridge_rmse": 0.5602,
+      "blend_rmse": 0.52102,
+      "blend_minus_persistence_rmse": 0.02928,
+      "persistence_mae": 0.12345,
+      "ridge_mae": 0.31238,
+      "blend_mae": 0.25625
+    },
+    {
+      "horizon_hours": 24,
+      "station": "FL_Sebring_23_SSE",
+      "n_evaluation_origins": 2624,
+      "selected_alpha": 1000.0,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 2299,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 0.98375,
+          "0.25": 0.96357,
+          "0.5": 0.94869,
+          "0.75": 0.93937,
+          "1.0": 0.93576
+        }
+      },
+      "persistence_rmse": 0.66542,
+      "ridge_rmse": 0.66146,
+      "blend_rmse": 0.66146,
+      "blend_minus_persistence_rmse": -0.00396,
+      "persistence_mae": 0.36124,
+      "ridge_mae": 0.43564,
+      "blend_mae": 0.43564
+    }
+  ]
+}

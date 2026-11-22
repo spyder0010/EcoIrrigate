@@ -1,73 +1,40 @@
-# EcoIrrigate Dataset — Data Dictionary
+# EcoIrrigate released CSV: data dictionary and provenance limits
 
-**Dataset title:** EcoIrrigate: Multi-Sensor Soil Moisture Monitoring Dataset from Kolkata, India (Jan–Apr 2025)
+**File:** `kolkata_unified_dataset.csv`
 
-**Associated manuscript:** From Rule-Based to Deep Learning: Multi-Task Sensor Calibration and Soil Moisture Forecasting for Precision Irrigation
+**Associated archive:** [Mendeley Data version 1](https://doi.org/10.17632/8x4v7yy3ds.1)
+**Purpose of this dictionary:** identify the supplied fields without treating undocumented transformations as independently verified measurements.
 
----
+## Coverage and grain
 
-## File: `kolkata_unified_dataset.csv`
+The file has **21,312 rows and 22 columns**: one record per `Farm_ID` and 15-minute `Timestamp`, with 10,656 rows for each of two site IDs. The inclusive range is **5 January 2025 00:00 through 25 April 2025 23:45**, or **111 calendar days per site**. The released file contains no null cells, duplicate site–timestamp pairs or gaps in its 15-minute grid. This is a property of the processed file, not proof that acquisition was uninterrupted.
 
-| # | Column | Type | Unit | Description | Range |
-|---|--------|------|------|-------------|-------|
-| 1 | `Timestamp` | datetime | ISO 8601 | Measurement timestamp (15-min intervals) | 2025-01-05 00:00 – 2025-04-25 23:45 |
-| 2 | `Farm_ID` | string | — | Farm identifier | Kolkata_Farm_1, Kolkata_Farm_2 |
-| 3 | `Volumetric_Moisture_Pct` | float | % VWC | Calibrated volumetric water content | 8.91 – 19.63 |
-| 4 | `Sensor_Board_Temperature_C` | float | °C | On-board temperature of capacitive sensor | varies |
-| 5 | `Raw_Capacitive_ADC` | int | counts | Raw 10-bit ADC reading from capacitive sensor | ~600 – 780 |
-| 6 | `Sensor_Voltage_V` | float | V | Supply voltage to sensor | ~2.0 – 3.3 |
-| 7 | `Atm_Pressure_inHg` | float | inHg | Atmospheric pressure from METAR data | ~29.8 – 30.1 |
-| 8 | `Atm_Temperature_C` | float | °C | Atmospheric temperature from METAR data | ~14 – 37 |
-| 9 | `Soil_Temperature_C` | float | °C | Soil temperature at sensor depth | ~17 – 34 |
-| 10 | `SM_Level_15cm` | float | cm | Soil moisture level at 15 cm depth | varies |
-| 11 | `SM_Volume_15cm` | float | cm³ | Soil moisture volume at 15 cm depth | varies |
-| 12 | `SM_Aggregate_Pct` | float | % | Aggregate soil moisture percentage | varies |
-| 13 | `SM_Volume_Pct` | float | % | Soil moisture volume percentage | varies |
-| 14 | `Hour` | int | — | Hour of day (0–23) | 0 – 23 |
-| 15 | `Day` | int | — | Day of month | 1 – 30 |
-| 16 | `Month` | int | — | Month (1–12) | 1 – 4 |
-| 17 | `DayOfWeek` | int | — | Day of week (0=Monday) | 0 – 6 |
-| 18 | `DayOfYear` | int | — | Day of year | 5 – 115 |
-| 19 | `Hour_sin` | float | — | Cyclical hour encoding (sine) | -1.0 – 1.0 |
-| 20 | `Hour_cos` | float | — | Cyclical hour encoding (cosine) | -1.0 – 1.0 |
-| 21 | `Day_sin` | float | — | Cyclical day-of-year encoding (sine) | -1.0 – 1.0 |
-| 22 | `Day_cos` | float | — | Cyclical day-of-year encoding (cosine) | -1.0 – 1.0 |
+The earlier description said that 128 records were interpolated. An original unfilled timestamp log, gap mask and interpolation procedure are not present in the available repository, so that count and any gap-length distribution are **unverified**. Do not use the processed grid alone to calculate a pre-processing missingness rate.
 
-**Total records:** 21,312 (10,656 per farm)
-**Temporal resolution:** 15-minute intervals
-**Study period:** 110 days (5 Jan – 25 Apr 2025)
-**Missing data:** Gap-filled using linear interpolation (128 gaps, < 1.1%)
-**Location:** Kolkata, West Bengal, India (22.57°N, 88.36°E)
+## Columns
 
----
+| Column | Supplied representation | Interpretation and qualification |
+|---|---|---|
+| `Timestamp` | Date and time | 15-minute record time; the file does not document the time zone |
+| `Farm_ID` | Text | Two site identifiers, `Kolkata_Farm_1` and `Kolkata_Farm_2`; exact physical locations and field conditions are not independently documented here |
+| `Volumetric_Moisture_Pct` | Numeric, nominal % VWC | Supplied forecast and auxiliary reconstruction target; its per-record gravimetric reference or conversion procedure is unavailable |
+| `Sensor_Board_Temperature_C` | Numeric, nominal °C | Supplied board-temperature field; sensor make, placement and accuracy are unverified from the CSV |
+| `Raw_Capacitive_ADC` | Integer counts | Supplied probe-related ADC field; bit depth and acquisition hardware are unverified from the archived firmware |
+| `Sensor_Voltage_V` | Numeric, nominal V | Closely tracks `Raw_Capacitive_ADC`; the observed relation is approximately `3.3 × ADC / 1023` |
+| `Atm_Pressure_inHg` | Numeric, nominal inHg | Supplied pressure field; original weather-source and interpolation lineage need source records for verification |
+| `Atm_Temperature_C` | Numeric, nominal °C | Supplied atmospheric-temperature field; original measurement and weather-source lineage are not documented per row |
+| `Soil_Temperature_C` | Numeric, nominal °C | Supplied soil-temperature field; whether it was directly measured or calculated cannot be established per row here |
+| `SM_Level_15cm` | Numeric, nominal cm | Supplementary moisture-related field; derivation and physical interpretation are not independently documented |
+| `SM_Volume_15cm` | Numeric, nominal cm³ | Supplementary moisture-related field; derivation is not independently documented |
+| `SM_Aggregate_Pct` | Numeric, nominal % | Supplementary moisture-related field; derivation is not independently documented |
+| `SM_Volume_Pct` | Numeric, nominal % | Supplementary moisture-related field; derivation is not independently documented |
+| `Hour`, `Day`, `Month`, `DayOfWeek`, `DayOfYear` | Integers | Calendar fields associated with the record timestamp |
+| `Hour_sin`, `Hour_cos`, `Day_sin`, `Day_cos` | Numeric | Cyclic calendar encodings supplied in the file |
 
-## File: `daily_pressure_extracted.csv`
+Repeated integer `Raw_Capacitive_ADC` values can accompany different supplied `Volumetric_Moisture_Pct` values. Therefore, the latter is not an exact function of the recorded integer ADC field alone. This observation does not reveal the actual transformation or establish independent calibration accuracy.
 
-Barometric pressure extracted from METAR aviation weather reports (Kolkata VECC station).
+## Other files and hardware descriptions
 
----
+`daily_pressure_extracted.csv`, `daily_temperature_extracted.csv` and `QUALITY_REPORT.json` are associated derived files or older reports; their text does not replace missing row-level acquisition or calibration records. Older repository documents disagree about the board and cloud platform. The available firmware is dated after the 2025 period and does not establish which device produced these rows. The supplied series reports one sensing depth and contains no measured irrigation volumes, pump logs or crop outcomes.
 
-## File: `daily_temperature_extracted.csv`
-
-Temperature data extracted from METAR aviation weather reports (Kolkata VECC station).
-
----
-
-## File: `QUALITY_REPORT.json`
-
-Automated data quality assessment including completeness, range checks, and gap statistics.
-
----
-
-## Hardware
-
-- **Sensor:** HW-390 capacitive soil moisture sensor (v1.2)
-- **Microcontroller:** Arduino Mega 2560 + ESP8266 WiFi module
-- **Power:** Solar-powered (6V panel + 18650 Li-ion battery)
-- **Sampling:** 15-minute intervals via ThingSpeak IoT platform
-
----
-
-## License
-
-CC BY 4.0 International
+Use the [Mendeley Data page](https://doi.org/10.17632/8x4v7yy3ds.1) for the published dataset version and governing data license. Code and model files require their own licensing and release decisions.

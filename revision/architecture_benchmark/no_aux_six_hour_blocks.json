@@ -1,0 +1,30 @@
+{
+  "variant": "bilstm_residual",
+  "estimand": "mean of five seed-specific RMSEs minus persistence RMSE on common six-hour origins",
+  "scope": "conditional on five trained seeds, two site IDs and the supplied 2025 series",
+  "n_origins": 3006,
+  "observed_difference_vwc_percentage_points": -0.02540584197635698,
+  "blocks": {
+    "48": {
+      "resamples": 2000,
+      "percentile_95_ci": [
+        -0.053367256931663595,
+        0.0003798154024283934
+      ]
+    },
+    "96": {
+      "resamples": 2000,
+      "percentile_95_ci": [
+        -0.05268272212258809,
+        0.0030654698976237526
+      ]
+    },
+    "192": {
+      "resamples": 2000,
+      "percentile_95_ci": [
+        -0.054265958396916975,
+        0.001387824677609602
+      ]
+    }
+  }
+}

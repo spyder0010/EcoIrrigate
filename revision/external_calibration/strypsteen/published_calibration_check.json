@@ -1,0 +1,417 @@
+{
+  "source": {
+    "name": "Field experiment GN1.xlsx",
+    "source_url": "https://zenodo.org/api/records/16911016/files/Field%20experiment%20GN1.xlsx/content",
+    "sha256": "be3ff34f2fd5ccbd8f9d72d7baf33ce7f87d9fec16eeaff2456a858666162c95",
+    "md5": "md5:7d6de47f6bc0cd6514bfe4fe51c50cb8"
+  },
+  "first_hour": "2024-10-10 07:00:00",
+  "last_hour": "2024-11-19 08:00:00",
+  "test_cutoff": "2024-11-11 08:00:00",
+  "source_hour_rows": 962,
+  "wet_reference_rows": 68,
+  "probes": {
+    "probe_2": {
+      "scored_ucl_range": [
+        18.36548215795338,
+        22.51236199877231
+      ],
+      "normalized_slope_range": [
+        0.9383882242156744,
+        1.0775597368777359
+      ],
+      "minimum_symmetric_slope_budget": 0.07755973687773587,
+      "calibration_knots": [
+        18.36548215795338,
+        18.855157879495,
+        19.351694446218488,
+        19.85566793786909,
+        20.36771884494702,
+        20.888561781822222,
+        21.418997105855677,
+        21.95992491034034,
+        22.51236199877231
+      ],
+      "pointwise_interpolation_error_upper": 0.0015812539107855413,
+      "by_horizon": {
+        "1": {
+          "fit_origins": 603,
+          "test_origins": 192,
+          "nominal_ucl_mse_delta": -0.00011596227177521659,
+          "published_sscl_mse_delta": -0.00010656051148623364,
+          "normalized_smooth_mse_delta": -0.0001558975657681233,
+          "normalized_interpolated_mse_delta": -0.00015678026168130382,
+          "interpolation_score_difference_upper": 0.0012148812609780407,
+          "envelopes": {
+            "0.1": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.00028372919771632506,
+                4.6269798955620264e-05
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.0014986104586943657,
+                0.001261151059933661
+              ]
+            },
+            "0.25": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.0005456074401472606,
+                0.0002837156367682473
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.0017604887011253012,
+                0.001498596897746288
+              ]
+            },
+            "0.5": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.0010097454535835377,
+                0.0007350870548824302
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.0022246267145615787,
+                0.0019499683158604709
+              ]
+            }
+          }
+        },
+        "6": {
+          "fit_origins": 575,
+          "test_origins": 187,
+          "nominal_ucl_mse_delta": 0.004934281152327118,
+          "published_sscl_mse_delta": 0.0034321387289110335,
+          "normalized_smooth_mse_delta": 0.005021204062866576,
+          "normalized_interpolated_mse_delta": 0.005024909578328253,
+          "interpolation_score_difference_upper": 0.0037507720575074457,
+          "envelopes": {
+            "0.1": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                0.0028568538694820384,
+                0.007134626568108283
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.0008939181880254074,
+                0.010885398625615729
+              ]
+            },
+            "0.25": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -2.8665555530466607e-05,
+                0.01066546619103514
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.003779437613037912,
+                0.014416238248542585
+              ]
+            },
+            "0.5": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.004223273932537637,
+                0.01716478956059357
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.007974045990045083,
+                0.020915561618101017
+              ]
+            }
+          }
+        },
+        "12": {
+          "fit_origins": 545,
+          "test_origins": 181,
+          "nominal_ucl_mse_delta": -0.0021236382516377646,
+          "published_sscl_mse_delta": -0.0009373432282604517,
+          "normalized_smooth_mse_delta": -0.0013713290743162729,
+          "normalized_interpolated_mse_delta": -0.0013440370460134192,
+          "interpolation_score_difference_upper": 0.00573722768936608,
+          "envelopes": {
+            "0.1": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.00887604976594979,
+                0.004842280429363988
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.01461327745531587,
+                0.010579508118730069
+              ]
+            },
+            "0.25": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.018604191099874757,
+                0.015691334388409684
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.024341418789240836,
+                0.021428562077775763
+              ]
+            },
+            "0.5": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.03409921009227895,
+                0.03484062682026746
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.039836437781645036,
+                0.04057785450963354
+              ]
+            }
+          }
+        },
+        "24": {
+          "fit_origins": 500,
+          "test_origins": 169,
+          "nominal_ucl_mse_delta": 0.005979870619809543,
+          "published_sscl_mse_delta": 0.010474134482475882,
+          "normalized_smooth_mse_delta": 0.015323613283868805,
+          "normalized_interpolated_mse_delta": 0.015496774301000342,
+          "interpolation_score_difference_upper": 0.007780933201100614,
+          "envelopes": {
+            "0.1": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.02614582754929674,
+                0.03763716604544481
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.033926760750397356,
+                0.04541809924654542
+              ]
+            },
+            "0.25": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.07521247994696448,
+                0.08424470403988933
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.08299341314806509,
+                0.09202563724098994
+              ]
+            },
+            "0.5": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.1593322476604328,
+                0.16376248173708258
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.16711318086153343,
+                0.1715434149381832
+              ]
+            }
+          }
+        }
+      }
+    },
+    "probe_4": {
+      "scored_ucl_range": [
+        21.29175547353974,
+        24.667268637764018
+      ],
+      "normalized_slope_range": [
+        0.9282608985472715,
+        1.0893078685007405
+      ],
+      "minimum_symmetric_slope_budget": 0.08930786850074046,
+      "calibration_knots": [
+        21.29175547353974,
+        21.68654384596628,
+        22.08789014606064,
+        22.496313321294725,
+        22.912389365821088,
+        23.33675988580427,
+        23.77014233755747,
+        24.213342346705605,
+        24.667268637764018
+      ],
+      "pointwise_interpolation_error_upper": 0.0014680520338813269,
+      "by_horizon": {
+        "1": {
+          "fit_origins": 603,
+          "test_origins": 192,
+          "nominal_ucl_mse_delta": -4.972707752039706e-06,
+          "published_sscl_mse_delta": 2.4158791883510552e-05,
+          "normalized_smooth_mse_delta": 2.8928235780981512e-05,
+          "normalized_interpolated_mse_delta": 3.1737978916467124e-05,
+          "interpolation_score_difference_upper": 0.0015434394075121713,
+          "envelopes": {
+            "0.1": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.0003259394091292671,
+                0.0003126470031398294
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.0018693788166414384,
+                0.0018560864106520007
+              ]
+            },
+            "0.25": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.0008135150683551395,
+                0.0007826509623176011
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.002356954475867311,
+                0.0023260903698297726
+              ]
+            },
+            "0.5": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.001642876119491689,
+                0.0016111225703884567
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.00318631552700386,
+                0.003154561977900628
+              ]
+            }
+          }
+        },
+        "6": {
+          "fit_origins": 575,
+          "test_origins": 187,
+          "nominal_ucl_mse_delta": -0.007627282073398036,
+          "published_sscl_mse_delta": -0.006356880425676325,
+          "normalized_smooth_mse_delta": -0.007611859759889679,
+          "normalized_interpolated_mse_delta": -0.007589080373715144,
+          "interpolation_score_difference_upper": 0.004745016138154196,
+          "envelopes": {
+            "0.1": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.008252736488347415,
+                -0.007034760433480751
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.01299775262650161,
+                -0.0022897442953265547
+              ]
+            },
+            "0.25": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.00925251706395663,
+                -0.006185327341773852
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.013997533202110826,
+                -0.0014403112036196564
+              ]
+            },
+            "0.5": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.011083481898465744,
+                -0.004719705381544166
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.01582849803661994,
+                2.531075661002958e-05
+              ]
+            }
+          }
+        },
+        "12": {
+          "fit_origins": 545,
+          "test_origins": 181,
+          "nominal_ucl_mse_delta": -0.02252980136131241,
+          "published_sscl_mse_delta": -0.017280379134781712,
+          "normalized_smooth_mse_delta": -0.02069188245863264,
+          "normalized_interpolated_mse_delta": -0.020809927182454314,
+          "interpolation_score_difference_upper": 0.007621618696415651,
+          "envelopes": {
+            "0.1": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.02614548715744839,
+                -0.019008056225733237
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.03376710585386404,
+                -0.011386437529317586
+              ]
+            },
+            "0.25": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.032044959297362285,
+                -0.013901727260908497
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.039666577993777936,
+                -0.006280108564492846
+              ]
+            },
+            "0.5": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.04329537173146063,
+                -0.005860882288984679
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.05091699042787628,
+                0.0017607364074309724
+              ]
+            }
+          }
+        },
+        "24": {
+          "fit_origins": 500,
+          "test_origins": 169,
+          "nominal_ucl_mse_delta": -0.07241140409367536,
+          "published_sscl_mse_delta": -0.0509154009593781,
+          "normalized_smooth_mse_delta": -0.06096715145937222,
+          "normalized_interpolated_mse_delta": -0.06101932205522176,
+          "interpolation_score_difference_upper": 0.010198736614008955,
+          "envelopes": {
+            "0.1": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.09968377041102151,
+                -0.04643248607123107
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.10988250702503047,
+                -0.03623374945722212
+              ]
+            },
+            "0.25": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.1433920644535457,
+                -0.009874357040643437
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.15359080106755463,
+                0.0003243795733655179
+              ]
+            },
+            "0.5": {
+              "smooth_curve_eligible": true,
+              "piecewise_outer": [
+                -0.22872140970090662,
+                0.044981443264251186
+              ],
+              "smooth_curve_outer_if_eligible": [
+                -0.2389201463149156,
+                0.05518017987826014
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

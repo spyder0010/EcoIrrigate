@@ -1,0 +1,8 @@
+*.py text eol=lf
+*.md text eol=lf
+*.csv -text whitespace=-blank-at-eol
+*.json -text whitespace=cr-at-eol
+*.xlsx -text
+*.gz -text
+revision/external_noaa/**/raw/*.txt -text whitespace=-blank-at-eol
+revision/external_noaa/zero_shot/catalog_2026.html -text

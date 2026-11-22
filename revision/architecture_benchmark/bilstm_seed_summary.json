@@ -1,0 +1,46 @@
+{
+  "12h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 1.1832152785896282,
+    "model_rmse_mean_vwc_percentage_points": 1.1563932256970078,
+    "model_rmse_sample_std_vwc_percentage_points": 0.05848836638250028,
+    "model_rmse_min_vwc_percentage_points": 1.1148264092649083,
+    "model_rmse_max_vwc_percentage_points": 1.2582721100748302,
+    "mean_difference_model_minus_persistence": -0.026822052892620452,
+    "seeds_beating_persistence": 4
+  },
+  "1h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 0.28830318835232743,
+    "model_rmse_mean_vwc_percentage_points": 0.3102625436831754,
+    "model_rmse_sample_std_vwc_percentage_points": 0.01290946377468085,
+    "model_rmse_min_vwc_percentage_points": 0.2884468640609199,
+    "model_rmse_max_vwc_percentage_points": 0.32085417140556866,
+    "mean_difference_model_minus_persistence": 0.021959355330847984,
+    "seeds_beating_persistence": 0
+  },
+  "24h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 1.6679906044049992,
+    "model_rmse_mean_vwc_percentage_points": 1.7450026555535474,
+    "model_rmse_sample_std_vwc_percentage_points": 0.12696696887722544,
+    "model_rmse_min_vwc_percentage_points": 1.6085237625901427,
+    "model_rmse_max_vwc_percentage_points": 1.9219098802513033,
+    "mean_difference_model_minus_persistence": 0.07701205114854819,
+    "seeds_beating_persistence": 2
+  },
+  "6h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 0.7846515811764249,
+    "model_rmse_mean_vwc_percentage_points": 0.7775807825868036,
+    "model_rmse_sample_std_vwc_percentage_points": 0.04854584141770164,
+    "model_rmse_min_vwc_percentage_points": 0.7436311875957395,
+    "model_rmse_max_vwc_percentage_points": 0.8629468917178532,
+    "mean_difference_model_minus_persistence": -0.007070798589621274,
+    "seeds_beating_persistence": 4
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "source_sha256": "1f12bac2a35f78b8f2c6af0fe56142f2301471d9ef2203a3983a5a60444d6319",
+  "question": "Is supplied VWC an exact single-valued function of the integer ADC column?",
+  "scope": "supplied processed CSV only; no inference about gravimetric reference, lookup code or raw acquisition",
+  "overall": {
+    "n_rows": 21312,
+    "n_adc_levels": 359,
+    "n_adc_levels_with_at_least_5_rows": 302,
+    "n_repeated_levels_with_multiple_vwc_values": 302,
+    "median_vwc_range_within_repeated_adc_level": 1.17,
+    "max_vwc_range_within_repeated_adc_level": 3.15,
+    "adc_vwc_pearson_correlation": -0.96345433
+  },
+  "farm_results": [
+    {
+      "farm": "Kolkata_Farm_1",
+      "n_rows": 10656,
+      "n_adc_levels": 326,
+      "n_adc_levels_with_at_least_5_rows": 218,
+      "n_repeated_levels_with_multiple_vwc_values": 218,
+      "median_vwc_range_within_repeated_adc_level": 1.36,
+      "max_vwc_range_within_repeated_adc_level": 3.15,
+      "adc_vwc_pearson_correlation": -0.95894937,
+      "adc_only_chronological_fit": {
+        "n_train": 7459,
+        "n_test": 1599,
+        "test_rmse_vwc_percentage_points": 1.16947,
+        "test_mae_vwc_percentage_points": 0.83628,
+        "test_r2": 0.68511
+      }
+    },
+    {
+      "farm": "Kolkata_Farm_2",
+      "n_rows": 10656,
+      "n_adc_levels": 352,
+      "n_adc_levels_with_at_least_5_rows": 264,
+      "n_repeated_levels_with_multiple_vwc_values": 264,
+      "median_vwc_range_within_repeated_adc_level": 1.07,
+      "max_vwc_range_within_repeated_adc_level": 3.09,
+      "adc_vwc_pearson_correlation": -0.96753007,
+      "adc_only_chronological_fit": {
+        "n_train": 7459,
+        "n_test": 1599,
+        "test_rmse_vwc_percentage_points": 1.03563,
+        "test_mae_vwc_percentage_points": 0.77454,
+        "test_r2": 0.71246
+      }
+    }
+  ],
+  "pooled_adc_only_chronological_fit": {
+    "n_train": 14918,
+    "n_test": 3198,
+    "test_rmse_vwc_percentage_points": 1.12596,
+    "test_mae_vwc_percentage_points": 0.84108,
+    "test_r2": 0.71276
+  },
+  "split": "per farm: first 70% train, final 15% test; middle 15% unused"
+}

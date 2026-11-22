@@ -1,0 +1,86 @@
+{
+  "scope": "Year-boundary correction to annual NOAA model fitting, selection and evaluation",
+  "archive_files_verified": 19,
+  "seven_station_evaluation": [
+    {
+      "horizon_hours": 1,
+      "old_evaluation_origins": 40485,
+      "cross_year_origins_removed": 5,
+      "new_evaluation_origins": 40480,
+      "new_predictions_changed_on_retained_origins": 40480,
+      "old_persistence_rmse": 0.63991,
+      "new_persistence_rmse": 0.63995,
+      "old_blend_rmse": 0.61444,
+      "new_blend_rmse": 0.61447
+    },
+    {
+      "horizon_hours": 6,
+      "old_evaluation_origins": 40387,
+      "cross_year_origins_removed": 30,
+      "new_evaluation_origins": 40357,
+      "new_predictions_changed_on_retained_origins": 40357,
+      "old_persistence_rmse": 1.87317,
+      "new_persistence_rmse": 1.87384,
+      "old_blend_rmse": 1.79912,
+      "new_blend_rmse": 1.79975
+    },
+    {
+      "horizon_hours": 12,
+      "old_evaluation_origins": 40297,
+      "cross_year_origins_removed": 60,
+      "new_evaluation_origins": 40237,
+      "new_predictions_changed_on_retained_origins": 40237,
+      "old_persistence_rmse": 2.56606,
+      "new_persistence_rmse": 2.56779,
+      "old_blend_rmse": 2.45378,
+      "new_blend_rmse": 2.4554
+    },
+    {
+      "horizon_hours": 24,
+      "old_evaluation_origins": 40188,
+      "cross_year_origins_removed": 120,
+      "new_evaluation_origins": 40068,
+      "new_predictions_changed_on_retained_origins": 40068,
+      "old_persistence_rmse": 3.26082,
+      "new_persistence_rmse": 3.26467,
+      "old_blend_rmse": 3.14856,
+      "new_blend_rmse": 3.15215
+    }
+  ],
+  "new_station_scores": [
+    {
+      "horizon_hours": 1,
+      "old_ridge_rmse": 0.63571,
+      "new_ridge_rmse": 0.63571,
+      "old_ridge_mae": 0.18303,
+      "new_ridge_mae": 0.18303
+    },
+    {
+      "horizon_hours": 6,
+      "old_ridge_rmse": 1.44783,
+      "new_ridge_rmse": 1.44784,
+      "old_ridge_mae": 0.63303,
+      "new_ridge_mae": 0.63305
+    },
+    {
+      "horizon_hours": 12,
+      "old_ridge_rmse": 2.00371,
+      "new_ridge_rmse": 2.00372,
+      "old_ridge_mae": 0.99578,
+      "new_ridge_mae": 0.99584
+    },
+    {
+      "horizon_hours": 24,
+      "old_ridge_rmse": 2.71204,
+      "new_ridge_rmse": 2.71211,
+      "old_ridge_mae": 1.51326,
+      "new_ridge_mae": 1.51342
+    }
+  ],
+  "new_station_ledger_comparison": {
+    "rows": 837338,
+    "ridge_predictions_changed": 837337,
+    "maximum_absolute_prediction_change_vwc_points": 0.01065801
+  },
+  "interpretation": "Original annual target-year split admitted previous-year origins; corrected split requires origin and target in the same calendar year. New-station test origins remain unchanged but fitted Ridge coefficients may change."
+}

@@ -1,0 +1,38 @@
+{
+  "1h": {
+    "chosen_alpha": 100.0,
+    "validation_rmse_vwc_percentage_points": 0.24888393382786078,
+    "test_ridge_rmse_vwc_percentage_points": 0.2789635123679102,
+    "test_persistence_rmse_vwc_percentage_points": 0.2802966408941636,
+    "test_ridge_r2": 0.9822661268032773,
+    "test_persistence_r2": 0.982096226289298,
+    "n_test": 3190
+  },
+  "6h": {
+    "chosen_alpha": 1000.0,
+    "validation_rmse_vwc_percentage_points": 0.6061374172442592,
+    "test_ridge_rmse_vwc_percentage_points": 0.75957119552772,
+    "test_persistence_rmse_vwc_percentage_points": 0.7685913108893458,
+    "test_ridge_r2": 0.8636344379631501,
+    "test_persistence_r2": 0.8603764508312293,
+    "n_test": 3150
+  },
+  "12h": {
+    "chosen_alpha": 1000.0,
+    "validation_rmse_vwc_percentage_points": 0.8369234436470557,
+    "test_ridge_rmse_vwc_percentage_points": 1.2081007776073642,
+    "test_persistence_rmse_vwc_percentage_points": 1.166986398114782,
+    "test_ridge_r2": 0.634572398443175,
+    "test_persistence_r2": 0.6590218045695282,
+    "n_test": 3102
+  },
+  "24h": {
+    "chosen_alpha": 1000.0,
+    "validation_rmse_vwc_percentage_points": 1.069769516847367,
+    "test_ridge_rmse_vwc_percentage_points": 1.8824908557792868,
+    "test_persistence_rmse_vwc_percentage_points": 1.6679906118752763,
+    "test_ridge_r2": 0.012556341390312031,
+    "test_persistence_r2": 0.22476427430880863,
+    "n_test": 3006
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "status": "exploratory; specified after seeing the 35-station outcomes",
+  "resampling_unit": "whole station, with paired errors and all available 2026 hours retained",
+  "interpretation": "sensitivity to selected station mix; not a population or future-year confidence interval",
+  "random_seed": 42,
+  "bootstrap_repetitions": 10000,
+  "results": [
+    {
+      "horizon_hours": 1,
+      "n_stations": 35,
+      "n_origins": 210301,
+      "pooled_ridge_minus_persistence_rmse": 0.01743,
+      "station_bootstrap_rmse_2p5_97p5": [
+        -0.00999,
+        0.0518
+      ],
+      "leave_one_station_out_rmse_range": [
+        -0.0021,
+        0.01935
+      ],
+      "leave_one_station_out_rmse_sign_reversals": 1,
+      "leave_one_station_out_rmse_sign_reversal_stations": [
+        "OR_Coos_Bay_8_SW"
+      ],
+      "pooled_ridge_minus_persistence_mae": 0.02141,
+      "station_bootstrap_mae_2p5_97p5": [
+        0.01602,
+        0.02728
+      ],
+      "leave_one_station_out_mae_range": [
+        0.02007,
+        0.02245
+      ],
+      "leave_one_station_out_mae_sign_reversals": 0
+    },
+    {
+      "horizon_hours": 6,
+      "n_stations": 35,
+      "n_origins": 209662,
+      "pooled_ridge_minus_persistence_rmse": -0.01621,
+      "station_bootstrap_rmse_2p5_97p5": [
+        -0.0342,
+        0.0015
+      ],
+      "leave_one_station_out_rmse_range": [
+        -0.01986,
+        -0.01168
+      ],
+      "leave_one_station_out_rmse_sign_reversals": 0,
+      "leave_one_station_out_rmse_sign_reversal_stations": [],
+      "pooled_ridge_minus_persistence_mae": 0.06505,
+      "station_bootstrap_mae_2p5_97p5": [
+        0.02249,
+        0.11101
+      ],
+      "leave_one_station_out_mae_range": [
+        0.05253,
+        0.07288
+      ],
+      "leave_one_station_out_mae_sign_reversals": 0
+    },
+    {
+      "horizon_hours": 12,
+      "n_stations": 35,
+      "n_origins": 209103,
+      "pooled_ridge_minus_persistence_rmse": -0.02676,
+      "station_bootstrap_rmse_2p5_97p5": [
+        -0.0543,
+        0.00055
+      ],
+      "leave_one_station_out_rmse_range": [
+        -0.03376,
+        -0.02012
+      ],
+      "leave_one_station_out_rmse_sign_reversals": 0,
+      "leave_one_station_out_rmse_sign_reversal_stations": [],
+      "pooled_ridge_minus_persistence_mae": 0.08625,
+      "station_bootstrap_mae_2p5_97p5": [
+        0.0176,
+        0.16063
+      ],
+      "leave_one_station_out_mae_range": [
+        0.06495,
+        0.09636
+      ],
+      "leave_one_station_out_mae_sign_reversals": 0
+    },
+    {
+      "horizon_hours": 24,
+      "n_stations": 35,
+      "n_origins": 208272,
+      "pooled_ridge_minus_persistence_rmse": -0.01857,
+      "station_bootstrap_rmse_2p5_97p5": [
+        -0.06199,
+        0.03259
+      ],
+      "leave_one_station_out_rmse_range": [
+        -0.03219,
+        -0.00918
+      ],
+      "leave_one_station_out_rmse_sign_reversals": 0,
+      "leave_one_station_out_rmse_sign_reversal_stations": [],
+      "pooled_ridge_minus_persistence_mae": 0.16435,
+      "station_bootstrap_mae_2p5_97p5": [
+        0.06546,
+        0.27047
+      ],
+      "leave_one_station_out_mae_range": [
+        0.13243,
+        0.18246
+      ],
+      "leave_one_station_out_mae_sign_reversals": 0
+    }
+  ]
+}

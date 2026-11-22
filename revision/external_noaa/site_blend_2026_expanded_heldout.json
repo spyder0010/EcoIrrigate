@@ -1,0 +1,1171 @@
+{
+  "method": {
+    "description": "A convex blend of persistence and pooled residual Ridge, with one weight per station and horizon.",
+    "feature_columns": [
+      "vwc_current",
+      "hour_sin",
+      "hour_cos",
+      "day_sin",
+      "day_cos",
+      "temp_current",
+      "rh_current",
+      "solar_current",
+      "vwc_lag_1",
+      "vwc_change_1",
+      "vwc_lag_3",
+      "vwc_change_3",
+      "vwc_lag_6",
+      "vwc_change_6",
+      "vwc_lag_12",
+      "vwc_change_12",
+      "vwc_lag_24",
+      "vwc_change_24",
+      "vwc_mean_3",
+      "rain_sum_3",
+      "temp_mean_3",
+      "vwc_mean_6",
+      "rain_sum_6",
+      "temp_mean_6",
+      "vwc_mean_24",
+      "rain_sum_24",
+      "temp_mean_24",
+      "station_AZ",
+      "station_CA",
+      "station_FL"
+    ],
+    "station_encoding": "The original AZ, CA and FL indicators are fixed; the four added stations share the all-zero reference encoding in Ridge and retain separate validation-selected blend weights.",
+    "alpha_grid": [
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "weight_grid": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "selection": "Train Ridge on 2023; select pooled alpha and station weights by 2024 RMSE; refit on all years before the evaluation year.",
+    "evaluation_year": 2026,
+    "stations": [
+      "AZ_Tucson_11_W",
+      "CA_Merced_23_WSW",
+      "FL_Sebring_23_SSE",
+      "IA_Des_Moines_17_E",
+      "IL_Champaign_9_SW",
+      "SC_Blackville_3_W",
+      "TX_Austin_33_NW"
+    ],
+    "expanded": true,
+    "test_status": "2025 is exploratory development evidence. The original 3-station 2026 check was frozen before that year's download. The 2026 expanded check was specified after inspecting original-station outcomes but before downloading the four added stations."
+  },
+  "results": [
+    {
+      "horizon_hours": 1,
+      "station": "ALL",
+      "n_evaluation_origins": 40480,
+      "selected_alpha": 0.1,
+      "site_weight": {
+        "AZ_Tucson_11_W": 1.0,
+        "CA_Merced_23_WSW": 0.5,
+        "FL_Sebring_23_SSE": 1.0,
+        "IA_Des_Moines_17_E": 1.0,
+        "IL_Champaign_9_SW": 1.0,
+        "SC_Blackville_3_W": 1.0,
+        "TX_Austin_33_NW": 1.0
+      },
+      "validation_selection": {
+        "AZ_Tucson_11_W": {
+          "n_validation": 7537,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 0.50232,
+            "0.25": 0.4911,
+            "0.5": 0.48122,
+            "0.75": 0.47275,
+            "1.0": 0.46577
+          }
+        },
+        "CA_Merced_23_WSW": {
+          "n_validation": 8651,
+          "weight": 0.5,
+          "rmse_by_weight": {
+            "0.0": 0.12991,
+            "0.25": 0.12598,
+            "0.5": 0.12438,
+            "0.75": 0.12521,
+            "1.0": 0.1284
+          }
+        },
+        "FL_Sebring_23_SSE": {
+          "n_validation": 2320,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 0.34444,
+            "0.25": 0.33778,
+            "0.5": 0.33221,
+            "0.75": 0.3278,
+            "1.0": 0.32458
+          }
+        },
+        "IA_Des_Moines_17_E": {
+          "n_validation": 6124,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 0.47122,
+            "0.25": 0.46194,
+            "0.5": 0.4554,
+            "0.75": 0.45173,
+            "1.0": 0.451
+          }
+        },
+        "IL_Champaign_9_SW": {
+          "n_validation": 4727,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 0.47559,
+            "0.25": 0.46194,
+            "0.5": 0.45069,
+            "0.75": 0.44201,
+            "1.0": 0.43606
+          }
+        },
+        "SC_Blackville_3_W": {
+          "n_validation": 8701,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 0.39128,
+            "0.25": 0.38133,
+            "0.5": 0.37407,
+            "0.75": 0.36968,
+            "1.0": 0.36824
+          }
+        },
+        "TX_Austin_33_NW": {
+          "n_validation": 8754,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 0.8781,
+            "0.25": 0.8597,
+            "0.5": 0.84361,
+            "0.75": 0.82997,
+            "1.0": 0.8189
+          }
+        }
+      },
+      "persistence_rmse": 0.63995,
+      "ridge_rmse": 0.61464,
+      "blend_rmse": 0.61447,
+      "blend_minus_persistence_rmse": -0.02548,
+      "persistence_mae": 0.18509,
+      "ridge_mae": 0.19145,
+      "blend_mae": 0.18967
+    },
+    {
+      "horizon_hours": 1,
+      "station": "AZ_Tucson_11_W",
+      "n_evaluation_origins": 7588,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 7537,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 0.50232,
+          "0.25": 0.4911,
+          "0.5": 0.48122,
+          "0.75": 0.47275,
+          "1.0": 0.46577
+        }
+      },
+      "persistence_rmse": 0.47427,
+      "ridge_rmse": 0.43526,
+      "blend_rmse": 0.43526,
+      "blend_minus_persistence_rmse": -0.03901,
+      "persistence_mae": 0.22736,
+      "ridge_mae": 0.19933,
+      "blend_mae": 0.19933
+    },
+    {
+      "horizon_hours": 1,
+      "station": "CA_Merced_23_WSW",
+      "n_evaluation_origins": 3302,
+      "selected_alpha": 0.1,
+      "site_weight": 0.5,
+      "validation_selection": {
+        "n_validation": 8651,
+        "weight": 0.5,
+        "rmse_by_weight": {
+          "0.0": 0.12991,
+          "0.25": 0.12598,
+          "0.5": 0.12438,
+          "0.75": 0.12521,
+          "1.0": 0.1284
+        }
+      },
+      "persistence_rmse": 0.08564,
+      "ridge_rmse": 0.09981,
+      "blend_rmse": 0.08623,
+      "blend_minus_persistence_rmse": 0.00059,
+      "persistence_mae": 0.01726,
+      "ridge_mae": 0.05993,
+      "blend_mae": 0.03807
+    },
+    {
+      "horizon_hours": 1,
+      "station": "FL_Sebring_23_SSE",
+      "n_evaluation_origins": 2652,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 2320,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 0.34444,
+          "0.25": 0.33778,
+          "0.5": 0.33221,
+          "0.75": 0.3278,
+          "1.0": 0.32458
+        }
+      },
+      "persistence_rmse": 0.17712,
+      "ridge_rmse": 0.18531,
+      "blend_rmse": 0.18531,
+      "blend_minus_persistence_rmse": 0.00819,
+      "persistence_mae": 0.03718,
+      "ridge_mae": 0.05752,
+      "blend_mae": 0.05752
+    },
+    {
+      "horizon_hours": 1,
+      "station": "IA_Des_Moines_17_E",
+      "n_evaluation_origins": 6412,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 6124,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 0.47122,
+          "0.25": 0.46194,
+          "0.5": 0.4554,
+          "0.75": 0.45173,
+          "1.0": 0.451
+        }
+      },
+      "persistence_rmse": 0.53578,
+      "ridge_rmse": 0.50472,
+      "blend_rmse": 0.50472,
+      "blend_minus_persistence_rmse": -0.03107,
+      "persistence_mae": 0.14083,
+      "ridge_mae": 0.14976,
+      "blend_mae": 0.14976
+    },
+    {
+      "horizon_hours": 1,
+      "station": "IL_Champaign_9_SW",
+      "n_evaluation_origins": 5986,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 4727,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 0.47559,
+          "0.25": 0.46194,
+          "0.5": 0.45069,
+          "0.75": 0.44201,
+          "1.0": 0.43606
+        }
+      },
+      "persistence_rmse": 0.80352,
+      "ridge_rmse": 0.80521,
+      "blend_rmse": 0.80521,
+      "blend_minus_persistence_rmse": 0.00169,
+      "persistence_mae": 0.28142,
+      "ridge_mae": 0.28436,
+      "blend_mae": 0.28436
+    },
+    {
+      "horizon_hours": 1,
+      "station": "SC_Blackville_3_W",
+      "n_evaluation_origins": 6976,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 8701,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 0.39128,
+          "0.25": 0.38133,
+          "0.5": 0.37407,
+          "0.75": 0.36968,
+          "1.0": 0.36824
+        }
+      },
+      "persistence_rmse": 0.50007,
+      "ridge_rmse": 0.50199,
+      "blend_rmse": 0.50199,
+      "blend_minus_persistence_rmse": 0.00192,
+      "persistence_mae": 0.22226,
+      "ridge_mae": 0.24706,
+      "blend_mae": 0.24706
+    },
+    {
+      "horizon_hours": 1,
+      "station": "TX_Austin_33_NW",
+      "n_evaluation_origins": 7564,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 8754,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 0.8781,
+          "0.25": 0.8597,
+          "0.5": 0.84361,
+          "0.75": 0.82997,
+          "1.0": 0.8189
+        }
+      },
+      "persistence_rmse": 0.98333,
+      "ridge_rmse": 0.92405,
+      "blend_rmse": 0.92405,
+      "blend_minus_persistence_rmse": -0.05928,
+      "persistence_mae": 0.19479,
+      "ridge_mae": 0.19846,
+      "blend_mae": 0.19846
+    },
+    {
+      "horizon_hours": 6,
+      "station": "ALL",
+      "n_evaluation_origins": 40357,
+      "selected_alpha": 0.1,
+      "site_weight": {
+        "AZ_Tucson_11_W": 1.0,
+        "CA_Merced_23_WSW": 0.25,
+        "FL_Sebring_23_SSE": 0.25,
+        "IA_Des_Moines_17_E": 0.5,
+        "IL_Champaign_9_SW": 0.75,
+        "SC_Blackville_3_W": 0.75,
+        "TX_Austin_33_NW": 1.0
+      },
+      "validation_selection": {
+        "AZ_Tucson_11_W": {
+          "n_validation": 7532,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 1.53107,
+            "0.25": 1.47527,
+            "0.5": 1.42388,
+            "0.75": 1.37742,
+            "1.0": 1.3364
+          }
+        },
+        "CA_Merced_23_WSW": {
+          "n_validation": 8644,
+          "weight": 0.25,
+          "rmse_by_weight": {
+            "0.0": 0.46337,
+            "0.25": 0.46174,
+            "0.5": 0.47101,
+            "0.75": 0.49057,
+            "1.0": 0.51924
+          }
+        },
+        "FL_Sebring_23_SSE": {
+          "n_validation": 2310,
+          "weight": 0.25,
+          "rmse_by_weight": {
+            "0.0": 0.60951,
+            "0.25": 0.6065,
+            "0.5": 0.60988,
+            "0.75": 0.61953,
+            "1.0": 0.63517
+          }
+        },
+        "IA_Des_Moines_17_E": {
+          "n_validation": 6113,
+          "weight": 0.5,
+          "rmse_by_weight": {
+            "0.0": 1.34767,
+            "0.25": 1.33584,
+            "0.5": 1.33058,
+            "0.75": 1.33195,
+            "1.0": 1.33994
+          }
+        },
+        "IL_Champaign_9_SW": {
+          "n_validation": 4714,
+          "weight": 0.75,
+          "rmse_by_weight": {
+            "0.0": 1.64277,
+            "0.25": 1.62266,
+            "0.5": 1.60998,
+            "0.75": 1.60493,
+            "1.0": 1.60758
+          }
+        },
+        "SC_Blackville_3_W": {
+          "n_validation": 8692,
+          "weight": 0.75,
+          "rmse_by_weight": {
+            "0.0": 1.25396,
+            "0.25": 1.2401,
+            "0.5": 1.23226,
+            "0.75": 1.23053,
+            "1.0": 1.23496
+          }
+        },
+        "TX_Austin_33_NW": {
+          "n_validation": 8746,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 2.4711,
+            "0.25": 2.44272,
+            "0.5": 2.42033,
+            "0.75": 2.40409,
+            "1.0": 2.39414
+          }
+        }
+      },
+      "persistence_rmse": 1.87384,
+      "ridge_rmse": 1.80419,
+      "blend_rmse": 1.79975,
+      "blend_minus_persistence_rmse": -0.07409,
+      "persistence_mae": 0.72798,
+      "ridge_mae": 0.71503,
+      "blend_mae": 0.683
+    },
+    {
+      "horizon_hours": 6,
+      "station": "AZ_Tucson_11_W",
+      "n_evaluation_origins": 7582,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 7532,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 1.53107,
+          "0.25": 1.47527,
+          "0.5": 1.42388,
+          "0.75": 1.37742,
+          "1.0": 1.3364
+        }
+      },
+      "persistence_rmse": 1.51937,
+      "ridge_rmse": 1.31121,
+      "blend_rmse": 1.31121,
+      "blend_minus_persistence_rmse": -0.20816,
+      "persistence_mae": 1.02017,
+      "ridge_mae": 0.79415,
+      "blend_mae": 0.79415
+    },
+    {
+      "horizon_hours": 6,
+      "station": "CA_Merced_23_WSW",
+      "n_evaluation_origins": 3296,
+      "selected_alpha": 0.1,
+      "site_weight": 0.25,
+      "validation_selection": {
+        "n_validation": 8644,
+        "weight": 0.25,
+        "rmse_by_weight": {
+          "0.0": 0.46337,
+          "0.25": 0.46174,
+          "0.5": 0.47101,
+          "0.75": 0.49057,
+          "1.0": 0.51924
+        }
+      },
+      "persistence_rmse": 0.27869,
+      "ridge_rmse": 0.39452,
+      "blend_rmse": 0.28104,
+      "blend_minus_persistence_rmse": 0.00235,
+      "persistence_mae": 0.06526,
+      "ridge_mae": 0.2771,
+      "blend_mae": 0.10132
+    },
+    {
+      "horizon_hours": 6,
+      "station": "FL_Sebring_23_SSE",
+      "n_evaluation_origins": 2642,
+      "selected_alpha": 0.1,
+      "site_weight": 0.25,
+      "validation_selection": {
+        "n_validation": 2310,
+        "weight": 0.25,
+        "rmse_by_weight": {
+          "0.0": 0.60951,
+          "0.25": 0.6065,
+          "0.5": 0.60988,
+          "0.75": 0.61953,
+          "1.0": 0.63517
+        }
+      },
+      "persistence_rmse": 0.41063,
+      "ridge_rmse": 0.45964,
+      "blend_rmse": 0.41091,
+      "blend_minus_persistence_rmse": 0.00029,
+      "persistence_mae": 0.15344,
+      "ridge_mae": 0.25962,
+      "blend_mae": 0.17026
+    },
+    {
+      "horizon_hours": 6,
+      "station": "IA_Des_Moines_17_E",
+      "n_evaluation_origins": 6386,
+      "selected_alpha": 0.1,
+      "site_weight": 0.5,
+      "validation_selection": {
+        "n_validation": 6113,
+        "weight": 0.5,
+        "rmse_by_weight": {
+          "0.0": 1.34767,
+          "0.25": 1.33584,
+          "0.5": 1.33058,
+          "0.75": 1.33195,
+          "1.0": 1.33994
+        }
+      },
+      "persistence_rmse": 1.68256,
+      "ridge_rmse": 1.69282,
+      "blend_rmse": 1.67367,
+      "blend_minus_persistence_rmse": -0.00889,
+      "persistence_mae": 0.58525,
+      "ridge_mae": 0.56141,
+      "blend_mae": 0.52739
+    },
+    {
+      "horizon_hours": 6,
+      "station": "IL_Champaign_9_SW",
+      "n_evaluation_origins": 5943,
+      "selected_alpha": 0.1,
+      "site_weight": 0.75,
+      "validation_selection": {
+        "n_validation": 4714,
+        "weight": 0.75,
+        "rmse_by_weight": {
+          "0.0": 1.64277,
+          "0.25": 1.62266,
+          "0.5": 1.60998,
+          "0.75": 1.60493,
+          "1.0": 1.60758
+        }
+      },
+      "persistence_rmse": 2.17498,
+      "ridge_rmse": 2.07684,
+      "blend_rmse": 2.09139,
+      "blend_minus_persistence_rmse": -0.08359,
+      "persistence_mae": 1.12288,
+      "ridge_mae": 1.05101,
+      "blend_mae": 1.05509
+    },
+    {
+      "horizon_hours": 6,
+      "station": "SC_Blackville_3_W",
+      "n_evaluation_origins": 6954,
+      "selected_alpha": 0.1,
+      "site_weight": 0.75,
+      "validation_selection": {
+        "n_validation": 8692,
+        "weight": 0.75,
+        "rmse_by_weight": {
+          "0.0": 1.25396,
+          "0.25": 1.2401,
+          "0.5": 1.23226,
+          "0.75": 1.23053,
+          "1.0": 1.23496
+        }
+      },
+      "persistence_rmse": 1.3544,
+      "ridge_rmse": 1.359,
+      "blend_rmse": 1.34681,
+      "blend_minus_persistence_rmse": -0.00759,
+      "persistence_mae": 0.56519,
+      "ridge_mae": 0.67537,
+      "blend_mae": 0.63446
+    },
+    {
+      "horizon_hours": 6,
+      "station": "TX_Austin_33_NW",
+      "n_evaluation_origins": 7554,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 8746,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 2.4711,
+          "0.25": 2.44272,
+          "0.5": 2.42033,
+          "0.75": 2.40409,
+          "1.0": 2.39414
+        }
+      },
+      "persistence_rmse": 2.92324,
+      "ridge_rmse": 2.8296,
+      "blend_rmse": 2.8296,
+      "blend_minus_persistence_rmse": -0.09363,
+      "persistence_mae": 0.88467,
+      "ridge_mae": 0.88805,
+      "blend_mae": 0.88805
+    },
+    {
+      "horizon_hours": 12,
+      "station": "ALL",
+      "n_evaluation_origins": 40237,
+      "selected_alpha": 0.1,
+      "site_weight": {
+        "AZ_Tucson_11_W": 1.0,
+        "CA_Merced_23_WSW": 0.25,
+        "FL_Sebring_23_SSE": 0.5,
+        "IA_Des_Moines_17_E": 0.5,
+        "IL_Champaign_9_SW": 0.75,
+        "SC_Blackville_3_W": 0.75,
+        "TX_Austin_33_NW": 1.0
+      },
+      "validation_selection": {
+        "AZ_Tucson_11_W": {
+          "n_validation": 7526,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 1.98531,
+            "0.25": 1.90825,
+            "0.5": 1.83913,
+            "0.75": 1.7789,
+            "1.0": 1.72849
+          }
+        },
+        "CA_Merced_23_WSW": {
+          "n_validation": 8638,
+          "weight": 0.25,
+          "rmse_by_weight": {
+            "0.0": 0.70266,
+            "0.25": 0.69875,
+            "0.5": 0.70558,
+            "0.75": 0.72282,
+            "1.0": 0.74977
+          }
+        },
+        "FL_Sebring_23_SSE": {
+          "n_validation": 2301,
+          "weight": 0.5,
+          "rmse_by_weight": {
+            "0.0": 0.74486,
+            "0.25": 0.73175,
+            "0.5": 0.73067,
+            "0.75": 0.74168,
+            "1.0": 0.76426
+          }
+        },
+        "IA_Des_Moines_17_E": {
+          "n_validation": 6101,
+          "weight": 0.5,
+          "rmse_by_weight": {
+            "0.0": 1.92419,
+            "0.25": 1.90311,
+            "0.5": 1.89348,
+            "0.75": 1.89547,
+            "1.0": 1.90903
+          }
+        },
+        "IL_Champaign_9_SW": {
+          "n_validation": 4702,
+          "weight": 0.75,
+          "rmse_by_weight": {
+            "0.0": 2.40981,
+            "0.25": 2.37947,
+            "0.5": 2.36266,
+            "0.75": 2.35964,
+            "1.0": 2.37049
+          }
+        },
+        "SC_Blackville_3_W": {
+          "n_validation": 8686,
+          "weight": 0.75,
+          "rmse_by_weight": {
+            "0.0": 1.82921,
+            "0.25": 1.80538,
+            "0.5": 1.79254,
+            "0.75": 1.79092,
+            "1.0": 1.80055
+          }
+        },
+        "TX_Austin_33_NW": {
+          "n_validation": 8740,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 3.31537,
+            "0.25": 3.26493,
+            "0.5": 3.22431,
+            "0.75": 3.19389,
+            "1.0": 3.17395
+          }
+        }
+      },
+      "persistence_rmse": 2.56779,
+      "ridge_rmse": 2.46123,
+      "blend_rmse": 2.4554,
+      "blend_minus_persistence_rmse": -0.11239,
+      "persistence_mae": 1.12863,
+      "ridge_mae": 1.09916,
+      "blend_mae": 1.06157
+    },
+    {
+      "horizon_hours": 12,
+      "station": "AZ_Tucson_11_W",
+      "n_evaluation_origins": 7576,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 7526,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 1.98531,
+          "0.25": 1.90825,
+          "0.5": 1.83913,
+          "0.75": 1.7789,
+          "1.0": 1.72849
+        }
+      },
+      "persistence_rmse": 1.94715,
+      "ridge_rmse": 1.67097,
+      "blend_rmse": 1.67097,
+      "blend_minus_persistence_rmse": -0.27619,
+      "persistence_mae": 1.36096,
+      "ridge_mae": 1.01709,
+      "blend_mae": 1.01709
+    },
+    {
+      "horizon_hours": 12,
+      "station": "CA_Merced_23_WSW",
+      "n_evaluation_origins": 3284,
+      "selected_alpha": 0.1,
+      "site_weight": 0.25,
+      "validation_selection": {
+        "n_validation": 8638,
+        "weight": 0.25,
+        "rmse_by_weight": {
+          "0.0": 0.70266,
+          "0.25": 0.69875,
+          "0.5": 0.70558,
+          "0.75": 0.72282,
+          "1.0": 0.74977
+        }
+      },
+      "persistence_rmse": 0.39988,
+      "ridge_rmse": 0.48678,
+      "blend_rmse": 0.39586,
+      "blend_minus_persistence_rmse": -0.00402,
+      "persistence_mae": 0.099,
+      "ridge_mae": 0.29404,
+      "blend_mae": 0.12615
+    },
+    {
+      "horizon_hours": 12,
+      "station": "FL_Sebring_23_SSE",
+      "n_evaluation_origins": 2630,
+      "selected_alpha": 0.1,
+      "site_weight": 0.5,
+      "validation_selection": {
+        "n_validation": 2301,
+        "weight": 0.5,
+        "rmse_by_weight": {
+          "0.0": 0.74486,
+          "0.25": 0.73175,
+          "0.5": 0.73067,
+          "0.75": 0.74168,
+          "1.0": 0.76426
+        }
+      },
+      "persistence_rmse": 0.52726,
+      "ridge_rmse": 0.60887,
+      "blend_rmse": 0.54267,
+      "blend_minus_persistence_rmse": 0.01541,
+      "persistence_mae": 0.2473,
+      "ridge_mae": 0.42594,
+      "blend_mae": 0.31791
+    },
+    {
+      "horizon_hours": 12,
+      "station": "IA_Des_Moines_17_E",
+      "n_evaluation_origins": 6361,
+      "selected_alpha": 0.1,
+      "site_weight": 0.5,
+      "validation_selection": {
+        "n_validation": 6101,
+        "weight": 0.5,
+        "rmse_by_weight": {
+          "0.0": 1.92419,
+          "0.25": 1.90311,
+          "0.5": 1.89348,
+          "0.75": 1.89547,
+          "1.0": 1.90903
+        }
+      },
+      "persistence_rmse": 2.45956,
+      "ridge_rmse": 2.48619,
+      "blend_rmse": 2.44739,
+      "blend_minus_persistence_rmse": -0.01217,
+      "persistence_mae": 1.04444,
+      "ridge_mae": 0.93649,
+      "blend_mae": 0.91106
+    },
+    {
+      "horizon_hours": 12,
+      "station": "IL_Champaign_9_SW",
+      "n_evaluation_origins": 5911,
+      "selected_alpha": 0.1,
+      "site_weight": 0.75,
+      "validation_selection": {
+        "n_validation": 4702,
+        "weight": 0.75,
+        "rmse_by_weight": {
+          "0.0": 2.40981,
+          "0.25": 2.37947,
+          "0.5": 2.36266,
+          "0.75": 2.35964,
+          "1.0": 2.37049
+        }
+      },
+      "persistence_rmse": 3.09049,
+      "ridge_rmse": 2.90091,
+      "blend_rmse": 2.93233,
+      "blend_minus_persistence_rmse": -0.15816,
+      "persistence_mae": 1.73189,
+      "ridge_mae": 1.63979,
+      "blend_mae": 1.64122
+    },
+    {
+      "horizon_hours": 12,
+      "station": "SC_Blackville_3_W",
+      "n_evaluation_origins": 6933,
+      "selected_alpha": 0.1,
+      "site_weight": 0.75,
+      "validation_selection": {
+        "n_validation": 8686,
+        "weight": 0.75,
+        "rmse_by_weight": {
+          "0.0": 1.82921,
+          "0.25": 1.80538,
+          "0.5": 1.79254,
+          "0.75": 1.79092,
+          "1.0": 1.80055
+        }
+      },
+      "persistence_rmse": 1.95526,
+      "ridge_rmse": 1.96207,
+      "blend_rmse": 1.9416,
+      "blend_minus_persistence_rmse": -0.01366,
+      "persistence_mae": 0.9056,
+      "ridge_mae": 1.12054,
+      "blend_mae": 1.04498
+    },
+    {
+      "horizon_hours": 12,
+      "station": "TX_Austin_33_NW",
+      "n_evaluation_origins": 7542,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 8740,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 3.31537,
+          "0.25": 3.26493,
+          "0.5": 3.22431,
+          "0.75": 3.19389,
+          "1.0": 3.17395
+        }
+      },
+      "persistence_rmse": 3.88584,
+      "ridge_rmse": 3.73271,
+      "blend_rmse": 3.73271,
+      "blend_minus_persistence_rmse": -0.15313,
+      "persistence_mae": 1.45414,
+      "ridge_mae": 1.46076,
+      "blend_mae": 1.46076
+    },
+    {
+      "horizon_hours": 24,
+      "station": "ALL",
+      "n_evaluation_origins": 40068,
+      "selected_alpha": 0.1,
+      "site_weight": {
+        "AZ_Tucson_11_W": 1.0,
+        "CA_Merced_23_WSW": 0.5,
+        "FL_Sebring_23_SSE": 0.5,
+        "IA_Des_Moines_17_E": 0.5,
+        "IL_Champaign_9_SW": 0.75,
+        "SC_Blackville_3_W": 0.75,
+        "TX_Austin_33_NW": 1.0
+      },
+      "validation_selection": {
+        "AZ_Tucson_11_W": {
+          "n_validation": 7514,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 2.02636,
+            "0.25": 1.99836,
+            "0.5": 1.97708,
+            "0.75": 1.96273,
+            "1.0": 1.95546
+          }
+        },
+        "CA_Merced_23_WSW": {
+          "n_validation": 8626,
+          "weight": 0.5,
+          "rmse_by_weight": {
+            "0.0": 1.01758,
+            "0.25": 1.00418,
+            "0.5": 1.00294,
+            "0.75": 1.01391,
+            "1.0": 1.03669
+          }
+        },
+        "FL_Sebring_23_SSE": {
+          "n_validation": 2299,
+          "weight": 0.5,
+          "rmse_by_weight": {
+            "0.0": 0.98375,
+            "0.25": 0.9573,
+            "0.5": 0.95465,
+            "0.75": 0.97601,
+            "1.0": 1.01987
+          }
+        },
+        "IA_Des_Moines_17_E": {
+          "n_validation": 6077,
+          "weight": 0.5,
+          "rmse_by_weight": {
+            "0.0": 2.60823,
+            "0.25": 2.57235,
+            "0.5": 2.55685,
+            "0.75": 2.5621,
+            "1.0": 2.58798
+          }
+        },
+        "IL_Champaign_9_SW": {
+          "n_validation": 4678,
+          "weight": 0.75,
+          "rmse_by_weight": {
+            "0.0": 3.33759,
+            "0.25": 3.29129,
+            "0.5": 3.26778,
+            "0.75": 3.26756,
+            "1.0": 3.29062
+          }
+        },
+        "SC_Blackville_3_W": {
+          "n_validation": 8674,
+          "weight": 0.75,
+          "rmse_by_weight": {
+            "0.0": 2.62501,
+            "0.25": 2.56958,
+            "0.5": 2.53414,
+            "0.75": 2.51952,
+            "1.0": 2.52608
+          }
+        },
+        "TX_Austin_33_NW": {
+          "n_validation": 8728,
+          "weight": 1.0,
+          "rmse_by_weight": {
+            "0.0": 4.30353,
+            "0.25": 4.22518,
+            "0.5": 4.15722,
+            "0.75": 4.10017,
+            "1.0": 4.05448
+          }
+        }
+      },
+      "persistence_rmse": 3.26467,
+      "ridge_rmse": 3.15996,
+      "blend_rmse": 3.15215,
+      "blend_minus_persistence_rmse": -0.11252,
+      "persistence_mae": 1.50285,
+      "ridge_mae": 1.59466,
+      "blend_mae": 1.55211
+    },
+    {
+      "horizon_hours": 24,
+      "station": "AZ_Tucson_11_W",
+      "n_evaluation_origins": 7564,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 7514,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 2.02636,
+          "0.25": 1.99836,
+          "0.5": 1.97708,
+          "0.75": 1.96273,
+          "1.0": 1.95546
+        }
+      },
+      "persistence_rmse": 2.04314,
+      "ridge_rmse": 1.95934,
+      "blend_rmse": 1.95934,
+      "blend_minus_persistence_rmse": -0.0838,
+      "persistence_mae": 0.95985,
+      "ridge_mae": 1.00112,
+      "blend_mae": 1.00112
+    },
+    {
+      "horizon_hours": 24,
+      "station": "CA_Merced_23_WSW",
+      "n_evaluation_origins": 3249,
+      "selected_alpha": 0.1,
+      "site_weight": 0.5,
+      "validation_selection": {
+        "n_validation": 8626,
+        "weight": 0.5,
+        "rmse_by_weight": {
+          "0.0": 1.01758,
+          "0.25": 1.00418,
+          "0.5": 1.00294,
+          "0.75": 1.01391,
+          "1.0": 1.03669
+        }
+      },
+      "persistence_rmse": 0.49173,
+      "ridge_rmse": 0.68034,
+      "blend_rmse": 0.52574,
+      "blend_minus_persistence_rmse": 0.03401,
+      "persistence_mae": 0.12345,
+      "ridge_mae": 0.46313,
+      "blend_mae": 0.27657
+    },
+    {
+      "horizon_hours": 24,
+      "station": "FL_Sebring_23_SSE",
+      "n_evaluation_origins": 2624,
+      "selected_alpha": 0.1,
+      "site_weight": 0.5,
+      "validation_selection": {
+        "n_validation": 2299,
+        "weight": 0.5,
+        "rmse_by_weight": {
+          "0.0": 0.98375,
+          "0.25": 0.9573,
+          "0.5": 0.95465,
+          "0.75": 0.97601,
+          "1.0": 1.01987
+        }
+      },
+      "persistence_rmse": 0.66542,
+      "ridge_rmse": 0.72659,
+      "blend_rmse": 0.66826,
+      "blend_minus_persistence_rmse": 0.00285,
+      "persistence_mae": 0.36124,
+      "ridge_mae": 0.54322,
+      "blend_mae": 0.43807
+    },
+    {
+      "horizon_hours": 24,
+      "station": "IA_Des_Moines_17_E",
+      "n_evaluation_origins": 6321,
+      "selected_alpha": 0.1,
+      "site_weight": 0.5,
+      "validation_selection": {
+        "n_validation": 6077,
+        "weight": 0.5,
+        "rmse_by_weight": {
+          "0.0": 2.60823,
+          "0.25": 2.57235,
+          "0.5": 2.55685,
+          "0.75": 2.5621,
+          "1.0": 2.58798
+        }
+      },
+      "persistence_rmse": 3.46535,
+      "ridge_rmse": 3.44723,
+      "blend_rmse": 3.41157,
+      "blend_minus_persistence_rmse": -0.05378,
+      "persistence_mae": 1.79521,
+      "ridge_mae": 1.53918,
+      "blend_mae": 1.55436
+    },
+    {
+      "horizon_hours": 24,
+      "station": "IL_Champaign_9_SW",
+      "n_evaluation_origins": 5889,
+      "selected_alpha": 0.1,
+      "site_weight": 0.75,
+      "validation_selection": {
+        "n_validation": 4678,
+        "weight": 0.75,
+        "rmse_by_weight": {
+          "0.0": 3.33759,
+          "0.25": 3.29129,
+          "0.5": 3.26778,
+          "0.75": 3.26756,
+          "1.0": 3.29062
+        }
+      },
+      "persistence_rmse": 3.88291,
+      "ridge_rmse": 3.72864,
+      "blend_rmse": 3.75111,
+      "blend_minus_persistence_rmse": -0.13181,
+      "persistence_mae": 2.29073,
+      "ridge_mae": 2.4192,
+      "blend_mae": 2.3755
+    },
+    {
+      "horizon_hours": 24,
+      "station": "SC_Blackville_3_W",
+      "n_evaluation_origins": 6903,
+      "selected_alpha": 0.1,
+      "site_weight": 0.75,
+      "validation_selection": {
+        "n_validation": 8674,
+        "weight": 0.75,
+        "rmse_by_weight": {
+          "0.0": 2.62501,
+          "0.25": 2.56958,
+          "0.5": 2.53414,
+          "0.75": 2.51952,
+          "1.0": 2.52608
+        }
+      },
+      "persistence_rmse": 2.7212,
+      "ridge_rmse": 2.6693,
+      "blend_rmse": 2.65303,
+      "blend_minus_persistence_rmse": -0.06817,
+      "persistence_mae": 1.49845,
+      "ridge_mae": 1.80558,
+      "blend_mae": 1.70981
+    },
+    {
+      "horizon_hours": 24,
+      "station": "TX_Austin_33_NW",
+      "n_evaluation_origins": 7518,
+      "selected_alpha": 0.1,
+      "site_weight": 1.0,
+      "validation_selection": {
+        "n_validation": 8728,
+        "weight": 1.0,
+        "rmse_by_weight": {
+          "0.0": 4.30353,
+          "0.25": 4.22518,
+          "0.5": 4.15722,
+          "0.75": 4.10017,
+          "1.0": 4.05448
+        }
+      },
+      "persistence_rmse": 4.86193,
+      "ridge_rmse": 4.64189,
+      "blend_rmse": 4.64189,
+      "blend_minus_persistence_rmse": -0.22004,
+      "persistence_mae": 2.18481,
+      "ridge_mae": 2.2549,
+      "blend_mae": 2.2549
+    }
+  ]
+}

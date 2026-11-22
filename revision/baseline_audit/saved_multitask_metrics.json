@@ -1,0 +1,93 @@
+{
+  "checkpoint": "deep_learning_model/results/models/MultiTaskNet_multi-task_20260214_155009.pt",
+  "checkpoint_epoch": 10,
+  "n_calibration": 2814,
+  "calibration": {
+    "n": 2814,
+    "rmse_vwc_percentage_points": 0.7864269969420378,
+    "mae_vwc_percentage_points": 0.6341870370707618,
+    "r2": 0.8367427260955383
+  },
+  "forecast": {
+    "12h": {
+      "model": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 2.4226845980380465,
+        "mae_vwc_percentage_points": 1.9905576389124306,
+        "r2": -0.6504086928204342
+      },
+      "persistence_last_sequence": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 1.1676384875151438,
+        "mae_vwc_percentage_points": 0.767181947405828,
+        "r2": 0.6166331564105255
+      },
+      "persistence_current": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 1.1543869078029663,
+        "mae_vwc_percentage_points": 0.7581272210376687,
+        "r2": 0.6252854722490782
+      }
+    },
+    "1h": {
+      "model": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 1.2293852986603249,
+        "mae_vwc_percentage_points": 0.933984539002759,
+        "r2": 0.599482268387385
+      },
+      "persistence_last_sequence": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 0.3171604088575608,
+        "mae_vwc_percentage_points": 0.11939943141435679,
+        "r2": 0.9733434675207496
+      },
+      "persistence_current": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 0.277722294861711,
+        "mae_vwc_percentage_points": 0.09696162046908315,
+        "r2": 0.979560644023451
+      }
+    },
+    "24h": {
+      "model": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 3.2829753357640334,
+        "mae_vwc_percentage_points": 2.8028304112669815,
+        "r2": -2.2388167613035024
+      },
+      "persistence_last_sequence": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 1.630379292752881,
+        "mae_vwc_percentage_points": 1.109506041222459,
+        "r2": 0.20121768744235602
+      },
+      "persistence_current": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 1.620103414793903,
+        "mae_vwc_percentage_points": 1.1003589196872778,
+        "r2": 0.21125501127291113
+      }
+    },
+    "6h": {
+      "model": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 2.0020588252644638,
+        "mae_vwc_percentage_points": 1.6335009388666542,
+        "r2": -0.08730069087780734
+      },
+      "persistence_last_sequence": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 0.784889772205721,
+        "mae_vwc_percentage_points": 0.4899786780383795,
+        "r2": 0.8328858070720585
+      },
+      "persistence_current": {
+        "n": 2814,
+        "rmse_vwc_percentage_points": 0.7630787153364806,
+        "mae_vwc_percentage_points": 0.47378820184790327,
+        "r2": 0.8420445279073692
+      }
+    }
+  }
+}

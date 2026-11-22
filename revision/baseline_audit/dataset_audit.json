@@ -1,0 +1,39 @@
+{
+  "source": "New_Dataset/kolkata_unified_dataset.csv",
+  "source_sha256": "1f12bac2a35f78b8f2c6af0fe56142f2301471d9ef2203a3983a5a60444d6319",
+  "total_rows": 21312,
+  "null_cells_in_supplied_file": 0,
+  "duplicate_farm_timestamps": 0,
+  "farms": [
+    {
+      "farm": "Kolkata_Farm_1",
+      "rows": 10656,
+      "first_timestamp": "2025-01-05 00:00:00",
+      "last_timestamp": "2025-04-25 23:45:00",
+      "expected_15min_rows": 10656,
+      "missing_timestamps_in_supplied_file": 0,
+      "train_rows": 7459,
+      "validation_rows": 1598,
+      "test_rows": 1599,
+      "test_start": "2025-04-09 08:15:00"
+    },
+    {
+      "farm": "Kolkata_Farm_2",
+      "rows": 10656,
+      "first_timestamp": "2025-01-05 00:00:00",
+      "last_timestamp": "2025-04-25 23:45:00",
+      "expected_15min_rows": 10656,
+      "missing_timestamps_in_supplied_file": 0,
+      "train_rows": 7459,
+      "validation_rows": 1598,
+      "test_rows": 1599,
+      "test_start": "2025-04-09 08:15:00"
+    }
+  ],
+  "adc_voltage_correlation": 0.9999988817270536,
+  "adc_voltage_3v3_conversion_mae_v": 0.0002486801317446516,
+  "vwc_target_provenance": "not established by supplied CSV; independent per-record gravimetric target unavailable",
+  "claimed_128_historical_gaps": "not verifiable without original unfilled logs or a missingness mask",
+  "baseline_definition": "origin t observes VWC through t; target is VWC[t+h]; all targets held out in test segment; linear 1h trend extrapolates y[t]-y[t-4] by h/4; seasonal baseline uses t-96; train mean uses first 70% only",
+  "metrics_scope": "descriptive scores on supplied VWC series; not a field or water-savings validation"
+}

@@ -1,0 +1,1295 @@
+{
+  "method": {
+    "source": "site_blend_2026_expanded_heldout_ledger.csv",
+    "resamples": 3000,
+    "seed": 20261114,
+    "block_hours": [
+      24,
+      72
+    ],
+    "resampling": "Resample fixed calendar-time blocks with replacement within each station; use paired errors for both methods.",
+    "interpretation": "Conditional intervals for the observed stations and their incomplete 2026 coverage; stations are not independent population replicates."
+  },
+  "results": [
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "ALL",
+      "n_origins": 40480,
+      "n_blocks": 1740,
+      "persistence_rmse": 0.63995,
+      "ridge_rmse": 0.61464,
+      "blend_rmse": 0.61447,
+      "ridge_minus_persistence": -0.02531,
+      "blend_minus_persistence": -0.02548,
+      "ridge_minus_persistence_ci": [
+        -0.03532,
+        -0.01559
+      ],
+      "blend_minus_persistence_ci": [
+        -0.03543,
+        -0.01575
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7588,
+      "n_blocks": 317,
+      "persistence_rmse": 0.47427,
+      "ridge_rmse": 0.43526,
+      "blend_rmse": 0.43526,
+      "ridge_minus_persistence": -0.03901,
+      "blend_minus_persistence": -0.03901,
+      "ridge_minus_persistence_ci": [
+        -0.04764,
+        -0.03061
+      ],
+      "blend_minus_persistence_ci": [
+        -0.04764,
+        -0.03061
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3302,
+      "n_blocks": 143,
+      "persistence_rmse": 0.08564,
+      "ridge_rmse": 0.09981,
+      "blend_rmse": 0.08623,
+      "ridge_minus_persistence": 0.01416,
+      "blend_minus_persistence": 0.00059,
+      "ridge_minus_persistence_ci": [
+        0.00328,
+        0.03271
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00444,
+        0.00931
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2652,
+      "n_blocks": 114,
+      "persistence_rmse": 0.17712,
+      "ridge_rmse": 0.18531,
+      "blend_rmse": 0.18531,
+      "ridge_minus_persistence": 0.00819,
+      "blend_minus_persistence": 0.00819,
+      "ridge_minus_persistence_ci": [
+        -0.00574,
+        0.02134
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00574,
+        0.02134
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "IA_Des_Moines_17_E",
+      "n_origins": 6412,
+      "n_blocks": 274,
+      "persistence_rmse": 0.53578,
+      "ridge_rmse": 0.50472,
+      "blend_rmse": 0.50472,
+      "ridge_minus_persistence": -0.03107,
+      "blend_minus_persistence": -0.03107,
+      "ridge_minus_persistence_ci": [
+        -0.05169,
+        -0.00945
+      ],
+      "blend_minus_persistence_ci": [
+        -0.05169,
+        -0.00945
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "IL_Champaign_9_SW",
+      "n_origins": 5986,
+      "n_blocks": 267,
+      "persistence_rmse": 0.80352,
+      "ridge_rmse": 0.80521,
+      "blend_rmse": 0.80521,
+      "ridge_minus_persistence": 0.00169,
+      "blend_minus_persistence": 0.00169,
+      "ridge_minus_persistence_ci": [
+        -0.02031,
+        0.02189
+      ],
+      "blend_minus_persistence_ci": [
+        -0.02031,
+        0.02189
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "SC_Blackville_3_W",
+      "n_origins": 6976,
+      "n_blocks": 307,
+      "persistence_rmse": 0.50007,
+      "ridge_rmse": 0.50199,
+      "blend_rmse": 0.50199,
+      "ridge_minus_persistence": 0.00192,
+      "blend_minus_persistence": 0.00192,
+      "ridge_minus_persistence_ci": [
+        -0.01403,
+        0.0162
+      ],
+      "blend_minus_persistence_ci": [
+        -0.01403,
+        0.0162
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "TX_Austin_33_NW",
+      "n_origins": 7564,
+      "n_blocks": 318,
+      "persistence_rmse": 0.98333,
+      "ridge_rmse": 0.92405,
+      "blend_rmse": 0.92405,
+      "ridge_minus_persistence": -0.05928,
+      "blend_minus_persistence": -0.05928,
+      "ridge_minus_persistence_ci": [
+        -0.08353,
+        -0.03464
+      ],
+      "blend_minus_persistence_ci": [
+        -0.08353,
+        -0.03464
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "ALL",
+      "n_origins": 40480,
+      "n_blocks": 592,
+      "persistence_rmse": 0.63995,
+      "ridge_rmse": 0.61464,
+      "blend_rmse": 0.61447,
+      "ridge_minus_persistence": -0.02531,
+      "blend_minus_persistence": -0.02548,
+      "ridge_minus_persistence_ci": [
+        -0.0359,
+        -0.01418
+      ],
+      "blend_minus_persistence_ci": [
+        -0.03606,
+        -0.01431
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7588,
+      "n_blocks": 106,
+      "persistence_rmse": 0.47427,
+      "ridge_rmse": 0.43526,
+      "blend_rmse": 0.43526,
+      "ridge_minus_persistence": -0.03901,
+      "blend_minus_persistence": -0.03901,
+      "ridge_minus_persistence_ci": [
+        -0.048,
+        -0.02918
+      ],
+      "blend_minus_persistence_ci": [
+        -0.048,
+        -0.02918
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3302,
+      "n_blocks": 49,
+      "persistence_rmse": 0.08564,
+      "ridge_rmse": 0.09981,
+      "blend_rmse": 0.08623,
+      "ridge_minus_persistence": 0.01416,
+      "blend_minus_persistence": 0.00059,
+      "ridge_minus_persistence_ci": [
+        0.00085,
+        0.03584
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00556,
+        0.01112
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2652,
+      "n_blocks": 40,
+      "persistence_rmse": 0.17712,
+      "ridge_rmse": 0.18531,
+      "blend_rmse": 0.18531,
+      "ridge_minus_persistence": 0.00819,
+      "blend_minus_persistence": 0.00819,
+      "ridge_minus_persistence_ci": [
+        -0.00548,
+        0.02092
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00548,
+        0.02092
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "IA_Des_Moines_17_E",
+      "n_origins": 6412,
+      "n_blocks": 93,
+      "persistence_rmse": 0.53578,
+      "ridge_rmse": 0.50472,
+      "blend_rmse": 0.50472,
+      "ridge_minus_persistence": -0.03107,
+      "blend_minus_persistence": -0.03107,
+      "ridge_minus_persistence_ci": [
+        -0.05076,
+        -0.00997
+      ],
+      "blend_minus_persistence_ci": [
+        -0.05076,
+        -0.00997
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "IL_Champaign_9_SW",
+      "n_origins": 5986,
+      "n_blocks": 93,
+      "persistence_rmse": 0.80352,
+      "ridge_rmse": 0.80521,
+      "blend_rmse": 0.80521,
+      "ridge_minus_persistence": 0.00169,
+      "blend_minus_persistence": 0.00169,
+      "ridge_minus_persistence_ci": [
+        -0.02752,
+        0.02601
+      ],
+      "blend_minus_persistence_ci": [
+        -0.02752,
+        0.02601
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "SC_Blackville_3_W",
+      "n_origins": 6976,
+      "n_blocks": 105,
+      "persistence_rmse": 0.50007,
+      "ridge_rmse": 0.50199,
+      "blend_rmse": 0.50199,
+      "ridge_minus_persistence": 0.00192,
+      "blend_minus_persistence": 0.00192,
+      "ridge_minus_persistence_ci": [
+        -0.0135,
+        0.01511
+      ],
+      "blend_minus_persistence_ci": [
+        -0.0135,
+        0.01511
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "TX_Austin_33_NW",
+      "n_origins": 7564,
+      "n_blocks": 106,
+      "persistence_rmse": 0.98333,
+      "ridge_rmse": 0.92405,
+      "blend_rmse": 0.92405,
+      "ridge_minus_persistence": -0.05928,
+      "blend_minus_persistence": -0.05928,
+      "ridge_minus_persistence_ci": [
+        -0.08091,
+        -0.03573
+      ],
+      "blend_minus_persistence_ci": [
+        -0.08091,
+        -0.03573
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "ALL",
+      "n_origins": 40357,
+      "n_blocks": 1734,
+      "persistence_rmse": 1.87384,
+      "ridge_rmse": 1.80419,
+      "blend_rmse": 1.79975,
+      "ridge_minus_persistence": -0.06965,
+      "blend_minus_persistence": -0.07409,
+      "ridge_minus_persistence_ci": [
+        -0.08395,
+        -0.05546
+      ],
+      "blend_minus_persistence_ci": [
+        -0.0874,
+        -0.06086
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7582,
+      "n_blocks": 317,
+      "persistence_rmse": 1.51937,
+      "ridge_rmse": 1.31121,
+      "blend_rmse": 1.31121,
+      "ridge_minus_persistence": -0.20816,
+      "blend_minus_persistence": -0.20816,
+      "ridge_minus_persistence_ci": [
+        -0.23432,
+        -0.18483
+      ],
+      "blend_minus_persistence_ci": [
+        -0.23432,
+        -0.18483
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3296,
+      "n_blocks": 143,
+      "persistence_rmse": 0.27869,
+      "ridge_rmse": 0.39452,
+      "blend_rmse": 0.28104,
+      "ridge_minus_persistence": 0.11584,
+      "blend_minus_persistence": 0.00235,
+      "ridge_minus_persistence_ci": [
+        0.07662,
+        0.1816
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00334,
+        0.0104
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2642,
+      "n_blocks": 113,
+      "persistence_rmse": 0.41063,
+      "ridge_rmse": 0.45964,
+      "blend_rmse": 0.41091,
+      "ridge_minus_persistence": 0.04901,
+      "blend_minus_persistence": 0.00029,
+      "ridge_minus_persistence_ci": [
+        0.02836,
+        0.07596
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00471,
+        0.00525
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "IA_Des_Moines_17_E",
+      "n_origins": 6386,
+      "n_blocks": 273,
+      "persistence_rmse": 1.68256,
+      "ridge_rmse": 1.69282,
+      "blend_rmse": 1.67367,
+      "ridge_minus_persistence": 0.01026,
+      "blend_minus_persistence": -0.00889,
+      "ridge_minus_persistence_ci": [
+        -0.0129,
+        0.03426
+      ],
+      "blend_minus_persistence_ci": [
+        -0.02176,
+        0.00327
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "IL_Champaign_9_SW",
+      "n_origins": 5943,
+      "n_blocks": 264,
+      "persistence_rmse": 2.17498,
+      "ridge_rmse": 2.07684,
+      "blend_rmse": 2.09139,
+      "ridge_minus_persistence": -0.09814,
+      "blend_minus_persistence": -0.08359,
+      "ridge_minus_persistence_ci": [
+        -0.12258,
+        -0.07235
+      ],
+      "blend_minus_persistence_ci": [
+        -0.10187,
+        -0.06455
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "SC_Blackville_3_W",
+      "n_origins": 6954,
+      "n_blocks": 307,
+      "persistence_rmse": 1.3544,
+      "ridge_rmse": 1.359,
+      "blend_rmse": 1.34681,
+      "ridge_minus_persistence": 0.0046,
+      "blend_minus_persistence": -0.00759,
+      "ridge_minus_persistence_ci": [
+        -0.01629,
+        0.02847
+      ],
+      "blend_minus_persistence_ci": [
+        -0.0229,
+        0.00969
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "TX_Austin_33_NW",
+      "n_origins": 7554,
+      "n_blocks": 317,
+      "persistence_rmse": 2.92324,
+      "ridge_rmse": 2.8296,
+      "blend_rmse": 2.8296,
+      "ridge_minus_persistence": -0.09363,
+      "blend_minus_persistence": -0.09363,
+      "ridge_minus_persistence_ci": [
+        -0.1362,
+        -0.04669
+      ],
+      "blend_minus_persistence_ci": [
+        -0.1362,
+        -0.04669
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "ALL",
+      "n_origins": 40357,
+      "n_blocks": 591,
+      "persistence_rmse": 1.87384,
+      "ridge_rmse": 1.80419,
+      "blend_rmse": 1.79975,
+      "ridge_minus_persistence": -0.06965,
+      "blend_minus_persistence": -0.07409,
+      "ridge_minus_persistence_ci": [
+        -0.08208,
+        -0.05646
+      ],
+      "blend_minus_persistence_ci": [
+        -0.08518,
+        -0.06276
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7582,
+      "n_blocks": 106,
+      "persistence_rmse": 1.51937,
+      "ridge_rmse": 1.31121,
+      "blend_rmse": 1.31121,
+      "ridge_minus_persistence": -0.20816,
+      "blend_minus_persistence": -0.20816,
+      "ridge_minus_persistence_ci": [
+        -0.23805,
+        -0.18144
+      ],
+      "blend_minus_persistence_ci": [
+        -0.23805,
+        -0.18144
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3296,
+      "n_blocks": 49,
+      "persistence_rmse": 0.27869,
+      "ridge_rmse": 0.39452,
+      "blend_rmse": 0.28104,
+      "ridge_minus_persistence": 0.11584,
+      "blend_minus_persistence": 0.00235,
+      "ridge_minus_persistence_ci": [
+        0.06893,
+        0.22245
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00473,
+        0.0177
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2642,
+      "n_blocks": 39,
+      "persistence_rmse": 0.41063,
+      "ridge_rmse": 0.45964,
+      "blend_rmse": 0.41091,
+      "ridge_minus_persistence": 0.04901,
+      "blend_minus_persistence": 0.00029,
+      "ridge_minus_persistence_ci": [
+        0.03022,
+        0.07418
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00428,
+        0.00447
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "IA_Des_Moines_17_E",
+      "n_origins": 6386,
+      "n_blocks": 93,
+      "persistence_rmse": 1.68256,
+      "ridge_rmse": 1.69282,
+      "blend_rmse": 1.67367,
+      "ridge_minus_persistence": 0.01026,
+      "blend_minus_persistence": -0.00889,
+      "ridge_minus_persistence_ci": [
+        -0.01082,
+        0.03342
+      ],
+      "blend_minus_persistence_ci": [
+        -0.02082,
+        0.003
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "IL_Champaign_9_SW",
+      "n_origins": 5943,
+      "n_blocks": 93,
+      "persistence_rmse": 2.17498,
+      "ridge_rmse": 2.07684,
+      "blend_rmse": 2.09139,
+      "ridge_minus_persistence": -0.09814,
+      "blend_minus_persistence": -0.08359,
+      "ridge_minus_persistence_ci": [
+        -0.12953,
+        -0.06366
+      ],
+      "blend_minus_persistence_ci": [
+        -0.10742,
+        -0.05745
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "SC_Blackville_3_W",
+      "n_origins": 6954,
+      "n_blocks": 105,
+      "persistence_rmse": 1.3544,
+      "ridge_rmse": 1.359,
+      "blend_rmse": 1.34681,
+      "ridge_minus_persistence": 0.0046,
+      "blend_minus_persistence": -0.00759,
+      "ridge_minus_persistence_ci": [
+        -0.01865,
+        0.02764
+      ],
+      "blend_minus_persistence_ci": [
+        -0.02423,
+        0.00889
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "TX_Austin_33_NW",
+      "n_origins": 7554,
+      "n_blocks": 106,
+      "persistence_rmse": 2.92324,
+      "ridge_rmse": 2.8296,
+      "blend_rmse": 2.8296,
+      "ridge_minus_persistence": -0.09363,
+      "blend_minus_persistence": -0.09363,
+      "ridge_minus_persistence_ci": [
+        -0.1282,
+        -0.0554
+      ],
+      "blend_minus_persistence_ci": [
+        -0.1282,
+        -0.0554
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "ALL",
+      "n_origins": 40237,
+      "n_blocks": 1725,
+      "persistence_rmse": 2.56779,
+      "ridge_rmse": 2.46123,
+      "blend_rmse": 2.4554,
+      "ridge_minus_persistence": -0.10656,
+      "blend_minus_persistence": -0.11239,
+      "ridge_minus_persistence_ci": [
+        -0.1356,
+        -0.07935
+      ],
+      "blend_minus_persistence_ci": [
+        -0.13985,
+        -0.08781
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7576,
+      "n_blocks": 316,
+      "persistence_rmse": 1.94715,
+      "ridge_rmse": 1.67097,
+      "blend_rmse": 1.67097,
+      "ridge_minus_persistence": -0.27619,
+      "blend_minus_persistence": -0.27619,
+      "ridge_minus_persistence_ci": [
+        -0.31595,
+        -0.24049
+      ],
+      "blend_minus_persistence_ci": [
+        -0.31595,
+        -0.24049
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3284,
+      "n_blocks": 142,
+      "persistence_rmse": 0.39988,
+      "ridge_rmse": 0.48678,
+      "blend_rmse": 0.39586,
+      "ridge_minus_persistence": 0.0869,
+      "blend_minus_persistence": -0.00402,
+      "ridge_minus_persistence_ci": [
+        0.05216,
+        0.16157
+      ],
+      "blend_minus_persistence_ci": [
+        -0.01065,
+        0.00185
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2630,
+      "n_blocks": 113,
+      "persistence_rmse": 0.52726,
+      "ridge_rmse": 0.60887,
+      "blend_rmse": 0.54267,
+      "ridge_minus_persistence": 0.08161,
+      "blend_minus_persistence": 0.01541,
+      "ridge_minus_persistence_ci": [
+        0.03841,
+        0.14531
+      ],
+      "blend_minus_persistence_ci": [
+        -0.0039,
+        0.04426
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "IA_Des_Moines_17_E",
+      "n_origins": 6361,
+      "n_blocks": 271,
+      "persistence_rmse": 2.45956,
+      "ridge_rmse": 2.48619,
+      "blend_rmse": 2.44739,
+      "ridge_minus_persistence": 0.02664,
+      "blend_minus_persistence": -0.01217,
+      "ridge_minus_persistence_ci": [
+        -0.00689,
+        0.05669
+      ],
+      "blend_minus_persistence_ci": [
+        -0.03421,
+        0.00636
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "IL_Champaign_9_SW",
+      "n_origins": 5911,
+      "n_blocks": 261,
+      "persistence_rmse": 3.09049,
+      "ridge_rmse": 2.90091,
+      "blend_rmse": 2.93233,
+      "ridge_minus_persistence": -0.18958,
+      "blend_minus_persistence": -0.15816,
+      "ridge_minus_persistence_ci": [
+        -0.24465,
+        -0.13639
+      ],
+      "blend_minus_persistence_ci": [
+        -0.19992,
+        -0.1172
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "SC_Blackville_3_W",
+      "n_origins": 6933,
+      "n_blocks": 306,
+      "persistence_rmse": 1.95526,
+      "ridge_rmse": 1.96207,
+      "blend_rmse": 1.9416,
+      "ridge_minus_persistence": 0.0068,
+      "blend_minus_persistence": -0.01366,
+      "ridge_minus_persistence_ci": [
+        -0.03738,
+        0.05692
+      ],
+      "blend_minus_persistence_ci": [
+        -0.0455,
+        0.02231
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "TX_Austin_33_NW",
+      "n_origins": 7542,
+      "n_blocks": 316,
+      "persistence_rmse": 3.88584,
+      "ridge_rmse": 3.73271,
+      "blend_rmse": 3.73271,
+      "ridge_minus_persistence": -0.15313,
+      "blend_minus_persistence": -0.15313,
+      "ridge_minus_persistence_ci": [
+        -0.23618,
+        -0.06564
+      ],
+      "blend_minus_persistence_ci": [
+        -0.23618,
+        -0.06564
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "ALL",
+      "n_origins": 40237,
+      "n_blocks": 589,
+      "persistence_rmse": 2.56779,
+      "ridge_rmse": 2.46123,
+      "blend_rmse": 2.4554,
+      "ridge_minus_persistence": -0.10656,
+      "blend_minus_persistence": -0.11239,
+      "ridge_minus_persistence_ci": [
+        -0.13374,
+        -0.08061
+      ],
+      "blend_minus_persistence_ci": [
+        -0.13691,
+        -0.08978
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7576,
+      "n_blocks": 106,
+      "persistence_rmse": 1.94715,
+      "ridge_rmse": 1.67097,
+      "blend_rmse": 1.67097,
+      "ridge_minus_persistence": -0.27619,
+      "blend_minus_persistence": -0.27619,
+      "ridge_minus_persistence_ci": [
+        -0.31808,
+        -0.241
+      ],
+      "blend_minus_persistence_ci": [
+        -0.31808,
+        -0.241
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3284,
+      "n_blocks": 49,
+      "persistence_rmse": 0.39988,
+      "ridge_rmse": 0.48678,
+      "blend_rmse": 0.39586,
+      "ridge_minus_persistence": 0.0869,
+      "blend_minus_persistence": -0.00402,
+      "ridge_minus_persistence_ci": [
+        0.0442,
+        0.21636
+      ],
+      "blend_minus_persistence_ci": [
+        -0.0101,
+        0.00665
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2630,
+      "n_blocks": 39,
+      "persistence_rmse": 0.52726,
+      "ridge_rmse": 0.60887,
+      "blend_rmse": 0.54267,
+      "ridge_minus_persistence": 0.08161,
+      "blend_minus_persistence": 0.01541,
+      "ridge_minus_persistence_ci": [
+        0.04509,
+        0.13739
+      ],
+      "blend_minus_persistence_ci": [
+        -0.001,
+        0.04043
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "IA_Des_Moines_17_E",
+      "n_origins": 6361,
+      "n_blocks": 92,
+      "persistence_rmse": 2.45956,
+      "ridge_rmse": 2.48619,
+      "blend_rmse": 2.44739,
+      "ridge_minus_persistence": 0.02664,
+      "blend_minus_persistence": -0.01217,
+      "ridge_minus_persistence_ci": [
+        -0.00695,
+        0.05712
+      ],
+      "blend_minus_persistence_ci": [
+        -0.03364,
+        0.00497
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "IL_Champaign_9_SW",
+      "n_origins": 5911,
+      "n_blocks": 92,
+      "persistence_rmse": 3.09049,
+      "ridge_rmse": 2.90091,
+      "blend_rmse": 2.93233,
+      "ridge_minus_persistence": -0.18958,
+      "blend_minus_persistence": -0.15816,
+      "ridge_minus_persistence_ci": [
+        -0.2713,
+        -0.11792
+      ],
+      "blend_minus_persistence_ci": [
+        -0.22156,
+        -0.10324
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "SC_Blackville_3_W",
+      "n_origins": 6933,
+      "n_blocks": 105,
+      "persistence_rmse": 1.95526,
+      "ridge_rmse": 1.96207,
+      "blend_rmse": 1.9416,
+      "ridge_minus_persistence": 0.0068,
+      "blend_minus_persistence": -0.01366,
+      "ridge_minus_persistence_ci": [
+        -0.03806,
+        0.05586
+      ],
+      "blend_minus_persistence_ci": [
+        -0.04536,
+        0.02151
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "TX_Austin_33_NW",
+      "n_origins": 7542,
+      "n_blocks": 106,
+      "persistence_rmse": 3.88584,
+      "ridge_rmse": 3.73271,
+      "blend_rmse": 3.73271,
+      "ridge_minus_persistence": -0.15313,
+      "blend_minus_persistence": -0.15313,
+      "ridge_minus_persistence_ci": [
+        -0.224,
+        -0.08356
+      ],
+      "blend_minus_persistence_ci": [
+        -0.224,
+        -0.08356
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "ALL",
+      "n_origins": 40068,
+      "n_blocks": 1723,
+      "persistence_rmse": 3.26467,
+      "ridge_rmse": 3.15996,
+      "blend_rmse": 3.15215,
+      "ridge_minus_persistence": -0.10471,
+      "blend_minus_persistence": -0.11252,
+      "ridge_minus_persistence_ci": [
+        -0.14386,
+        -0.06883
+      ],
+      "blend_minus_persistence_ci": [
+        -0.14881,
+        -0.08045
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7564,
+      "n_blocks": 316,
+      "persistence_rmse": 2.04314,
+      "ridge_rmse": 1.95934,
+      "blend_rmse": 1.95934,
+      "ridge_minus_persistence": -0.0838,
+      "blend_minus_persistence": -0.0838,
+      "ridge_minus_persistence_ci": [
+        -0.12978,
+        -0.04049
+      ],
+      "blend_minus_persistence_ci": [
+        -0.12978,
+        -0.04049
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3249,
+      "n_blocks": 140,
+      "persistence_rmse": 0.49173,
+      "ridge_rmse": 0.68034,
+      "blend_rmse": 0.52574,
+      "ridge_minus_persistence": 0.1886,
+      "blend_minus_persistence": 0.03401,
+      "ridge_minus_persistence_ci": [
+        0.12132,
+        0.29414
+      ],
+      "blend_minus_persistence_ci": [
+        0.00645,
+        0.07766
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2624,
+      "n_blocks": 112,
+      "persistence_rmse": 0.66542,
+      "ridge_rmse": 0.72659,
+      "blend_rmse": 0.66826,
+      "ridge_minus_persistence": 0.06118,
+      "blend_minus_persistence": 0.00285,
+      "ridge_minus_persistence_ci": [
+        0.00364,
+        0.13121
+      ],
+      "blend_minus_persistence_ci": [
+        -0.02326,
+        0.03613
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "IA_Des_Moines_17_E",
+      "n_origins": 6321,
+      "n_blocks": 270,
+      "persistence_rmse": 3.46535,
+      "ridge_rmse": 3.44723,
+      "blend_rmse": 3.41157,
+      "ridge_minus_persistence": -0.01812,
+      "blend_minus_persistence": -0.05378,
+      "ridge_minus_persistence_ci": [
+        -0.06835,
+        0.02839
+      ],
+      "blend_minus_persistence_ci": [
+        -0.08784,
+        -0.02626
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "IL_Champaign_9_SW",
+      "n_origins": 5889,
+      "n_blocks": 264,
+      "persistence_rmse": 3.88291,
+      "ridge_rmse": 3.72864,
+      "blend_rmse": 3.75111,
+      "ridge_minus_persistence": -0.15427,
+      "blend_minus_persistence": -0.13181,
+      "ridge_minus_persistence_ci": [
+        -0.2231,
+        -0.07922
+      ],
+      "blend_minus_persistence_ci": [
+        -0.18282,
+        -0.07722
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "SC_Blackville_3_W",
+      "n_origins": 6903,
+      "n_blocks": 305,
+      "persistence_rmse": 2.7212,
+      "ridge_rmse": 2.6693,
+      "blend_rmse": 2.65303,
+      "ridge_minus_persistence": -0.0519,
+      "blend_minus_persistence": -0.06817,
+      "ridge_minus_persistence_ci": [
+        -0.14314,
+        0.05135
+      ],
+      "blend_minus_persistence_ci": [
+        -0.13585,
+        0.0047
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "TX_Austin_33_NW",
+      "n_origins": 7518,
+      "n_blocks": 316,
+      "persistence_rmse": 4.86193,
+      "ridge_rmse": 4.64189,
+      "blend_rmse": 4.64189,
+      "ridge_minus_persistence": -0.22004,
+      "blend_minus_persistence": -0.22004,
+      "ridge_minus_persistence_ci": [
+        -0.32418,
+        -0.11303
+      ],
+      "blend_minus_persistence_ci": [
+        -0.32418,
+        -0.11303
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "ALL",
+      "n_origins": 40068,
+      "n_blocks": 588,
+      "persistence_rmse": 3.26467,
+      "ridge_rmse": 3.15996,
+      "blend_rmse": 3.15215,
+      "ridge_minus_persistence": -0.10471,
+      "blend_minus_persistence": -0.11252,
+      "ridge_minus_persistence_ci": [
+        -0.14703,
+        -0.06208
+      ],
+      "blend_minus_persistence_ci": [
+        -0.15173,
+        -0.07604
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7564,
+      "n_blocks": 106,
+      "persistence_rmse": 2.04314,
+      "ridge_rmse": 1.95934,
+      "blend_rmse": 1.95934,
+      "ridge_minus_persistence": -0.0838,
+      "blend_minus_persistence": -0.0838,
+      "ridge_minus_persistence_ci": [
+        -0.12812,
+        -0.03765
+      ],
+      "blend_minus_persistence_ci": [
+        -0.12812,
+        -0.03765
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3249,
+      "n_blocks": 48,
+      "persistence_rmse": 0.49173,
+      "ridge_rmse": 0.68034,
+      "blend_rmse": 0.52574,
+      "ridge_minus_persistence": 0.1886,
+      "blend_minus_persistence": 0.03401,
+      "ridge_minus_persistence_ci": [
+        0.1003,
+        0.39263
+      ],
+      "blend_minus_persistence_ci": [
+        0.00108,
+        0.13799
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2624,
+      "n_blocks": 39,
+      "persistence_rmse": 0.66542,
+      "ridge_rmse": 0.72659,
+      "blend_rmse": 0.66826,
+      "ridge_minus_persistence": 0.06118,
+      "blend_minus_persistence": 0.00285,
+      "ridge_minus_persistence_ci": [
+        0.00687,
+        0.12639
+      ],
+      "blend_minus_persistence_ci": [
+        -0.02351,
+        0.03522
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "IA_Des_Moines_17_E",
+      "n_origins": 6321,
+      "n_blocks": 92,
+      "persistence_rmse": 3.46535,
+      "ridge_rmse": 3.44723,
+      "blend_rmse": 3.41157,
+      "ridge_minus_persistence": -0.01812,
+      "blend_minus_persistence": -0.05378,
+      "ridge_minus_persistence_ci": [
+        -0.07253,
+        0.03246
+      ],
+      "blend_minus_persistence_ci": [
+        -0.08948,
+        -0.02757
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "IL_Champaign_9_SW",
+      "n_origins": 5889,
+      "n_blocks": 92,
+      "persistence_rmse": 3.88291,
+      "ridge_rmse": 3.72864,
+      "blend_rmse": 3.75111,
+      "ridge_minus_persistence": -0.15427,
+      "blend_minus_persistence": -0.13181,
+      "ridge_minus_persistence_ci": [
+        -0.23294,
+        -0.06888
+      ],
+      "blend_minus_persistence_ci": [
+        -0.1898,
+        -0.0697
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "SC_Blackville_3_W",
+      "n_origins": 6903,
+      "n_blocks": 105,
+      "persistence_rmse": 2.7212,
+      "ridge_rmse": 2.6693,
+      "blend_rmse": 2.65303,
+      "ridge_minus_persistence": -0.0519,
+      "blend_minus_persistence": -0.06817,
+      "ridge_minus_persistence_ci": [
+        -0.15279,
+        0.07267
+      ],
+      "blend_minus_persistence_ci": [
+        -0.14027,
+        0.02092
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "TX_Austin_33_NW",
+      "n_origins": 7518,
+      "n_blocks": 106,
+      "persistence_rmse": 4.86193,
+      "ridge_rmse": 4.64189,
+      "blend_rmse": 4.64189,
+      "ridge_minus_persistence": -0.22004,
+      "blend_minus_persistence": -0.22004,
+      "ridge_minus_persistence_ci": [
+        -0.33748,
+        -0.10361
+      ],
+      "blend_minus_persistence_ci": [
+        -0.33748,
+        -0.10361
+      ]
+    }
+  ]
+}

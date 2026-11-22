@@ -1,0 +1,24 @@
+{
+  "record": "https://zenodo.org/records/16911016",
+  "license": "cc-by-4.0",
+  "files": [
+    {
+      "name": "Field experiment TH.xlsx",
+      "source_url": "https://zenodo.org/api/records/16911016/files/Field%20experiment%20TH.xlsx/content",
+      "sha256": "ba0368a70980cee699992781c27d6688e38d15a3e097134e8c01b3fb648e91de",
+      "md5": "md5:8b1db8ac08387a584376e7e7fbee7977"
+    },
+    {
+      "name": "Field experiment GN1.xlsx",
+      "source_url": "https://zenodo.org/api/records/16911016/files/Field%20experiment%20GN1.xlsx/content",
+      "sha256": "be3ff34f2fd5ccbd8f9d72d7baf33ce7f87d9fec16eeaff2456a858666162c95",
+      "md5": "md5:7d6de47f6bc0cd6514bfe4fe51c50cb8"
+    },
+    {
+      "name": "Field experiment GN2.xlsx",
+      "source_url": "https://zenodo.org/api/records/16911016/files/Field%20experiment%20GN2.xlsx/content",
+      "sha256": "6ffc7b6cac3605189dc6d98a3191222b26796aa13da7a067a1d3823a8263c42a",
+      "md5": "md5:149a2e020f35d96a0e06beaff9703100"
+    }
+  ]
+}

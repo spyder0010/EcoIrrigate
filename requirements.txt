@@ -1,0 +1,9 @@
+# Versions used for the 14 November 2026 computational revision (Python 3.11.9).
+# PyTorch 2.7.1 was run with CUDA 12.8; a compatible CPU wheel can score saved outputs.
+numpy==2.3.5
+pandas==2.3.0
+scikit-learn==1.8.0
+scipy==1.16.1
+torch==2.7.1
+matplotlib==3.10.3
+openpyxl==3.1.5

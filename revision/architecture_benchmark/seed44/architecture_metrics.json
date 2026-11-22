@@ -1,0 +1,117 @@
+{
+  "source_sha256": "1f12bac2a35f78b8f2c6af0fe56142f2301471d9ef2203a3983a5a60444d6319",
+  "feature_columns": [
+    "Volumetric_Moisture_Pct",
+    "Raw_Capacitive_ADC",
+    "Sensor_Voltage_V",
+    "Sensor_Board_Temperature_C",
+    "Atm_Temperature_C",
+    "Soil_Temperature_C",
+    "Atm_Pressure_inHg",
+    "Hour_sin",
+    "Hour_cos"
+  ],
+  "history": "t-96 through t-1; current A2 and environmental features at t; current observed VWC at t anchors residual forecast",
+  "target": "VWC[t+h] for h in 4,24,48,96 steps; same origins for every horizon",
+  "selection": "lowest validation forecast MSE, early stopping; test scored once per specified variant",
+  "limits": "supplied VWC provenance unverified; architecture search after historical test inspection is exploratory",
+  "device": "cuda",
+  "seed": 44,
+  "epochs_max": 12,
+  "patience": 3,
+  "train_stride": 4,
+  "n_origins": {
+    "train": 3634,
+    "validation": 752,
+    "test": 3006
+  },
+  "variants": {
+    "shared_bilstm_residual": {
+      "parameters": 20749,
+      "best_epoch": 1,
+      "validation_forecast_mse_scaled": 0.33886926541937157,
+      "current_value_head_rmse_vwc_percentage_points": 3.1320375164118683,
+      "horizons": {
+        "1h": {
+          "model_rmse_vwc_percentage_points": 0.3189320124079873,
+          "persistence_rmse_vwc_percentage_points": 0.2883031898771611,
+          "model_mae_vwc_percentage_points": 0.1463973969221115,
+          "model_r2": 0.9779229760169983
+        },
+        "6h": {
+          "model_rmse_vwc_percentage_points": 0.7436312236028497,
+          "persistence_rmse_vwc_percentage_points": 0.7846515988515876,
+          "model_mae_vwc_percentage_points": 0.41706007719039917,
+          "model_r2": 0.8743724822998047
+        },
+        "12h": {
+          "model_rmse_vwc_percentage_points": 1.1516277610474919,
+          "persistence_rmse_vwc_percentage_points": 1.1832153420433102,
+          "model_mae_vwc_percentage_points": 0.7333451509475708,
+          "model_r2": 0.676976203918457
+        },
+        "24h": {
+          "model_rmse_vwc_percentage_points": 1.7897428859628453,
+          "persistence_rmse_vwc_percentage_points": 1.6679905481276531,
+          "model_mae_vwc_percentage_points": 1.368783950805664,
+          "model_r2": 0.10745954513549805
+        }
+      },
+      "training_log": [
+        {
+          "epoch": 1,
+          "train": [
+            1.1021442320823145,
+            0.26422248764325446,
+            0.8379217368859673
+          ],
+          "validation": [
+            1.4332912627686845,
+            0.33886926541937157,
+            1.0944219916424853
+          ]
+        },
+        {
+          "epoch": 2,
+          "train": [
+            0.5289589113826993,
+            0.24127537026041868,
+            0.2876835442714528
+          ],
+          "validation": [
+            0.5975970080558289,
+            0.3734170819850678,
+            0.22417990641391022
+          ]
+        },
+        {
+          "epoch": 3,
+          "train": [
+            0.3358128358439292,
+            0.23557638478643236,
+            0.10023645945528935
+          ],
+          "validation": [
+            0.43135044676192263,
+            0.3677753076908436,
+            0.06357514152818537
+          ]
+        },
+        {
+          "epoch": 4,
+          "train": [
+            0.27982499418461393,
+            0.2320012094808694,
+            0.0478237827355119
+          ],
+          "validation": [
+            0.4052453472259197,
+            0.36965055795426066,
+            0.035594785784153225
+          ]
+        }
+      ],
+      "checkpoint": "revision/architecture_benchmark/seed44/shared_bilstm_residual_seed44.pt"
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "shared_bilstm_residual:12h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 1.1832152785896282,
+    "model_rmse_mean_vwc_percentage_points": 1.1563932256970078,
+    "model_rmse_sample_std_vwc_percentage_points": 0.05848836638250028,
+    "model_rmse_min_vwc_percentage_points": 1.1148264092649083,
+    "model_rmse_max_vwc_percentage_points": 1.2582721100748302,
+    "mean_difference_model_minus_persistence": -0.026822052892620452,
+    "seeds_beating_persistence": 4
+  },
+  "shared_bilstm_residual:1h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 0.28830318835232743,
+    "model_rmse_mean_vwc_percentage_points": 0.3102625436831754,
+    "model_rmse_sample_std_vwc_percentage_points": 0.01290946377468085,
+    "model_rmse_min_vwc_percentage_points": 0.2884468640609199,
+    "model_rmse_max_vwc_percentage_points": 0.32085417140556866,
+    "mean_difference_model_minus_persistence": 0.021959355330847984,
+    "seeds_beating_persistence": 0
+  },
+  "shared_bilstm_residual:24h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 1.6679906044049992,
+    "model_rmse_mean_vwc_percentage_points": 1.7450026555535474,
+    "model_rmse_sample_std_vwc_percentage_points": 0.12696696887722544,
+    "model_rmse_min_vwc_percentage_points": 1.6085237625901427,
+    "model_rmse_max_vwc_percentage_points": 1.9219098802513033,
+    "mean_difference_model_minus_persistence": 0.07701205114854819,
+    "seeds_beating_persistence": 2
+  },
+  "shared_bilstm_residual:6h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 0.7846515811764249,
+    "model_rmse_mean_vwc_percentage_points": 0.7775807825868036,
+    "model_rmse_sample_std_vwc_percentage_points": 0.04854584141770164,
+    "model_rmse_min_vwc_percentage_points": 0.7436311875957395,
+    "model_rmse_max_vwc_percentage_points": 0.8629468917178532,
+    "mean_difference_model_minus_persistence": -0.007070798589621274,
+    "seeds_beating_persistence": 4
+  },
+  "shared_gru_residual:12h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 1.1832152785896282,
+    "model_rmse_mean_vwc_percentage_points": 1.2126858670571825,
+    "model_rmse_sample_std_vwc_percentage_points": 0.05377413543557666,
+    "model_rmse_min_vwc_percentage_points": 1.1612832931977008,
+    "model_rmse_max_vwc_percentage_points": 1.2930526163401102,
+    "mean_difference_model_minus_persistence": 0.029470588467554303,
+    "seeds_beating_persistence": 2
+  },
+  "shared_gru_residual:1h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 0.28830318835232743,
+    "model_rmse_mean_vwc_percentage_points": 0.3113952547388763,
+    "model_rmse_sample_std_vwc_percentage_points": 0.025394309046606122,
+    "model_rmse_min_vwc_percentage_points": 0.29054294049768237,
+    "model_rmse_max_vwc_percentage_points": 0.3509258540995657,
+    "mean_difference_model_minus_persistence": 0.02309206638654887,
+    "seeds_beating_persistence": 0
+  },
+  "shared_gru_residual:24h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 1.6679906044049992,
+    "model_rmse_mean_vwc_percentage_points": 1.79727272772083,
+    "model_rmse_sample_std_vwc_percentage_points": 0.10432763597484412,
+    "model_rmse_min_vwc_percentage_points": 1.6863837694448105,
+    "model_rmse_max_vwc_percentage_points": 1.943899986852973,
+    "mean_difference_model_minus_persistence": 0.1292821233158307,
+    "seeds_beating_persistence": 0
+  },
+  "shared_gru_residual:6h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 0.7846515811764249,
+    "model_rmse_mean_vwc_percentage_points": 0.8173022327087038,
+    "model_rmse_sample_std_vwc_percentage_points": 0.062001787856626425,
+    "model_rmse_min_vwc_percentage_points": 0.7649305669013473,
+    "model_rmse_max_vwc_percentage_points": 0.9196714585015282,
+    "mean_difference_model_minus_persistence": 0.03265065153227879,
+    "seeds_beating_persistence": 2
+  },
+  "shared_tcn_residual:12h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 1.1832152785896282,
+    "model_rmse_mean_vwc_percentage_points": 1.2987634634910035,
+    "model_rmse_sample_std_vwc_percentage_points": 0.05604533142082454,
+    "model_rmse_min_vwc_percentage_points": 1.2218669063655283,
+    "model_rmse_max_vwc_percentage_points": 1.3461431229991911,
+    "mean_difference_model_minus_persistence": 0.11554818490137535,
+    "seeds_beating_persistence": 0
+  },
+  "shared_tcn_residual:1h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 0.28830318835232743,
+    "model_rmse_mean_vwc_percentage_points": 0.3521333218249809,
+    "model_rmse_sample_std_vwc_percentage_points": 0.051457856105989394,
+    "model_rmse_min_vwc_percentage_points": 0.30066942449885947,
+    "model_rmse_max_vwc_percentage_points": 0.4320202179890649,
+    "mean_difference_model_minus_persistence": 0.06383013347265347,
+    "seeds_beating_persistence": 0
+  },
+  "shared_tcn_residual:24h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 1.6679906044049992,
+    "model_rmse_mean_vwc_percentage_points": 2.0446457241212155,
+    "model_rmse_sample_std_vwc_percentage_points": 0.10557133108221149,
+    "model_rmse_min_vwc_percentage_points": 1.8803957948501497,
+    "model_rmse_max_vwc_percentage_points": 2.1648757531658167,
+    "mean_difference_model_minus_persistence": 0.37665511971621624,
+    "seeds_beating_persistence": 0
+  },
+  "shared_tcn_residual:6h": {
+    "seed_count": 5,
+    "test_origins_per_seed": 3006,
+    "persistence_rmse_vwc_percentage_points": 0.7846515811764249,
+    "model_rmse_mean_vwc_percentage_points": 0.8303199835885312,
+    "model_rmse_sample_std_vwc_percentage_points": 0.0776147164233799,
+    "model_rmse_min_vwc_percentage_points": 0.7430084583947011,
+    "model_rmse_max_vwc_percentage_points": 0.9244712440163447,
+    "mean_difference_model_minus_persistence": 0.045668402412106325,
+    "seeds_beating_persistence": 2
+  }
+}

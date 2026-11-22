@@ -1,0 +1,655 @@
+{
+  "method": {
+    "source": "site_blend_2026_heldout_ledger.csv",
+    "resamples": 3000,
+    "seed": 20261114,
+    "block_hours": [
+      24,
+      72
+    ],
+    "resampling": "Resample fixed calendar-time blocks with replacement within each station; use paired errors for both methods.",
+    "interpretation": "Conditional intervals for the observed stations and their incomplete 2026 coverage; stations are not independent population replicates."
+  },
+  "results": [
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "ALL",
+      "n_origins": 13542,
+      "n_blocks": 574,
+      "persistence_rmse": 0.36602,
+      "ridge_rmse": 0.33563,
+      "blend_rmse": 0.33434,
+      "ridge_minus_persistence": -0.03039,
+      "blend_minus_persistence": -0.03168,
+      "ridge_minus_persistence_ci": [
+        -0.03595,
+        -0.02515
+      ],
+      "blend_minus_persistence_ci": [
+        -0.03729,
+        -0.02638
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7588,
+      "n_blocks": 317,
+      "persistence_rmse": 0.47427,
+      "ridge_rmse": 0.42942,
+      "blend_rmse": 0.42942,
+      "ridge_minus_persistence": -0.04485,
+      "blend_minus_persistence": -0.04485,
+      "ridge_minus_persistence_ci": [
+        -0.05231,
+        -0.03763
+      ],
+      "blend_minus_persistence_ci": [
+        -0.05231,
+        -0.03763
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3302,
+      "n_blocks": 143,
+      "persistence_rmse": 0.08564,
+      "ridge_rmse": 0.10392,
+      "blend_rmse": 0.08515,
+      "ridge_minus_persistence": 0.01828,
+      "blend_minus_persistence": -0.0005,
+      "ridge_minus_persistence_ci": [
+        0.00887,
+        0.03587
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00219,
+        0.00179
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 24,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2652,
+      "n_blocks": 114,
+      "persistence_rmse": 0.17712,
+      "ridge_rmse": 0.18479,
+      "blend_rmse": 0.18479,
+      "ridge_minus_persistence": 0.00767,
+      "blend_minus_persistence": 0.00767,
+      "ridge_minus_persistence_ci": [
+        -0.00167,
+        0.01605
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00167,
+        0.01605
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "ALL",
+      "n_origins": 13542,
+      "n_blocks": 195,
+      "persistence_rmse": 0.36602,
+      "ridge_rmse": 0.33563,
+      "blend_rmse": 0.33434,
+      "ridge_minus_persistence": -0.03039,
+      "blend_minus_persistence": -0.03168,
+      "ridge_minus_persistence_ci": [
+        -0.03635,
+        -0.02396
+      ],
+      "blend_minus_persistence_ci": [
+        -0.03777,
+        -0.02534
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7588,
+      "n_blocks": 106,
+      "persistence_rmse": 0.47427,
+      "ridge_rmse": 0.42942,
+      "blend_rmse": 0.42942,
+      "ridge_minus_persistence": -0.04485,
+      "blend_minus_persistence": -0.04485,
+      "ridge_minus_persistence_ci": [
+        -0.05303,
+        -0.0368
+      ],
+      "blend_minus_persistence_ci": [
+        -0.05303,
+        -0.0368
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3302,
+      "n_blocks": 49,
+      "persistence_rmse": 0.08564,
+      "ridge_rmse": 0.10392,
+      "blend_rmse": 0.08515,
+      "ridge_minus_persistence": 0.01828,
+      "blend_minus_persistence": -0.0005,
+      "ridge_minus_persistence_ci": [
+        0.0075,
+        0.03901
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00256,
+        0.0027
+      ]
+    },
+    {
+      "horizon_hours": 1,
+      "block_hours": 72,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2652,
+      "n_blocks": 40,
+      "persistence_rmse": 0.17712,
+      "ridge_rmse": 0.18479,
+      "blend_rmse": 0.18479,
+      "ridge_minus_persistence": 0.00767,
+      "blend_minus_persistence": 0.00767,
+      "ridge_minus_persistence_ci": [
+        -0.00169,
+        0.01538
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00169,
+        0.01538
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "ALL",
+      "n_origins": 13520,
+      "n_blocks": 573,
+      "persistence_rmse": 1.16038,
+      "ridge_rmse": 0.97635,
+      "blend_rmse": 0.96541,
+      "ridge_minus_persistence": -0.18403,
+      "blend_minus_persistence": -0.19497,
+      "ridge_minus_persistence_ci": [
+        -0.21456,
+        -0.15779
+      ],
+      "blend_minus_persistence_ci": [
+        -0.22687,
+        -0.16826
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7582,
+      "n_blocks": 317,
+      "persistence_rmse": 1.51937,
+      "ridge_rmse": 1.25275,
+      "blend_rmse": 1.25275,
+      "ridge_minus_persistence": -0.26662,
+      "blend_minus_persistence": -0.26662,
+      "ridge_minus_persistence_ci": [
+        -0.31384,
+        -0.22793
+      ],
+      "blend_minus_persistence_ci": [
+        -0.31384,
+        -0.22793
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3296,
+      "n_blocks": 143,
+      "persistence_rmse": 0.27869,
+      "ridge_rmse": 0.37334,
+      "blend_rmse": 0.27869,
+      "ridge_minus_persistence": 0.09465,
+      "blend_minus_persistence": 0.0,
+      "ridge_minus_persistence_ci": [
+        0.06105,
+        0.1481
+      ],
+      "blend_minus_persistence_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 24,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2642,
+      "n_blocks": 113,
+      "persistence_rmse": 0.41063,
+      "ridge_rmse": 0.44772,
+      "blend_rmse": 0.41078,
+      "ridge_minus_persistence": 0.03709,
+      "blend_minus_persistence": 0.00015,
+      "ridge_minus_persistence_ci": [
+        0.01786,
+        0.06265
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00368,
+        0.00428
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "ALL",
+      "n_origins": 13520,
+      "n_blocks": 194,
+      "persistence_rmse": 1.16038,
+      "ridge_rmse": 0.97635,
+      "blend_rmse": 0.96541,
+      "ridge_minus_persistence": -0.18403,
+      "blend_minus_persistence": -0.19497,
+      "ridge_minus_persistence_ci": [
+        -0.22779,
+        -0.14747
+      ],
+      "blend_minus_persistence_ci": [
+        -0.24037,
+        -0.15784
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7582,
+      "n_blocks": 106,
+      "persistence_rmse": 1.51937,
+      "ridge_rmse": 1.25275,
+      "blend_rmse": 1.25275,
+      "ridge_minus_persistence": -0.26662,
+      "blend_minus_persistence": -0.26662,
+      "ridge_minus_persistence_ci": [
+        -0.32858,
+        -0.21625
+      ],
+      "blend_minus_persistence_ci": [
+        -0.32858,
+        -0.21625
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3296,
+      "n_blocks": 49,
+      "persistence_rmse": 0.27869,
+      "ridge_rmse": 0.37334,
+      "blend_rmse": 0.27869,
+      "ridge_minus_persistence": 0.09465,
+      "blend_minus_persistence": 0.0,
+      "ridge_minus_persistence_ci": [
+        0.06076,
+        0.1765
+      ],
+      "blend_minus_persistence_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "horizon_hours": 6,
+      "block_hours": 72,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2642,
+      "n_blocks": 39,
+      "persistence_rmse": 0.41063,
+      "ridge_rmse": 0.44772,
+      "blend_rmse": 0.41078,
+      "ridge_minus_persistence": 0.03709,
+      "blend_minus_persistence": 0.00015,
+      "ridge_minus_persistence_ci": [
+        0.02469,
+        0.05156
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00319,
+        0.00365
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "ALL",
+      "n_origins": 13490,
+      "n_blocks": 571,
+      "persistence_rmse": 1.49077,
+      "ridge_rmse": 1.25119,
+      "blend_rmse": 1.24231,
+      "ridge_minus_persistence": -0.23958,
+      "blend_minus_persistence": -0.24846,
+      "ridge_minus_persistence_ci": [
+        -0.28133,
+        -0.20361
+      ],
+      "blend_minus_persistence_ci": [
+        -0.29143,
+        -0.21174
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7576,
+      "n_blocks": 316,
+      "persistence_rmse": 1.94715,
+      "ridge_rmse": 1.60619,
+      "blend_rmse": 1.60619,
+      "ridge_minus_persistence": -0.34096,
+      "blend_minus_persistence": -0.34096,
+      "ridge_minus_persistence_ci": [
+        -0.40496,
+        -0.28851
+      ],
+      "blend_minus_persistence_ci": [
+        -0.40496,
+        -0.28851
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3284,
+      "n_blocks": 142,
+      "persistence_rmse": 0.39988,
+      "ridge_rmse": 0.4682,
+      "blend_rmse": 0.39988,
+      "ridge_minus_persistence": 0.06832,
+      "blend_minus_persistence": 0.0,
+      "ridge_minus_persistence_ci": [
+        0.04318,
+        0.11722
+      ],
+      "blend_minus_persistence_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 24,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2630,
+      "n_blocks": 113,
+      "persistence_rmse": 0.52726,
+      "ridge_rmse": 0.5696,
+      "blend_rmse": 0.53381,
+      "ridge_minus_persistence": 0.04234,
+      "blend_minus_persistence": 0.00654,
+      "ridge_minus_persistence_ci": [
+        0.01036,
+        0.08586
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00765,
+        0.02516
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "ALL",
+      "n_origins": 13490,
+      "n_blocks": 194,
+      "persistence_rmse": 1.49077,
+      "ridge_rmse": 1.25119,
+      "blend_rmse": 1.24231,
+      "ridge_minus_persistence": -0.23958,
+      "blend_minus_persistence": -0.24846,
+      "ridge_minus_persistence_ci": [
+        -0.29921,
+        -0.19512
+      ],
+      "blend_minus_persistence_ci": [
+        -0.30915,
+        -0.20288
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7576,
+      "n_blocks": 106,
+      "persistence_rmse": 1.94715,
+      "ridge_rmse": 1.60619,
+      "blend_rmse": 1.60619,
+      "ridge_minus_persistence": -0.34096,
+      "blend_minus_persistence": -0.34096,
+      "ridge_minus_persistence_ci": [
+        -0.42931,
+        -0.2762
+      ],
+      "blend_minus_persistence_ci": [
+        -0.42931,
+        -0.2762
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3284,
+      "n_blocks": 49,
+      "persistence_rmse": 0.39988,
+      "ridge_rmse": 0.4682,
+      "blend_rmse": 0.39988,
+      "ridge_minus_persistence": 0.06832,
+      "blend_minus_persistence": 0.0,
+      "ridge_minus_persistence_ci": [
+        0.04137,
+        0.15146
+      ],
+      "blend_minus_persistence_ci": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "horizon_hours": 12,
+      "block_hours": 72,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2630,
+      "n_blocks": 39,
+      "persistence_rmse": 0.52726,
+      "ridge_rmse": 0.5696,
+      "blend_rmse": 0.53381,
+      "ridge_minus_persistence": 0.04234,
+      "blend_minus_persistence": 0.00654,
+      "ridge_minus_persistence_ci": [
+        0.0213,
+        0.07316
+      ],
+      "blend_minus_persistence_ci": [
+        -0.00407,
+        0.02169
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "ALL",
+      "n_origins": 13437,
+      "n_blocks": 568,
+      "persistence_rmse": 1.5795,
+      "ridge_rmse": 1.52311,
+      "blend_rmse": 1.51974,
+      "ridge_minus_persistence": -0.05639,
+      "blend_minus_persistence": -0.05976,
+      "ridge_minus_persistence_ci": [
+        -0.07811,
+        -0.03541
+      ],
+      "blend_minus_persistence_ci": [
+        -0.08119,
+        -0.03929
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7564,
+      "n_blocks": 316,
+      "persistence_rmse": 2.04314,
+      "ridge_rmse": 1.95819,
+      "blend_rmse": 1.95819,
+      "ridge_minus_persistence": -0.08495,
+      "blend_minus_persistence": -0.08495,
+      "ridge_minus_persistence_ci": [
+        -0.11387,
+        -0.05616
+      ],
+      "blend_minus_persistence_ci": [
+        -0.11387,
+        -0.05616
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3249,
+      "n_blocks": 140,
+      "persistence_rmse": 0.49173,
+      "ridge_rmse": 0.5602,
+      "blend_rmse": 0.52102,
+      "ridge_minus_persistence": 0.06846,
+      "blend_minus_persistence": 0.02928,
+      "ridge_minus_persistence_ci": [
+        0.02977,
+        0.12577
+      ],
+      "blend_minus_persistence_ci": [
+        -8e-05,
+        0.06867
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 24,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2624,
+      "n_blocks": 112,
+      "persistence_rmse": 0.66542,
+      "ridge_rmse": 0.66146,
+      "blend_rmse": 0.66146,
+      "ridge_minus_persistence": -0.00396,
+      "blend_minus_persistence": -0.00396,
+      "ridge_minus_persistence_ci": [
+        -0.03183,
+        0.03029
+      ],
+      "blend_minus_persistence_ci": [
+        -0.03183,
+        0.03029
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "ALL",
+      "n_origins": 13437,
+      "n_blocks": 193,
+      "persistence_rmse": 1.5795,
+      "ridge_rmse": 1.52311,
+      "blend_rmse": 1.51974,
+      "ridge_minus_persistence": -0.05639,
+      "blend_minus_persistence": -0.05976,
+      "ridge_minus_persistence_ci": [
+        -0.07815,
+        -0.03206
+      ],
+      "blend_minus_persistence_ci": [
+        -0.08107,
+        -0.03618
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "AZ_Tucson_11_W",
+      "n_origins": 7564,
+      "n_blocks": 106,
+      "persistence_rmse": 2.04314,
+      "ridge_rmse": 1.95819,
+      "blend_rmse": 1.95819,
+      "ridge_minus_persistence": -0.08495,
+      "blend_minus_persistence": -0.08495,
+      "ridge_minus_persistence_ci": [
+        -0.11379,
+        -0.05393
+      ],
+      "blend_minus_persistence_ci": [
+        -0.11379,
+        -0.05393
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "CA_Merced_23_WSW",
+      "n_origins": 3249,
+      "n_blocks": 48,
+      "persistence_rmse": 0.49173,
+      "ridge_rmse": 0.5602,
+      "blend_rmse": 0.52102,
+      "ridge_minus_persistence": 0.06846,
+      "blend_minus_persistence": 0.02928,
+      "ridge_minus_persistence_ci": [
+        0.0279,
+        0.19426
+      ],
+      "blend_minus_persistence_ci": [
+        0.0003,
+        0.11793
+      ]
+    },
+    {
+      "horizon_hours": 24,
+      "block_hours": 72,
+      "station": "FL_Sebring_23_SSE",
+      "n_origins": 2624,
+      "n_blocks": 39,
+      "persistence_rmse": 0.66542,
+      "ridge_rmse": 0.66146,
+      "blend_rmse": 0.66146,
+      "ridge_minus_persistence": -0.00396,
+      "blend_minus_persistence": -0.00396,
+      "ridge_minus_persistence_ci": [
+        -0.02988,
+        0.02973
+      ],
+      "blend_minus_persistence_ci": [
+        -0.02988,
+        0.02973
+      ]
+    }
+  ]
+}

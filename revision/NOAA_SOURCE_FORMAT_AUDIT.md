@@ -1,0 +1,15 @@
+# NOAA hourly source-format audit
+
+Checked 14 November 2026 against the [NOAA USCRN `hourly02` field guide](https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/readme.txt). Run `python revision\audit_noaa_source_format.py` from the workspace root to regenerate `external_noaa/source_format_audit.json` from the frozen source manifests and downloaded bytes.
+
+The audit covers 68 archived file copies representing 67 distinct station–year pairs: 32 in the development manifest and 36 in the unseen-station manifest. Every line contains 38 whitespace-separated fields. For all 545,527 parsed lines, fixed-width slices and whitespace tokens agree for UTC date/time, hourly temperature, precipitation, solar radiation, relative humidity and 5-cm soil moisture. Every file matches its manifest SHA-256 and row count; the parser retains each row, produces strictly increasing unique UTC timestamps, maps the 5-cm missing sentinel to null, and has no observed 5-cm VWC outside 0–1 m³/m³.
+
+Sixteen file copies contain one run of 244 NUL bytes immediately before a valid 243-character record. Each such run coincides with a two-hour jump between adjacent UTC timestamps: one hourly observation is absent. The forecast feature builder requires 25 consecutive observed hourly VWC values through the origin; the evaluation additionally requires the target timestamp to be exactly the stated horizon after the origin. Thus a missing hour cannot silently become a shorter or longer forecast horizon. The archived raw bytes are retained unchanged.
+
+The yearly file convention includes the hour ending at 00:00 UTC on 1 January of the next calendar year as the final record. Twenty-four archived file copies have this final hour. The model splits records by *target timestamp year*, so this convention does not put a later-year target into an earlier-year training partition.
+
+Alabama Brewton 2026 appears in both manifests because it was in the original candidate list but failed the 2023–24 VWC availability rule, and it was separately selected by the unseen-state directory rule. The two archived 2026 copies differ by one newly appended hour (7,614 versus 7,615 rows). Neither copy contributes to training; the unseen-cohort copy is used for its 2026 test. The manifests distinguish their hashes and retrieval times.
+
+As a source check on the NUL padding, the current NOAA [2025 Alabama file](https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2025/CRNH0203-2025-AL_Brewton_3_NNE.txt) had the same bytes and SHA-256 as the archived copy and contained the same 244 NUL bytes. The live [2026 Oregon file](https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-OR_Coos_Bay_8_SW.txt) also contained the padding; its archived 7,615 rows were an exact byte prefix of the current 7,620-row file. These comparisons were made read-only and did not alter the frozen inputs.
+
+This audit verifies file layout and the parser's treatment of source gaps. It cannot independently validate the physical sensors, the EcoIrrigate VWC conversion, or the representativeness of the selected NOAA stations.

@@ -1,0 +1,297 @@
+{
+  "source": "NOAA USCRN hourly02",
+  "source_page": "https://www.ncei.noaa.gov/access/crn/products.html",
+  "format_documentation": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/readme.txt",
+  "download_utc": "2026-11-14T09:23:01.449272+00:00",
+  "station_selection": "Initial cohort: Alabama, Arizona, California and Florida fixed before model-score inspection. Expanded cohort: Iowa, Illinois, South Carolina and Texas fixed after inspecting initial 2026 scores but before downloading expanded-station outcomes. See EXTERNAL_EVALUATION_PROTOCOL.md.",
+  "files": [
+    {
+      "station": "AL_Brewton_3_NNE",
+      "year": 2023,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2023/CRNH0203-2023-AL_Brewton_3_NNE.txt",
+      "file": "raw/CRNH0203-2023-AL_Brewton_3_NNE.txt",
+      "bytes": 2137440,
+      "sha256": "77618496b76ddff9d1a9931c63c60fc24d3dca6c1b9b4967534ada3d4b05cc42",
+      "rows": 8760
+    },
+    {
+      "station": "AZ_Tucson_11_W",
+      "year": 2023,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2023/CRNH0203-2023-AZ_Tucson_11_W.txt",
+      "file": "raw/CRNH0203-2023-AZ_Tucson_11_W.txt",
+      "bytes": 2137440,
+      "sha256": "475f7431494dbdf7e1dce391fad901ae5feb4655f75df5b38cb069c880562ad6",
+      "rows": 8760
+    },
+    {
+      "station": "CA_Merced_23_WSW",
+      "year": 2023,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2023/CRNH0203-2023-CA_Merced_23_WSW.txt",
+      "file": "raw/CRNH0203-2023-CA_Merced_23_WSW.txt",
+      "bytes": 2137440,
+      "sha256": "2c190deb154f2f5b05b463594a34fd7eac0948a2394281801a7be706ecfa50a6",
+      "rows": 8760
+    },
+    {
+      "station": "FL_Sebring_23_SSE",
+      "year": 2023,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2023/CRNH0203-2023-FL_Sebring_23_SSE.txt",
+      "file": "raw/CRNH0203-2023-FL_Sebring_23_SSE.txt",
+      "bytes": 2137440,
+      "sha256": "fdd861cd702953e60cd59b67999f9e6061fbeebf6a5a5841ccfcad4fd3b8a49f",
+      "rows": 8760
+    },
+    {
+      "station": "IA_Des_Moines_17_E",
+      "year": 2023,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2023/CRNH0203-2023-IA_Des_Moines_17_E.txt",
+      "file": "raw/CRNH0203-2023-IA_Des_Moines_17_E.txt",
+      "bytes": 2137440,
+      "sha256": "55ceb1ae8b658fed22628f228237e3f207f5209bafd0deee62511fc8f7a8defc",
+      "rows": 8760
+    },
+    {
+      "station": "IL_Champaign_9_SW",
+      "year": 2023,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2023/CRNH0203-2023-IL_Champaign_9_SW.txt",
+      "file": "raw/CRNH0203-2023-IL_Champaign_9_SW.txt",
+      "bytes": 2137440,
+      "sha256": "d99092abd3691492cf920ca27beacd6a8af5709e369004621c3987af20f8bac1",
+      "rows": 8760
+    },
+    {
+      "station": "SC_Blackville_3_W",
+      "year": 2023,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2023/CRNH0203-2023-SC_Blackville_3_W.txt",
+      "file": "raw/CRNH0203-2023-SC_Blackville_3_W.txt",
+      "bytes": 2137440,
+      "sha256": "8dc3197df5c6f228543bc5bd43d02c896af610434238197df1c19e1416225b45",
+      "rows": 8760
+    },
+    {
+      "station": "TX_Austin_33_NW",
+      "year": 2023,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2023/CRNH0203-2023-TX_Austin_33_NW.txt",
+      "file": "raw/CRNH0203-2023-TX_Austin_33_NW.txt",
+      "bytes": 2137440,
+      "sha256": "be8855b81c3a1adb2647301c879a843c76004f434f6360c0d492f533d5a970a4",
+      "rows": 8760
+    },
+    {
+      "station": "AL_Brewton_3_NNE",
+      "year": 2024,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2024/CRNH0203-2024-AL_Brewton_3_NNE.txt",
+      "file": "raw/CRNH0203-2024-AL_Brewton_3_NNE.txt",
+      "bytes": 2143296,
+      "sha256": "f08570c0595d900805f54aa98f583723db2c52265f430b20e09c8031951b370a",
+      "rows": 8784
+    },
+    {
+      "station": "AZ_Tucson_11_W",
+      "year": 2024,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2024/CRNH0203-2024-AZ_Tucson_11_W.txt",
+      "file": "raw/CRNH0203-2024-AZ_Tucson_11_W.txt",
+      "bytes": 2143296,
+      "sha256": "df3770689f4cc18ae818ded93287d43da90a12943401ab7e114fcf0349ebcfea",
+      "rows": 8784
+    },
+    {
+      "station": "CA_Merced_23_WSW",
+      "year": 2024,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2024/CRNH0203-2024-CA_Merced_23_WSW.txt",
+      "file": "raw/CRNH0203-2024-CA_Merced_23_WSW.txt",
+      "bytes": 2143296,
+      "sha256": "678212013b895df8be25bdd3dc2769c1772360c93d47b47563b99939e2f6946e",
+      "rows": 8784
+    },
+    {
+      "station": "FL_Sebring_23_SSE",
+      "year": 2024,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2024/CRNH0203-2024-FL_Sebring_23_SSE.txt",
+      "file": "raw/CRNH0203-2024-FL_Sebring_23_SSE.txt",
+      "bytes": 2143296,
+      "sha256": "1d112e04fc3ca297bdd911a5a918f9c8c23e8870a384fbdfcc50abbb099f3600",
+      "rows": 8784
+    },
+    {
+      "station": "IA_Des_Moines_17_E",
+      "year": 2024,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2024/CRNH0203-2024-IA_Des_Moines_17_E.txt",
+      "file": "raw/CRNH0203-2024-IA_Des_Moines_17_E.txt",
+      "bytes": 2143296,
+      "sha256": "afb9ee5bbd5486c428c346826fef7e8ed991da982b09ff48129e44bfbe642ae7",
+      "rows": 8784
+    },
+    {
+      "station": "IL_Champaign_9_SW",
+      "year": 2024,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2024/CRNH0203-2024-IL_Champaign_9_SW.txt",
+      "file": "raw/CRNH0203-2024-IL_Champaign_9_SW.txt",
+      "bytes": 2143296,
+      "sha256": "fa979f970a630f23774ce14746711c6108992ed1d6e7843be8d4a43e40fd882e",
+      "rows": 8784
+    },
+    {
+      "station": "SC_Blackville_3_W",
+      "year": 2024,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2024/CRNH0203-2024-SC_Blackville_3_W.txt",
+      "file": "raw/CRNH0203-2024-SC_Blackville_3_W.txt",
+      "bytes": 2143296,
+      "sha256": "1a3fdccbcf2e920181ee357a61cc30710ce1cfece733e78bd3f9795628107624",
+      "rows": 8784
+    },
+    {
+      "station": "TX_Austin_33_NW",
+      "year": 2024,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2024/CRNH0203-2024-TX_Austin_33_NW.txt",
+      "file": "raw/CRNH0203-2024-TX_Austin_33_NW.txt",
+      "bytes": 2143296,
+      "sha256": "f72f2de5b05d0ac9593a27db1fd2d6ee5c0a6ba1746f5e137d80d8c11b7d7272",
+      "rows": 8784
+    },
+    {
+      "station": "AL_Brewton_3_NNE",
+      "year": 2025,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2025/CRNH0203-2025-AL_Brewton_3_NNE.txt",
+      "file": "raw/CRNH0203-2025-AL_Brewton_3_NNE.txt",
+      "bytes": 2137440,
+      "sha256": "4c603e18049d3e49f9d3d33a011e6b8d9ceba61d8793d02809972f686cdc274a",
+      "rows": 8759
+    },
+    {
+      "station": "AZ_Tucson_11_W",
+      "year": 2025,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2025/CRNH0203-2025-AZ_Tucson_11_W.txt",
+      "file": "raw/CRNH0203-2025-AZ_Tucson_11_W.txt",
+      "bytes": 2137440,
+      "sha256": "8a3f9e470c96557cb21a0e1bab0f556630f4c8ec50965666a8f5a32a0677ea75",
+      "rows": 8760
+    },
+    {
+      "station": "CA_Merced_23_WSW",
+      "year": 2025,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2025/CRNH0203-2025-CA_Merced_23_WSW.txt",
+      "file": "raw/CRNH0203-2025-CA_Merced_23_WSW.txt",
+      "bytes": 2137440,
+      "sha256": "9f4bbceebb9ee9fdccb6ade2e60e93ffd883dce961c253d62605ec6757433a2c",
+      "rows": 8760
+    },
+    {
+      "station": "FL_Sebring_23_SSE",
+      "year": 2025,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2025/CRNH0203-2025-FL_Sebring_23_SSE.txt",
+      "file": "raw/CRNH0203-2025-FL_Sebring_23_SSE.txt",
+      "bytes": 2137440,
+      "sha256": "24fc7468603185c37b871b8e117a626c93221d2030e9e2055cf19fb63dd85de4",
+      "rows": 8760
+    },
+    {
+      "station": "IA_Des_Moines_17_E",
+      "year": 2025,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2025/CRNH0203-2025-IA_Des_Moines_17_E.txt",
+      "file": "raw/CRNH0203-2025-IA_Des_Moines_17_E.txt",
+      "bytes": 2137440,
+      "sha256": "36e93e5189c368591e240ae15fe56f71ad9ea3a75b49cdfaacd89e9a3e725a5d",
+      "rows": 8760
+    },
+    {
+      "station": "IL_Champaign_9_SW",
+      "year": 2025,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2025/CRNH0203-2025-IL_Champaign_9_SW.txt",
+      "file": "raw/CRNH0203-2025-IL_Champaign_9_SW.txt",
+      "bytes": 2137440,
+      "sha256": "e692ae63e210fdcc36cc80aa7c1aabaaa600a3b2db468eaec834dce3e873eaaf",
+      "rows": 8760
+    },
+    {
+      "station": "SC_Blackville_3_W",
+      "year": 2025,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2025/CRNH0203-2025-SC_Blackville_3_W.txt",
+      "file": "raw/CRNH0203-2025-SC_Blackville_3_W.txt",
+      "bytes": 2137440,
+      "sha256": "783d8474b3b7ebd0699e1fbb07dae234f68bcb9649c61f9da8b809f1a7d8264e",
+      "rows": 8760
+    },
+    {
+      "station": "TX_Austin_33_NW",
+      "year": 2025,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2025/CRNH0203-2025-TX_Austin_33_NW.txt",
+      "file": "raw/CRNH0203-2025-TX_Austin_33_NW.txt",
+      "bytes": 2137440,
+      "sha256": "8cf8edafb9c62cc88a695bbd89b3b49ef509e3c470fc683dd1c55a683e736578",
+      "rows": 8760
+    },
+    {
+      "station": "AL_Brewton_3_NNE",
+      "year": 2026,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-AL_Brewton_3_NNE.txt",
+      "file": "raw/CRNH0203-2026-AL_Brewton_3_NNE.txt",
+      "bytes": 1858060,
+      "sha256": "cbef030895289078670832f9edee5223c8e387cefe2059a7b5dcf3120543c423",
+      "rows": 7614
+    },
+    {
+      "station": "AZ_Tucson_11_W",
+      "year": 2026,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-AZ_Tucson_11_W.txt",
+      "file": "raw/CRNH0203-2026-AZ_Tucson_11_W.txt",
+      "bytes": 1858060,
+      "sha256": "1daeaaf5eae8d6a316d9ef32a38b3b4666d9b8409672c5e4dbf8ebb74ba724e3",
+      "rows": 7615
+    },
+    {
+      "station": "CA_Merced_23_WSW",
+      "year": 2026,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-CA_Merced_23_WSW.txt",
+      "file": "raw/CRNH0203-2026-CA_Merced_23_WSW.txt",
+      "bytes": 1858304,
+      "sha256": "e67b821e44e1accf1bf7697a3dd5d0d45015419dcc999aaf45be5ba940ad6ef3",
+      "rows": 7616
+    },
+    {
+      "station": "FL_Sebring_23_SSE",
+      "year": 2026,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-FL_Sebring_23_SSE.txt",
+      "file": "raw/CRNH0203-2026-FL_Sebring_23_SSE.txt",
+      "bytes": 1858060,
+      "sha256": "35508e5fed9afb375e8d0b5c673551c5e30b6f991ffa9c21f07a2dfcfe8c3b4f",
+      "rows": 7615
+    },
+    {
+      "station": "IA_Des_Moines_17_E",
+      "year": 2026,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-IA_Des_Moines_17_E.txt",
+      "file": "raw/CRNH0203-2026-IA_Des_Moines_17_E.txt",
+      "bytes": 1858304,
+      "sha256": "772bba42183c8672b16aeb1f99e74ad9cb77e997f0aa4bf335ffed9bdbb46a73",
+      "rows": 7615
+    },
+    {
+      "station": "IL_Champaign_9_SW",
+      "year": 2026,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-IL_Champaign_9_SW.txt",
+      "file": "raw/CRNH0203-2026-IL_Champaign_9_SW.txt",
+      "bytes": 1858304,
+      "sha256": "f6611436086373e19d374c80802a1056578eeb066ce128a20be02af931703f4f",
+      "rows": 7616
+    },
+    {
+      "station": "SC_Blackville_3_W",
+      "year": 2026,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-SC_Blackville_3_W.txt",
+      "file": "raw/CRNH0203-2026-SC_Blackville_3_W.txt",
+      "bytes": 1858548,
+      "sha256": "69694a06aaaaef081a449ca6b7e2d74befc2657e974a038deb12164363332852",
+      "rows": 7617
+    },
+    {
+      "station": "TX_Austin_33_NW",
+      "year": 2026,
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-TX_Austin_33_NW.txt",
+      "file": "raw/CRNH0203-2026-TX_Austin_33_NW.txt",
+      "bytes": 1858304,
+      "sha256": "cacd67d6e3f12b8fd408545495a7c16492eb8c2774021a8c615bd3f54424ee17",
+      "rows": 7615
+    }
+  ]
+}

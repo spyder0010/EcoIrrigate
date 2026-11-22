@@ -1,0 +1,334 @@
+{
+  "source": "NOAA USCRN hourly02 2026",
+  "protocol": "NOAA_ZERO_SHOT_PROTOCOL.md",
+  "catalog_url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/",
+  "catalog_file": "catalog_2026.html",
+  "catalog_sha256": "038c03bb233eccb25ee59e4cef215a38ba0cc72d750c9710d2808fc6579a1854",
+  "catalog_selection": "alphabetically first station per state after protocol exclusions",
+  "files": [
+    {
+      "station": "AL_Brewton_3_NNE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-AL_Brewton_3_NNE.txt",
+      "file": "raw/CRNH0203-2026-AL_Brewton_3_NNE.txt",
+      "download_utc": "2026-11-14T09:59:27.827499+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "4f9b241f24024a7619f52fe0912272d7d88511ddc19810540bf10ff098805a16"
+    },
+    {
+      "station": "AR_Batesville_8_WNW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-AR_Batesville_8_WNW.txt",
+      "file": "raw/CRNH0203-2026-AR_Batesville_8_WNW.txt",
+      "download_utc": "2026-11-14T09:59:44.949089+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "f6ada63573caa166f3063af57497cdc8e36ad60a4b8fd20acb0bfc073bd1aaa9"
+    },
+    {
+      "station": "CO_Boulder_14_W",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-CO_Boulder_14_W.txt",
+      "file": "raw/CRNH0203-2026-CO_Boulder_14_W.txt",
+      "download_utc": "2026-11-14T09:59:48.997272+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "1960135e7a1451eda4677e9dbd279ee879678f363395889b59238010ad085c12"
+    },
+    {
+      "station": "GA_Brunswick_23_S",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-GA_Brunswick_23_S.txt",
+      "file": "raw/CRNH0203-2026-GA_Brunswick_23_S.txt",
+      "download_utc": "2026-11-14T09:59:53.281720+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "d315d05aaa5773ac4ad21a0bf710975d7c97270ee16020c5d9fc91bdd35fa08a"
+    },
+    {
+      "station": "ID_Arco_17_SW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-ID_Arco_17_SW.txt",
+      "file": "raw/CRNH0203-2026-ID_Arco_17_SW.txt",
+      "download_utc": "2026-11-14T09:59:57.749747+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "f1d48d7f39548ce1f17c14d7fcf2d8e45a407427d7f382ba9408cdfc8b5f5c37"
+    },
+    {
+      "station": "IN_Bedford_5_WNW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-IN_Bedford_5_WNW.txt",
+      "file": "raw/CRNH0203-2026-IN_Bedford_5_WNW.txt",
+      "download_utc": "2026-11-14T10:00:08.628424+00:00",
+      "bytes": 1858548,
+      "rows": 7617,
+      "sha256": "fd5fb3b29faf2b608e64e5b0027fed20c3b861f6679694945b261d1c55893cfa"
+    },
+    {
+      "station": "KS_Manhattan_6_SSW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-KS_Manhattan_6_SSW.txt",
+      "file": "raw/CRNH0203-2026-KS_Manhattan_6_SSW.txt",
+      "download_utc": "2026-11-14T10:00:28.783656+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "1da2cf1f03e886428763dc5b0d2c7f21e53a212d667ded046db2cee991213a4a"
+    },
+    {
+      "station": "KY_Bowling_Green_21_NNE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-KY_Bowling_Green_21_NNE.txt",
+      "file": "raw/CRNH0203-2026-KY_Bowling_Green_21_NNE.txt",
+      "download_utc": "2026-11-14T10:00:36.264750+00:00",
+      "bytes": 1858548,
+      "rows": 7617,
+      "sha256": "b119cd1727b53135b526537c969d828ca58f2559271d24c94580920a6d516070"
+    },
+    {
+      "station": "LA_Lafayette_13_SE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-LA_Lafayette_13_SE.txt",
+      "file": "raw/CRNH0203-2026-LA_Lafayette_13_SE.txt",
+      "download_utc": "2026-11-14T10:00:51.205668+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "f11ca50b9ce0fded37386edb7c3c044dbc863263d434ac9cec2a4913c4424734"
+    },
+    {
+      "station": "MA_Blue_Hill_0_W",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-MA_Blue_Hill_0_W.txt",
+      "file": "raw/CRNH0203-2026-MA_Blue_Hill_0_W.txt",
+      "download_utc": "2026-11-14T10:01:00.655723+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "c64a2d1e5fe0fd9355ee1399d427453203467524bba4bf4d7db62611cd6c934d"
+    },
+    {
+      "station": "ME_Limestone_4_NNW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-ME_Limestone_4_NNW.txt",
+      "file": "raw/CRNH0203-2026-ME_Limestone_4_NNW.txt",
+      "download_utc": "2026-11-14T10:01:11.851527+00:00",
+      "bytes": 1858548,
+      "rows": 7617,
+      "sha256": "da33a59332eb10fd56cf810342debdd8da0b3d31734333eeb0248ddc64a7e81d"
+    },
+    {
+      "station": "MI_Chatham_1_SE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-MI_Chatham_1_SE.txt",
+      "file": "raw/CRNH0203-2026-MI_Chatham_1_SE.txt",
+      "download_utc": "2026-11-14T10:01:18.201830+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "186129ed093bb8fa831d42f56f61b8d2dca862adbf7ff9ee03f0512089bcd40b"
+    },
+    {
+      "station": "MN_Goodridge_12_NNW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-MN_Goodridge_12_NNW.txt",
+      "file": "raw/CRNH0203-2026-MN_Goodridge_12_NNW.txt",
+      "download_utc": "2026-11-14T10:01:23.088733+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "8c5832d8de4e378436bb820d767576e8e44eccfc62fcce9fc16958bc66ba1ccd"
+    },
+    {
+      "station": "MO_Chillicothe_22_ENE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-MO_Chillicothe_22_ENE.txt",
+      "file": "raw/CRNH0203-2026-MO_Chillicothe_22_ENE.txt",
+      "download_utc": "2026-11-14T10:01:28.167204+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "04fdf5d2571922eda0f570f703cce162de1fb666ec0c325a552b3ca1d824f20f"
+    },
+    {
+      "station": "MS_Holly_Springs_4_N",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-MS_Holly_Springs_4_N.txt",
+      "file": "raw/CRNH0203-2026-MS_Holly_Springs_4_N.txt",
+      "download_utc": "2026-11-14T10:01:51.615954+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "11169ae0cf6437a0abb8d081a84507e3ec568531759584d342d33d707333941a"
+    },
+    {
+      "station": "MT_Dillon_18_WSW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-MT_Dillon_18_WSW.txt",
+      "file": "raw/CRNH0203-2026-MT_Dillon_18_WSW.txt",
+      "download_utc": "2026-11-14T10:01:57.288521+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "fefaa70875b591fb4f8e604c531e82297852c2b0df02367a8c460db5a4c65c5f"
+    },
+    {
+      "station": "NC_Asheville_13_S",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-NC_Asheville_13_S.txt",
+      "file": "raw/CRNH0203-2026-NC_Asheville_13_S.txt",
+      "download_utc": "2026-11-14T10:02:05.047523+00:00",
+      "bytes": 1858548,
+      "rows": 7617,
+      "sha256": "9b0474b630614b15a7b59d7958b0048a8d1be09fcb55d26f4c47f75035e0ce9e"
+    },
+    {
+      "station": "ND_Jamestown_38_WSW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-ND_Jamestown_38_WSW.txt",
+      "file": "raw/CRNH0203-2026-ND_Jamestown_38_WSW.txt",
+      "download_utc": "2026-11-14T10:02:09.341798+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "c70da391f71da70cb8b5fc98a177b51695e3a7e8e6bec7a786dfa81ebf983849"
+    },
+    {
+      "station": "NE_Harrison_20_SSE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-NE_Harrison_20_SSE.txt",
+      "file": "raw/CRNH0203-2026-NE_Harrison_20_SSE.txt",
+      "download_utc": "2026-11-14T10:02:31.955883+00:00",
+      "bytes": 1858548,
+      "rows": 7617,
+      "sha256": "01bde4ba8be1be92316d63bc904e69512846647d0185d5e5a525f091e1b84d1a"
+    },
+    {
+      "station": "NH_Durham_2_N",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-NH_Durham_2_N.txt",
+      "file": "raw/CRNH0203-2026-NH_Durham_2_N.txt",
+      "download_utc": "2026-11-14T10:02:55.190473+00:00",
+      "bytes": 1858548,
+      "rows": 7617,
+      "sha256": "602cee1b452b71e7321f577037752913f88c86c05bbceb200a24cbc0df007005"
+    },
+    {
+      "station": "NM_Las_Cruces_20_N",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-NM_Las_Cruces_20_N.txt",
+      "file": "raw/CRNH0203-2026-NM_Las_Cruces_20_N.txt",
+      "download_utc": "2026-11-14T10:03:04.490309+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "c8d54a106061759c6d879527e488e0e1c7771bb1f62eeca1747e7db330783429"
+    },
+    {
+      "station": "NV_Baker_5_W",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-NV_Baker_5_W.txt",
+      "file": "raw/CRNH0203-2026-NV_Baker_5_W.txt",
+      "download_utc": "2026-11-14T10:03:13.598495+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "473fc462f5f4ff89589647b38de70fcfadfce9adc69b7348fdf9b25e6abe0d91"
+    },
+    {
+      "station": "NY_Ithaca_13_E",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-NY_Ithaca_13_E.txt",
+      "file": "raw/CRNH0203-2026-NY_Ithaca_13_E.txt",
+      "download_utc": "2026-11-14T10:03:19.715453+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "dcf6469e45405da75adb1556c9cf0d3ab7b044f62455370a2a07a5097dfa755f"
+    },
+    {
+      "station": "OH_Wooster_3_SSE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-OH_Wooster_3_SSE.txt",
+      "file": "raw/CRNH0203-2026-OH_Wooster_3_SSE.txt",
+      "download_utc": "2026-11-14T10:03:45.295152+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "628eff45734637e139cbd20d1bdd5ee35d55f9042a4223ff31eb2ca7639711cc"
+    },
+    {
+      "station": "OK_Goodwell_2_E",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-OK_Goodwell_2_E.txt",
+      "file": "raw/CRNH0203-2026-OK_Goodwell_2_E.txt",
+      "download_utc": "2026-11-14T10:03:52.656461+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "629e4c5a32d0b62be0c246702f8d80d0455d501210fba1278acfcca56adc009d"
+    },
+    {
+      "station": "OR_Coos_Bay_8_SW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-OR_Coos_Bay_8_SW.txt",
+      "file": "raw/CRNH0203-2026-OR_Coos_Bay_8_SW.txt",
+      "download_utc": "2026-11-14T10:03:56.300783+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "213c5183ac16cae3edd2081185f10327c0179f1d45cd823f22754792001c5b90"
+    },
+    {
+      "station": "PA_Avondale_2_N",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-PA_Avondale_2_N.txt",
+      "file": "raw/CRNH0203-2026-PA_Avondale_2_N.txt",
+      "download_utc": "2026-11-14T10:04:10.872070+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "ac360b34b4fc50e8ef084d0372c34ff65e6eb9ebd58cfbfa0c42c47458f9b79d"
+    },
+    {
+      "station": "RI_Kingston_1_NW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-RI_Kingston_1_NW.txt",
+      "file": "raw/CRNH0203-2026-RI_Kingston_1_NW.txt",
+      "download_utc": "2026-11-14T10:04:17.704277+00:00",
+      "bytes": 1858548,
+      "rows": 7617,
+      "sha256": "a7b6048f5e1385dc821537e685b89c7a7601051448220b8b598f24ec4aabef9a"
+    },
+    {
+      "station": "SD_Aberdeen_35_WNW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-SD_Aberdeen_35_WNW.txt",
+      "file": "raw/CRNH0203-2026-SD_Aberdeen_35_WNW.txt",
+      "download_utc": "2026-11-14T10:04:33.770451+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "ce3b16fd15c7682e91b81a63f3f7db10353afdc4b598eceb8a3bb97781d76433"
+    },
+    {
+      "station": "TN_Crossville_7_NW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-TN_Crossville_7_NW.txt",
+      "file": "raw/CRNH0203-2026-TN_Crossville_7_NW.txt",
+      "download_utc": "2026-11-14T10:04:42.122679+00:00",
+      "bytes": 1858548,
+      "rows": 7617,
+      "sha256": "b32f275c3ea0fe0a74b32ba8522527032b95c564b4768fb774da88f20fea88a8"
+    },
+    {
+      "station": "UT_Brigham_City_28_WNW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-UT_Brigham_City_28_WNW.txt",
+      "file": "raw/CRNH0203-2026-UT_Brigham_City_28_WNW.txt",
+      "download_utc": "2026-11-14T10:04:47.609204+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "133637f82a54e3e58ff56bfa2ae12d024b6abd97d03bdd58c546cff5e6d092f0"
+    },
+    {
+      "station": "VA_Cape_Charles_5_ENE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-VA_Cape_Charles_5_ENE.txt",
+      "file": "raw/CRNH0203-2026-VA_Cape_Charles_5_ENE.txt",
+      "download_utc": "2026-11-14T10:04:55.684353+00:00",
+      "bytes": 1858548,
+      "rows": 7617,
+      "sha256": "a49be5a025551914970e4dbf2d0cfbcdfd6e987bbe305b6281bf657e88857cee"
+    },
+    {
+      "station": "WA_Darrington_21_NNE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-WA_Darrington_21_NNE.txt",
+      "file": "raw/CRNH0203-2026-WA_Darrington_21_NNE.txt",
+      "download_utc": "2026-11-14T10:05:04.951512+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "14a2c8edd734d537817fcaed15f77cf55cf8d0d494e17fcf75c8b0bf05a596ac"
+    },
+    {
+      "station": "WI_Necedah_5_WNW",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-WI_Necedah_5_WNW.txt",
+      "file": "raw/CRNH0203-2026-WI_Necedah_5_WNW.txt",
+      "download_utc": "2026-11-14T10:05:12.386568+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "c23823f3c1d278aef21c9470c89dfb50cc159a52270e28a7b8a17434eabf346f"
+    },
+    {
+      "station": "WV_Elkins_21_ENE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-WV_Elkins_21_ENE.txt",
+      "file": "raw/CRNH0203-2026-WV_Elkins_21_ENE.txt",
+      "download_utc": "2026-11-14T10:05:19.069604+00:00",
+      "bytes": 1858304,
+      "rows": 7615,
+      "sha256": "bfe43836c9a218a2fea3c7a3ed1448800d7c3963d4d944dfb20fc59e3c1b7a80"
+    },
+    {
+      "station": "WY_Lander_11_SSE",
+      "url": "https://www.ncei.noaa.gov/pub/data/uscrn/products/hourly02/2026/CRNH0203-2026-WY_Lander_11_SSE.txt",
+      "file": "raw/CRNH0203-2026-WY_Lander_11_SSE.txt",
+      "download_utc": "2026-11-14T10:05:24.203460+00:00",
+      "bytes": 1858304,
+      "rows": 7616,
+      "sha256": "c2f0de9a3dfdf804413123e78bfa099b1aec23520af6e5b8b98c6eca8ac94b7e"
+    }
+  ]
+}

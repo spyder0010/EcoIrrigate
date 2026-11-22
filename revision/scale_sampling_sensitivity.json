@@ -1,0 +1,315 @@
+{
+  "slope_budget": 0.25,
+  "scale_audit_sha256": "5733e92eba1c93997ee181fc195abb4bae1a46993e2d85cdcc5d06c5a69dfa9c",
+  "ecoirrigate": {
+    "paired_timestamps": 1503,
+    "replicates": 4000,
+    "blocks": {
+      "48": {
+        "by_horizon": {
+          "1": {
+            "nominal": 0.01785339554257016,
+            "identity_percentiles": [
+              0.012577012074201945,
+              0.023176449095834
+            ],
+            "identity_absolute_deviation_q95": 0.005307865686464006,
+            "scale_only_outer": [
+              0.012031595125878872,
+              0.0257358435862422
+            ],
+            "uniform_deviation_q95_upper": 0.00999570674115711,
+            "scale_and_resampling_outer": [
+              0.0020358883847217627,
+              0.03573155032739931
+            ]
+          },
+          "6": {
+            "nominal": -0.039131502889391975,
+            "identity_percentiles": [
+              -0.0983248519377127,
+              0.006540120714474415
+            ],
+            "identity_absolute_deviation_q95": 0.051486998745170875,
+            "scale_only_outer": [
+              -0.05524321420509522,
+              -0.027496732743617927
+            ],
+            "uniform_deviation_q95_upper": 0.0818541586884835,
+            "scale_and_resampling_outer": [
+              -0.1370973728935787,
+              0.054357425944865576
+            ]
+          },
+          "12": {
+            "nominal": -0.11561541327989017,
+            "identity_percentiles": [
+              -0.2863453706986892,
+              0.016581459560748465
+            ],
+            "identity_absolute_deviation_q95": 0.15128040008847,
+            "scale_only_outer": [
+              -0.15603430010687153,
+              -0.07943768358616342
+            ],
+            "uniform_deviation_q95_upper": 0.22953779696181698,
+            "scale_and_resampling_outer": [
+              -0.3855720970686885,
+              0.15010011337565354
+            ]
+          },
+          "24": {
+            "nominal": 0.1788751517504833,
+            "identity_percentiles": [
+              -0.4160671317579563,
+              0.6819666443417115
+            ],
+            "identity_absolute_deviation_q95": 0.5456849460593136,
+            "scale_only_outer": [
+              -0.05429144659648844,
+              0.4312796883527156
+            ],
+            "uniform_deviation_q95_upper": 0.8136182257940393,
+            "scale_and_resampling_outer": [
+              -0.8679096723905277,
+              1.2448979141467549
+            ]
+          }
+        },
+        "fixed_24h_witness_percentiles": [
+          -0.4905051682267195,
+          0.3666450073890093
+        ],
+        "fraction_with_identity_positive_and_witness_negative": 0.273
+      },
+      "96": {
+        "by_horizon": {
+          "1": {
+            "nominal": 0.01785339554257016,
+            "identity_percentiles": [
+              0.011310075376950635,
+              0.02504892938879623
+            ],
+            "identity_absolute_deviation_q95": 0.006782262822099263,
+            "scale_only_outer": [
+              0.012031595125878872,
+              0.0257358435862422
+            ],
+            "uniform_deviation_q95_upper": 0.012831737579271908,
+            "scale_and_resampling_outer": [
+              -0.0008001424533930351,
+              0.038567581165514106
+            ]
+          },
+          "6": {
+            "nominal": -0.039131502889391975,
+            "identity_percentiles": [
+              -0.09865840842264222,
+              0.009434499501124682
+            ],
+            "identity_absolute_deviation_q95": 0.05435843438830984,
+            "scale_only_outer": [
+              -0.05524321420509522,
+              -0.027496732743617927
+            ],
+            "uniform_deviation_q95_upper": 0.08336312160349611,
+            "scale_and_resampling_outer": [
+              -0.13860633580859133,
+              0.055866388859878185
+            ]
+          },
+          "12": {
+            "nominal": -0.11561541327989017,
+            "identity_percentiles": [
+              -0.2985961400150969,
+              0.02698793246366131
+            ],
+            "identity_absolute_deviation_q95": 0.16241442885401552,
+            "scale_only_outer": [
+              -0.15603430010687153,
+              -0.07943768358616342
+            ],
+            "uniform_deviation_q95_upper": 0.2449190237708277,
+            "scale_and_resampling_outer": [
+              -0.4009533238776992,
+              0.16548134018466426
+            ]
+          },
+          "24": {
+            "nominal": 0.1788751517504833,
+            "identity_percentiles": [
+              -0.6113461500670028,
+              0.7783052046928084
+            ],
+            "identity_absolute_deviation_q95": 0.6918566442952295,
+            "scale_only_outer": [
+              -0.05429144659648844,
+              0.4312796883527156
+            ],
+            "uniform_deviation_q95_upper": 1.0368622641110752,
+            "scale_and_resampling_outer": [
+              -1.0911537107075637,
+              1.4681419524637906
+            ]
+          }
+        },
+        "fixed_24h_witness_percentiles": [
+          -0.640584493055045,
+          0.4376419685977387
+        ],
+        "fraction_with_identity_positive_and_witness_negative": 0.22725
+      },
+      "192": {
+        "by_horizon": {
+          "1": {
+            "nominal": 0.01785339554257016,
+            "identity_percentiles": [
+              0.01017445098686774,
+              0.026144052274678007
+            ],
+            "identity_absolute_deviation_q95": 0.007973831620380543,
+            "scale_only_outer": [
+              0.012031595125878872,
+              0.0257358435862422
+            ],
+            "uniform_deviation_q95_upper": 0.01531034269712046,
+            "scale_and_resampling_outer": [
+              -0.0032787475712415873,
+              0.04104618628336266
+            ]
+          },
+          "6": {
+            "nominal": -0.039131502889391975,
+            "identity_percentiles": [
+              -0.09853102650020065,
+              0.007238150077777333
+            ],
+            "identity_absolute_deviation_q95": 0.05221005465202856,
+            "scale_only_outer": [
+              -0.05524321420509522,
+              -0.027496732743617927
+            ],
+            "uniform_deviation_q95_upper": 0.08293949145257354,
+            "scale_and_resampling_outer": [
+              -0.13818270565766877,
+              0.05544275870895561
+            ]
+          },
+          "12": {
+            "nominal": -0.11561541327989017,
+            "identity_percentiles": [
+              -0.30370331666926687,
+              0.02601356385376323
+            ],
+            "identity_absolute_deviation_q95": 0.1642014887290376,
+            "scale_only_outer": [
+              -0.15603430010687153,
+              -0.07943768358616342
+            ],
+            "uniform_deviation_q95_upper": 0.24912881104205656,
+            "scale_and_resampling_outer": [
+              -0.4051631111489281,
+              0.16969112745589315
+            ]
+          },
+          "24": {
+            "nominal": 0.1788751517504833,
+            "identity_percentiles": [
+              -0.6919118882761357,
+              0.8156765284634482
+            ],
+            "identity_absolute_deviation_q95": 0.765105387811708,
+            "scale_only_outer": [
+              -0.05429144659648844,
+              0.4312796883527156
+            ],
+            "uniform_deviation_q95_upper": 1.1536612360923924,
+            "scale_and_resampling_outer": [
+              -1.207952682688881,
+              1.584940924445108
+            ]
+          }
+        },
+        "fixed_24h_witness_percentiles": [
+          -0.7113380483200687,
+          0.4480217367640476
+        ],
+        "fraction_with_identity_positive_and_witness_negative": 0.19425
+      }
+    }
+  },
+  "uscrn": {
+    "stations": 35,
+    "replicates": 10000,
+    "by_horizon": {
+      "1": {
+        "nominal": 0.02185761296408233,
+        "identity_percentiles": [
+          -0.010455918448684718,
+          0.08244310412560914
+        ],
+        "identity_absolute_deviation_q95": 0.05192286323846588,
+        "scale_only_outer": [
+          0.0036320807559785066,
+          0.04182169433718257
+        ],
+        "uniform_deviation_q95_upper": 0.07633668174262004,
+        "scale_and_resampling_outer": [
+          -0.07270460098664153,
+          0.11815837607980262
+        ]
+      },
+      "6": {
+        "nominal": -0.0472003214949142,
+        "identity_percentiles": [
+          -0.09882754779094391,
+          0.0037834996173458243
+        ],
+        "identity_absolute_deviation_q95": 0.05125306184755851,
+        "scale_only_outer": [
+          -0.11182349612283857,
+          0.017528847135081488
+        ],
+        "uniform_deviation_q95_upper": 0.12243869704961599,
+        "scale_and_resampling_outer": [
+          -0.23426219317245456,
+          0.13996754418469748
+        ]
+      },
+      "12": {
+        "nominal": -0.10795677257208576,
+        "identity_percentiles": [
+          -0.22060574556209833,
+          0.005121024188565528
+        ],
+        "identity_absolute_deviation_q95": 0.11289105866353365,
+        "scale_only_outer": [
+          -0.24792882371072306,
+          0.033315216565469014
+        ],
+        "uniform_deviation_q95_upper": 0.2667647122790089,
+        "scale_and_resampling_outer": [
+          -0.514693535989732,
+          0.3000799288444779
+        ]
+      },
+      "24": {
+        "nominal": -0.10108303519739999,
+        "identity_percentiles": [
+          -0.3573929275063547,
+          0.1652389205706698
+        ],
+        "identity_absolute_deviation_q95": 0.26070800918303755,
+        "scale_only_outer": [
+          -0.3772883712438175,
+          0.18480664986656628
+        ],
+        "uniform_deviation_q95_upper": 0.5728188334757899,
+        "scale_and_resampling_outer": [
+          -0.9501072047196073,
+          0.7576254833423561
+        ]
+      }
+    }
+  }
+}

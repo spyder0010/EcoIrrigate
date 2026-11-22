@@ -1,0 +1,126 @@
+{
+  "purpose": "saved neural ledger alignment with supplied source VWC and stated test segments",
+  "source_sha256": "1f12bac2a35f78b8f2c6af0fe56142f2301471d9ef2203a3983a5a60444d6319",
+  "float32_tolerance_vwc_points": 5e-06,
+  "ledger_count": 16,
+  "prediction_rows_checked": 574768,
+  "does_not_check": [
+    "model checkpoint weights",
+    "unfilled sensor logs",
+    "independent gravimetric VWC"
+  ],
+  "ledgers": [
+    {
+      "path": "architecture_benchmark/architecture_predictions.csv",
+      "rows_checked": 60120,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/bilstm_no_aux_seed42/architecture_predictions.csv",
+      "rows_checked": 12024,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/bilstm_no_aux_seed43/architecture_predictions.csv",
+      "rows_checked": 12024,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/bilstm_no_aux_seed44/architecture_predictions.csv",
+      "rows_checked": 12024,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/bilstm_no_aux_seed45/architecture_predictions.csv",
+      "rows_checked": 12024,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/bilstm_no_aux_seed46/architecture_predictions.csv",
+      "rows_checked": 12024,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/seed43/architecture_predictions.csv",
+      "rows_checked": 12024,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/seed43_others/architecture_predictions.csv",
+      "rows_checked": 24048,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/seed44/architecture_predictions.csv",
+      "rows_checked": 12024,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/seed44_others/architecture_predictions.csv",
+      "rows_checked": 24048,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/seed45/architecture_predictions.csv",
+      "rows_checked": 12024,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/seed45_others/architecture_predictions.csv",
+      "rows_checked": 24048,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/seed46/architecture_predictions.csv",
+      "rows_checked": 12024,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/seed46_others/architecture_predictions.csv",
+      "rows_checked": 24048,
+      "kind": "final_test",
+      "max_abs_current_source_difference": 9.200000015141541e-07,
+      "max_abs_target_source_difference": 9.200000015141541e-07
+    },
+    {
+      "path": "architecture_benchmark/rolling_backtest/rolling_predictions.csv",
+      "rows_checked": 155120,
+      "kind": "rolling",
+      "max_abs_current_source_difference": 1.0800000005417587e-06,
+      "max_abs_target_source_difference": 1.1099999994712562e-06
+    },
+    {
+      "path": "architecture_benchmark/rolling_backtest_no_aux/rolling_predictions.csv",
+      "rows_checked": 155120,
+      "kind": "rolling",
+      "max_abs_current_source_difference": 1.0800000005417587e-06,
+      "max_abs_target_source_difference": 1.1099999994712562e-06
+    }
+  ]
+}

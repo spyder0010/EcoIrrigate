@@ -1,0 +1,21 @@
+# Forecast ranking under an uncertain sensor scale
+
+## Research question
+
+Does the sign of the reported EcoIrrigate model's error advantage survive a **common** strictly increasing change in the measurement scale? This asks about a fixed set of archived forecasts. It differs from recalibrating model predictions separately, retraining under a new target or estimating physical calibration.
+
+The previous sensitivity script evaluated seven exponential transformations. Here the domain is the smallest interval containing all archived observations and the forecasts in the five no-auxiliary BiLSTM test ledgers. Divide it into eight equal intervals. A candidate scale fixes both endpoints, is continuous and piecewise linear, and has slopes between 1 − δ and 1 + δ for δ = 0.10, 0.25 or 0.50. These are illustrative tolerance budgets, selected before computing the results. The archive provides no physical basis for a particular δ.
+
+## Computation
+
+For each forecast and its observation, form a vector with the length of the part of their intervening interval that lies in each of the eight bins. The absolute difference after applying a scale with slopes **s** is the dot product of that vector with **s**. A paired mean absolute error difference is therefore linear in **s**. It has exact optima over the specified slope bounds and width-weighted endpoint equality, up to optimizer tolerance. This is related to the median-score threshold decomposition in [Ehm et al. (2016)](https://doi.org/10.1111/rssb.12154).
+
+For a paired mean squared error difference, compute the difference **Q** of the two mean outer-product matrices of the interval-length vectors. The error difference is **s**ᵀ**Q** **s**. Its sign also determines the ordering of RMSE when both methods use the same cases with the same weights. Find feasible witnesses by constrained minimization and maximization from several starting vectors. Compute outer bounds by a linear relaxation with lifted pair products, [McCormick inequalities](https://doi.org/10.1007/BF01580665), square tangents and products of the endpoint equality with each slope. The optimizer's dual weights are checked by minimizing the residual linear term over the variable bounds and padding the resulting lower and upper bounds for numerical tolerance. Direct evaluation of the feasible witnesses supplies inner bounds. If only the outer interval crosses zero, the sign remains unresolved. Opposite signs at two feasible maps establish a ranking reversal on the archived cases.
+
+## Evidence and limits
+
+Pool the five saved seeds with equal weight and use their common exact forecast origins. Compare the forecast versus persistence separately at 1, 6, 12 and 24 hours. Check feasibility and evaluate every reported witness directly with piecewise interpolation. The numerical bounds describe this finite sample and specified family. The design preserves no guarantee for time-varying calibration, nonmonotone maps, different transforms by site, physical moisture recovery or a population confidence interval. The test outcomes were inspected previously, so the result is post hoc. A methodological claim for a journal would require a closer literature review, meaningful comparison with elementary-score diagnostics and validation of the method on independent measurement settings.
+
+## Extension to independent transforms by sensor
+
+Recorded levels from one instrument can share an unknown scale even when the scale differs between instruments. Use the same eight-bin and slope-budget rules per site, with each site's bounds derived from the pooled archived cases across horizons. For a pooled case-weighted score, site-separable bounds and witnesses can then be combined by summing site contributions with their origin-count weights. This makes the optimization tractable without modeling interactions between sites. Evaluate the extension on the two EcoIrrigate sites and as a post hoc diagnostic on the existing 2026 35-station USCRN Ridge versus persistence ledger. Use the same tolerance budgets and all four horizons. USCRN supplies a separate measurement setting and examples of applying hypothetical perturbations. The USCRN outcomes were already inspected in earlier work and these perturbations do not estimate USCRN instrument calibration.
